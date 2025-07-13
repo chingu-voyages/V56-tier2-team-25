@@ -36,6 +36,11 @@ coding!
 
 - Nidhi       #1: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
 - Mingshi Hui #2: [GitHub]https://github.com/mingshi0821 / [LinkedIn][(https://linkedin.com/in/liaccountname](https://www.linkedin.com/in/mingshi-hui/))
-
-   ...
-- Teammate name #n: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Dylan Zimmer #3: [GitHub][(https://github.com/ghaccountname)](https://github.com/DylanZimmer) / [LinkedIn][(https://linkedin.com/in/liaccountname)](https://www.linkedin.com/in/dylanzimmereads/)
+- Maha      #4: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Will  #5: [GitHub][(https://github.com/ghaccountname](https://github.com/williamk31)) / [LinkedIn][(https://linkedin.com/in/liaccountname](https://www.linkedin.com/in/william-kalish/))
+- Omar      #6: [GitHub][(https://github.com/ghaccountname)](https://github.com/oramos-correa) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Matthew      #7: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Ben       #8: [GitHub][(https://github.com/ghaccountname)](https://github.com/rubenaguilardev) / [LinkedIn][(https://linkedin.com/in/liaccountname)](https://www.linkedin.com/in/rubenaguilar-/)
+- Jamika       #1: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Tanika      #1: [GitHub][(https://github.com/ghaccountname)](https://github.com/twatson07017) / [LinkedIn][(https://linkedin.com/in/liaccountname)](https://www.linkedin.com/in/tanika-watson/)
