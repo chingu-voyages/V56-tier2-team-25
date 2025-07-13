@@ -42,5 +42,5 @@ coding!
 - Omar      #6: [GitHub][(https://github.com/ghaccountname)](https://github.com/oramos-correa) / [LinkedIn](https://linkedin.com/in/liaccountname)
 - Matthew      #7: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
 - Ben       #8: [GitHub][(https://github.com/ghaccountname)](https://github.com/rubenaguilardev) / [LinkedIn][(https://linkedin.com/in/liaccountname)](https://www.linkedin.com/in/rubenaguilar-/)
-- Jamika       #1: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
-- Tanika      #1: [GitHub][(https://github.com/ghaccountname)](https://github.com/twatson07017) / [LinkedIn][(https://linkedin.com/in/liaccountname)](https://www.linkedin.com/in/tanika-watson/)
+- Jamika       #9: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Tanika      #10: [GitHub][(https://github.com/ghaccountname)](https://github.com/twatson07017) / [LinkedIn][(https://linkedin.com/in/liaccountname)](https://www.linkedin.com/in/tanika-watson/)
