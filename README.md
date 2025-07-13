@@ -35,7 +35,7 @@ your repo access and to practice PR'ing with your team *before* you start
 coding!
 
 - Nidhi       #1: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
-- Mingshi Hui #2: [GitHub]GitHub) / [LinkedIn][(https://linkedin.com/in/liaccountname](https://www.linkedin.com/in/mingshi-hui/))
+- Mingshi Hui #2: [GitHub]https://github.com/mingshi0821 / [LinkedIn][(https://linkedin.com/in/liaccountname](https://www.linkedin.com/in/mingshi-hui/))
 
    ...
 - Teammate name #n: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
