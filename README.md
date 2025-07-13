@@ -40,7 +40,7 @@ coding!
 - Maha      #4: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
 - Will  #5: [GitHub][(https://github.com/ghaccountname](https://github.com/williamk31)) / [LinkedIn][(https://linkedin.com/in/liaccountname](https://www.linkedin.com/in/william-kalish/))
 - Omar      #6: [GitHub][(https://github.com/ghaccountname)](https://github.com/oramos-correa) / [LinkedIn](https://linkedin.com/in/liaccountname)
-- Matthew Neie #7: [GitHub](https://github.com/Matthew Neie) / [LinkedIn](https://linkedin.com/in/matthew-neie)
+- Matthew Neie #7: [GitHub](https://github.com/MatthewNeie) / [LinkedIn](https://linkedin.com/in/matthew-neie)
 - Ben       #8: [GitHub][(https://github.com/ghaccountname)](https://github.com/rubenaguilardev) / [LinkedIn][(https://linkedin.com/in/liaccountname)](https://www.linkedin.com/in/rubenaguilar-/)
 - Jamika       #9: [GitHub](https://github.com/msjaydee)) / [LinkedIn](https://linkedin.com/in/liaccountname)
 - Tanika      #10: [GitHub][(https://github.com/ghaccountname)](https://github.com/twatson07017) / [LinkedIn][(https://linkedin.com/in/liaccountname)](https://www.linkedin.com/in/tanika-watson/)
