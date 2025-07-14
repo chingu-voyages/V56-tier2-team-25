@@ -34,13 +34,14 @@ Everyone on your team should add their name along with a link to their GitHub
 your repo access and to practice PR'ing with your team *before* you start
 coding!
 
-- Nidhi       #1: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
-- Mingshi Hui #2: [GitHub]https://github.com/mingshi0821 / [LinkedIn][(https://linkedin.com/in/liaccountname](https://www.linkedin.com/in/mingshi-hui/))
-- Dylan Zimmer #3: [GitHub][(https://github.com/ghaccountname)](https://github.com/DylanZimmer) / [LinkedIn][(https://linkedin.com/in/liaccountname)](https://www.linkedin.com/in/dylanzimmereads/)
-- Maha      #4: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
-- Will  #5: [GitHub][(https://github.com/ghaccountname](https://github.com/williamk31)) / [LinkedIn][(https://linkedin.com/in/liaccountname](https://www.linkedin.com/in/william-kalish/))
-- Omar      #6: [GitHub][(https://github.com/ghaccountname)](https://github.com/oramos-correa) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Nidhi #1: [GitHub](https://github.com/Nidh12) / [LinkedIn](https://linkedin.com/in/nidhi-gupta-46423b24/)
+- Mingshi Hui #2: [GitHub](https://github.com/mingshi0821 / [LinkedIn](https://www.linkedin.com/in/mingshi-hui/)
+- Dylan Zimmer #3: [GitHub](https://github.com/DylanZimmer) / [LinkedIn](https://www.linkedin.com/in/dylanzimmereads/)
+- Maha #4: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Will #5: [GitHub](https://github.com/williamk31) / [LinkedIn](https://www.linkedin.com/in/william-kalish/))
+- Omar #6: [GitHub](https://github.com/oramos-correa) / [LinkedIn](https://linkedin.com/in/liaccountname)
 - Matthew Neie #7: [GitHub](https://github.com/MatthewNeie) / [LinkedIn](https://linkedin.com/in/matthew-neie)
-- Ben       #8: [GitHub][(https://github.com/ghaccountname)](https://github.com/rubenaguilardev) / [LinkedIn][(https://linkedin.com/in/liaccountname)](https://www.linkedin.com/in/rubenaguilar-/)
-- Jamika       #9: [GitHub](https://github.com/msjaydee)) / [LinkedIn](https://linkedin.com/in/liaccountname)
-- Tanika      #10: [GitHub][(https://github.com/ghaccountname)](https://github.com/twatson07017) / [LinkedIn][(https://linkedin.com/in/liaccountname)](https://www.linkedin.com/in/tanika-watson/)
+- Ruben #8: [GitHub](https://github.com/rubenaguilardev) / [LinkedIn](https://www.linkedin.com/in/rubenaguilar-/)
+- Jamika #9: [GitHub](https://github.com/msjaydee) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Tanika #10: [GitHub](https://github.com/twatson07017) / [LinkedIn](https://www.linkedin.com/in/tanika-watson/)
+- Valeriy #11: [GitHub](https://github.com/Valeriusdev) / [LinkedIn](https://www.linkedin.com/in/valeriylysenko/)
