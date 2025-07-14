@@ -34,8 +34,14 @@ Everyone on your team should add their name along with a link to their GitHub
 your repo access and to practice PR'ing with your team *before* you start
 coding!
 
-- Teammate name #1: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
-- Teammate name #2: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
-
-   ...
-- Teammate name #n: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Nidhi Gupta: [GitHub](https://github.com/Nidh12) / [LinkedIn](https://linkedin.com/in/nidhi-gupta-46423b24/)
+- Mingshi Hui: [GitHub](https://github.com/mingshi0821) / [LinkedIn](https://www.linkedin.com/in/mingshi-hui/)
+- Dylan Zimmer: [GitHub](https://github.com/DylanZimmer) / [LinkedIn](https://www.linkedin.com/in/dylanzimmereads/)
+- Maha: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Will Kalish: [GitHub](https://github.com/williamk31) / [LinkedIn](https://www.linkedin.com/in/william-kalish/)
+- Omar: [GitHub](https://github.com/oramos-correa) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Matthew Neie: [GitHub](https://github.com/MatthewNeie) / [LinkedIn](https://linkedin.com/in/matthew-neie)
+- Ruben Aguilar: [GitHub](https://github.com/rubenaguilardev) / [LinkedIn](https://www.linkedin.com/in/rubenaguilar-/)
+- Jamika: [GitHub](https://github.com/msjaydee) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Tanika Watson: [GitHub](https://github.com/twatson07017) / [LinkedIn](https://www.linkedin.com/in/tanika-watson/)
+- Valeriy Lysenko: [GitHub](https://github.com/Valeriusdev) / [LinkedIn](https://www.linkedin.com/in/valeriylysenko/)
