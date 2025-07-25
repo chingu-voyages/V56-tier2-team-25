@@ -1,0 +1,240 @@
+/* ADMIN */
+
+.lp-admin-wrapper {
+  width: 100vw;
+}
+
+.lp-admin-container {
+  width: 100vw;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background-color: #f0f0fa;
+}
+
+.lp-admin-title {
+  color: #5d5a88;
+  font-size: 2.4vw;
+  font-weight: 800;
+  margin-bottom: 4vh;
+}
+
+.lp-admin-desc {
+  width: 30vw;
+  color: #8d8ba7;
+  line-height: 3vh;
+}
+
+.lp-admin-button-div {
+  margin-top: 4vh;
+  display: flex;
+}
+
+.lp-admin-button-left {
+  height: 7vh;
+  width: 16vw;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 14px;
+  border: solid 1px #5d5a88;
+  border-radius: 50px;
+  color: #5d5a88;
+  margin-right: 1vw;
+}
+
+.lp-admin-button-right {
+  height: 7vh;
+  width: 14vw;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  border: solid 1px #5d5a88;
+  border-radius: 50px;
+  color: #5d5a88;
+  margin-left: 1vw;
+}
+
+.lp-admin-button-left:hover {
+  cursor: pointer;
+  background-color: #5d5a88;
+  font-weight: 600;
+  color: white;
+}
+
+.lp-admin-button-right:hover {
+  cursor: pointer;
+  background-color: #5d5a88;
+  font-weight: 600;
+  color: white;
+}
+
+/* STAFF */
+
+.lp-staff-wrapper {
+  width: 100vw;
+}
+
+.lp-staff-container {
+  width: 100vw;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background-color: #f0f0fa;
+}
+
+.lp-staff-title {
+  color: #5d5a88;
+  font-size: 1.8vw;
+  font-weight: 600;
+  margin-bottom: 4vh;
+}
+
+.lp-staff-desc {
+  width: 50vw;
+  color: #5d5a88;
+  font-weight: 600;
+  line-height: 3vh;
+}
+
+.lp-staff-welcome {
+  color: #5d5a88;
+  font-size: 1.8vw;
+  font-weight: 600;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
+}
+
+.lp-staff-button-div {
+  margin-top: 4vh;
+  display: flex;
+}
+
+.lp-staff-button-div2 {
+  margin-top: 4vh;
+  display: flex;
+}
+
+.lp-staff-button-left {
+  height: 7vh;
+  width: 16vw;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 14px;
+  border: solid 1px #5d5a88;
+  border-radius: 50px;
+  color: #5d5a88;
+  margin-right: 1vw;
+}
+
+.lp-staff-button-center {
+  height: 7vh;
+  width: 16vw;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 14px;
+  border: solid 1px #5d5a88;
+  border-radius: 50px;
+  color: #5d5a88;
+  margin-right: 1vw;
+}
+
+.lp-staff-button-right {
+  height: 7vh;
+  width: 14vw;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  border: solid 1px #5d5a88;
+  border-radius: 50px;
+  color: #5d5a88;
+  margin-left: 1vw;
+}
+
+.lp-staff-button-left:hover {
+  cursor: pointer;
+  background-color: #5d5a88;
+  font-weight: 600;
+  color: white;
+}
+
+.lp-staff-button-center:hover {
+  cursor: pointer;
+  background-color: #5d5a88;
+  font-weight: 600;
+  color: white;
+}
+
+.lp-staff-button-right:hover {
+  cursor: pointer;
+  background-color: #5d5a88;
+  font-weight: 600;
+  color: white;
+}
+
+/* GUEST */
+
+.lp-guest-wrapper {
+  width: 100vw;
+}
+
+.lp-guest-container {
+  width: 100vw;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background-color: #f0f0fa;
+}
+
+.lp-guest-title {
+  color: #5d5a88;
+  font-size: 2.4vw;
+  font-weight: 800;
+  margin-bottom: 4vh;
+}
+
+.lp-guest-desc {
+  width: 30vw;
+  color: #8d8ba7;
+  line-height: 3vh;
+}
+
+.lp-guest-button {
+  height: 7vh;
+  width: 16vw;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 14px;
+  border: solid 1px #5d5a88;
+  border-radius: 50px;
+  color: #5d5a88;
+  margin-top: 4vh;
+  margin-right: 1vw;
+}
+
+.lp-guest-button:hover {
+  cursor: pointer;
+  background-color: #5d5a88;
+  font-weight: 600;
+  color: white;
+}
