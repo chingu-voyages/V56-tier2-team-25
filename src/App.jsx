@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-route
 import './index.css';
 import Header from './components/Header'
 import homeImg from './assets/homeImg.png'
+import Footer from './components/Footer'
 
 function Home() {
   return (
@@ -25,6 +26,7 @@ function Home() {
           <img src={homeImg} className="max-h-[400px] w-auto object-contain"/>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
