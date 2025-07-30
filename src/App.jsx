@@ -6,7 +6,8 @@ import homeImg from './assets/homeImg.png'
 import LandingPageAdmin from "./components/Landingpages/LandingPageAdmin";
 import LandingPageGuest from "./components/Landingpages/LandingPageGuest";
 import LandingPageStaff from "./components/Landingpages/LandingPageStaff";
-import Footer from './components/Footer'
+import Footer from './components/Footer';
+import Login from './components/Landingpages/Login';
 
 function Home() {
   const [page, setPage] = useState("admin");
@@ -66,29 +67,12 @@ function Home() {
   );
 }
 
-
-/*
-function Home() {
-  return (
-    <div className="min-h-screen w-full flex flex-col">
-      <Header />
-      <p>
-        Get immediate updates on your loved one's surgery
-      </p>
-      <p>
-        Our mission is to offer timely, compassionate updates during surgery, ensuring families feel informed, supported, and connected every step of the way
-      </p>
-      <button type="submit" className="btn-dark-oval">Get Started →</button>
-      <img src={homeImg}/>
-    </div>
-  );
-}
-*/
 export default function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );
