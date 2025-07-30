@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import './index.css';
 import Header from './components/Header'
@@ -5,7 +6,7 @@ import homeImg from './assets/homeImg.png'
 import LandingPageAdmin from "./components/Landingpages/LandingPageAdmin";
 import LandingPageGuest from "./components/Landingpages/LandingPageGuest";
 import LandingPageStaff from "./components/Landingpages/LandingPageStaff";
-import { useState } from "react";
+import Footer from './components/Footer'
 
 function Home() {
   const [page, setPage] = useState("admin");
@@ -60,6 +61,7 @@ function Home() {
       {page === "staff" ? <LandingPageStaff /> : null}
       {page === "guest" ? <LandingPageGuest /> : null}
       </div>
+      <Footer />
     </div>
   );
 }
