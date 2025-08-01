@@ -8,30 +8,41 @@ import LandingPageGuest from "./components/Landingpages/LandingPageGuest";
 import LandingPageStaff from "./components/Landingpages/LandingPageStaff";
 import Footer from './components/Footer';
 import Login from './components/Landingpages/Login';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import AddPatient from "./components/AddPatient";
 
 function Home() {
   const [page, setPage] = useState("admin");
   
   return (
-    <div className="min-h-screen w-full flex flex-col">
-      <Header />
-      <div className="flex flex-1 items-center max-w-7xl mx-auto px-6 py-12 gap-12">
-        <div className="flex flex-col justify-center flex-1 max-w-lg space-y-6">
-          <p className="text-4xl font-bold text-blue-900">
-            Get immediate updates on your loved one's surgery
-          </p>
-          <p className="text-sm text-gray-400">
-            Our mission is to offer timely, compassionate updates during surgery, ensuring families feel informed, supported, and connected every step of the way
-          </p>
-          <div>
-            <button type="submit" className="btn-dark-oval px-8">Get Started →</button>
+    <>
+      <div className="min-h-screen w-full flex flex-col">
+        <Header />
+        <div className="flex-1 flex items-center justify-center bg-[#F5F3EA]">
+          <div className="container flex justify-center items-center mx-auto px-8 gap-18">
+            <div className="flex flex-col justify-center w-[45%] space-y-11">
+              <h1 className="text-[3.4rem] font-bold text-[#4F4F4F] dm-sans leading-[1.125]">
+                Get immediate updates on your loved one's surgery
+              </h1>
+              <p className="text-[1.125rem] dm-sans text-[#4F4F4F]">
+                Our mission is to offer timely, compassionate updates during surgery, ensuring families feel informed, supported, and connected every step of the way
+              </p>
+              <div>
+                <button 
+                  type="submit" 
+                  className="bg-[#008C99] text-white text-[1.125rem] font-bold rounded-[40px] px-10 py-5 cursor-pointer"
+                >
+                  Get Started <FontAwesomeIcon icon={faArrowRight} />
+                </button>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-center">
+              <img src={homeImg} className="w-auto object-contain"/>
+            </div>
           </div>
-        </div>
-
-        <div className="flex-1 flex items-center justify-center">
-          <img src={homeImg} className="max-h-[400px] w-auto object-contain"/>
-        </div>
-
+      {/*  
        <div className="h-16 flex text-center items-center justify-center">
         <div
           className="w-20 mr-2 border-1 p-1 hover:cursor-pointer"
@@ -60,10 +71,12 @@ function Home() {
       </div>
       {page === "admin" ? <LandingPageAdmin /> : null}
       {page === "staff" ? <LandingPageStaff /> : null}
-      {page === "guest" ? <LandingPageGuest /> : null}
+      {page === "guest" ? <LandingPageGuest /> : null} */}
+        </div>
+        
       </div>
       <Footer />
-    </div>
+    </>
   );
 }
 
@@ -73,6 +86,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/add" element={<AddPatient />} />
       </Routes>
     </Router>
   );

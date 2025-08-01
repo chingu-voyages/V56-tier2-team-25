@@ -24,8 +24,8 @@ const Navbar = () => {
         const isLastLink = index === linksArr.length - 1;
 
         const linkStyle = isLastLink 
-        ? 'text-white bg-[#4F3788] rounded-4xl px-[24px] py-[18px] border-1 border-[#D4D2E3] shadow-md/60 cursor-pointer hover:bg-[#56428a]'
-        : 'text-[#5D5A88] dm-sans text-[1.125rem] hover:text-[#4F378A]'
+        ? 'text-white bg-[#008C99] rounded-[30px] px-[24px] py-[14px] shadow-md/50 cursor-pointer hover:bg-[#56428a]'
+        : 'text-[#4F4F4F] dm-sans text-[1.125rem] hover:text-[#4F4F4F] cursor-pointer'
 
         if (link.dropdown) {
             return (
@@ -43,7 +43,7 @@ const Navbar = () => {
                             return (
                                 //If statement only included because not all links have paths. Take out when they're all there
                                 <div key={subIndex} className={subLinkStyle} onClick={() => {if (link.path) navigate(link.path);}}>
-                                    <span className='text-[#79747E] hover:text-[#4F378A] dm-sans hover:font-semibold'>
+                                    <span className='text-[#79747E] hover:text-[#4F4F4F] dm-sans hover:font-semibold cursor-pointer'>
                                         {item}
                                     </span>
                                 </div>
