@@ -42,7 +42,7 @@ function Home() {
               <img src={homeImg} className="w-auto object-contain"/>
             </div>
           </div>
-      {/*  
+       
        <div className="h-16 flex text-center items-center justify-center">
         <div
           className="w-20 mr-2 border-1 p-1 hover:cursor-pointer"
@@ -71,7 +71,7 @@ function Home() {
       </div>
       {page === "admin" ? <LandingPageAdmin /> : null}
       {page === "staff" ? <LandingPageStaff /> : null}
-      {page === "guest" ? <LandingPageGuest /> : null} */}
+      {page === "guest" ? <LandingPageGuest /> : null} 
         </div>
         
       </div>
