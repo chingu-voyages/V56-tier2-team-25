@@ -40,16 +40,17 @@ const AddPatient = () => {
         const formData = new FormData(formElement)
         formElement.reset()
     }
+    
     return (
         <>
         <section className="min-h-screen w-full flex flex-col">
             <Header/>
             <div className="flex-1 flex flex-col items-center justify-center bg-[#F5F3EA]">
                 <h2 className="text-4xl font-bold text-[#4F4F4F] mb-24">Patient Information</h2>
-                <form onSubmit={submitForm} className="flex flex-col w-[310px]">
+                <form onSubmit={submitForm} className="flex flex-col w-[314px]">
                     {formInputs}
                 </form>
-                <div className="flex gap-6 mt-15">
+                <div className="flex gap-6 mt-10">
                         <button 
                             type="submit"
                             className="bg-[#008C99] text-white text-[1.125rem] font-bold rounded-[40px] px-10 py-5 cursor-pointer shadow-md/50"

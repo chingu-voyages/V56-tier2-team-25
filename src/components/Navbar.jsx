@@ -66,7 +66,7 @@ const Navbar = () => {
     
 
     return (
-        <nav className="hidden md:flex items-center space-x-17">
+        <nav className="hidden lg:flex items-center space-x-17">
             {links}
         </nav>
     )

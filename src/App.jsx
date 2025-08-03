@@ -20,8 +20,8 @@ function Home() {
       <div className="min-h-screen w-full flex flex-col">
         <Header />
         <div className="flex-1 flex items-center justify-center bg-[#F5F3EA]">
-          <div className="container flex justify-center items-center mx-auto px-8 gap-18">
-            <div className="flex flex-col justify-center w-[45%] space-y-11">
+          <div className="container flex flex-col lg:flex-row justify-center items-center mx-auto px-8 gap-18">
+            <div className="flex flex-col justify-center lg:w-[45%] space-y-11">
               <h1 className="text-[3.4rem] font-bold text-[#4F4F4F] dm-sans leading-[1.125]">
                 Get immediate updates on your loved one's surgery
               </h1>
@@ -31,7 +31,7 @@ function Home() {
               <div>
                 <button 
                   type="submit" 
-                  className="bg-[#008C99] text-white text-[1.125rem] font-bold rounded-[40px] px-10 py-5 cursor-pointer"
+                  className="bg-[#008C99] text-white text-[1.125rem] font-bold rounded-[40px] px-13 py-6 cursor-pointer shadow-md/60"
                 >
                   Get Started <FontAwesomeIcon icon={faArrowRight} />
                 </button>
@@ -42,7 +42,7 @@ function Home() {
               <img src={homeImg} className="w-auto object-contain"/>
             </div>
           </div>
-       
+      {/*  
        <div className="h-16 flex text-center items-center justify-center">
         <div
           className="w-20 mr-2 border-1 p-1 hover:cursor-pointer"
@@ -71,7 +71,7 @@ function Home() {
       </div>
       {page === "admin" ? <LandingPageAdmin /> : null}
       {page === "staff" ? <LandingPageStaff /> : null}
-      {page === "guest" ? <LandingPageGuest /> : null} 
+      {page === "guest" ? <LandingPageGuest /> : null} */}
         </div>
         
       </div>
