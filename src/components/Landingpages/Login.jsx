@@ -78,7 +78,7 @@ function Login() {
                         </div>
                         {existingAccount === 'Yes' ? (
                             <div className="flex flex-col mt-5">
-                                <div className="self-center bg-[#008C99] text-white text-[1.125rem] font-bold rounded-[40px] mb-14 px-15 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA] dm-sans" onClick={infoSubmitted}>Sign In</div>
+                                <div className="self-center bg-[#008C99] text-white text-[1.25rem] font-bold rounded-[40px] mb-14 px-15 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA] dm-sans" onClick={infoSubmitted}>Sign In</div>
                                 <p className="text-left dm-sans text-[1.125rem]">
                                     Surgery Staff or Admin but don't have an account?
                                 </p>
