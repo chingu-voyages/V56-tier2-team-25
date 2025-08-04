@@ -31,7 +31,7 @@ function Home() {
               <div>
                 <button 
                   type="submit" 
-                  className="bg-[#008C99] text-white text-[1.125rem] font-bold rounded-[40px] px-13 py-6 cursor-pointer shadow-md/60"
+                  className="bg-[#008C99] text-white text-[1.125rem] font-bold rounded-[40px] px-13 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
                 >
                   Get Started <FontAwesomeIcon icon={faArrowRight} />
                 </button>
