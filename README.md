@@ -42,6 +42,6 @@ coding!
 - Omar: [GitHub](https://github.com/oramos-correa) / [LinkedIn](https://linkedin.com/in/liaccountname)
 - Matthew Neie: [GitHub](https://github.com/MatthewNeie) / [LinkedIn](https://linkedin.com/in/matthew-neie)
 - Ruben Aguilar: [GitHub](https://github.com/rubenaguilardev) / [LinkedIn](https://www.linkedin.com/in/rubenaguilar-/)
-- Jamika: [GitHub](https://github.com/msjaydee) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Jamika: [GitHub](https://github.com/msjaydee) / [LinkedIn](https://linkedin.com/in/jamika-arnwine/)
 - Tanika Watson: [GitHub](https://github.com/twatson07017) / [LinkedIn](https://www.linkedin.com/in/tanika-watson/)
 - Valeriy Lysenko: [GitHub](https://github.com/Valeriusdev) / [LinkedIn](https://www.linkedin.com/in/valeriylysenko/)
