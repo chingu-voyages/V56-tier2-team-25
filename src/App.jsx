@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -14,9 +14,10 @@ import LandingPageStaff from "./components/Landingpages/LandingPageStaff";
 import Footer from "./components/Footer";
 import WaitingRoom from "./components/WaitingRoom";
 import UpdateStatus from "./components/Updatestatus/UpdateStatus";
+import FindPatient from "./components/Findpatient/FindPatient";
 
 function Home() {
-  const [page, setPage] = useState("admin");
+  const [currentPatient, setCurrentPatient] = useState(null);
 
   return (
     <div className="min-h-screen w-full flex flex-col">
@@ -41,38 +42,19 @@ function Home() {
         <div className="flex-1 flex items-center justify-center">
           <img src={homeImg} className="max-h-[400px] w-auto object-contain" />
         </div>
-
-        <div className="h-16 flex text-center items-center justify-center">
-          <div
-            className="w-20 mr-2 border-1 p-1 hover:cursor-pointer"
-            onClick={() => {
-              setPage("admin");
-            }}
-          >
-            Admin
-          </div>
-          <div
-            className="w-20 ml-2 border-1 p-1 hover:cursor-pointer"
-            onClick={() => {
-              setPage("staff");
-            }}
-          >
-            Staff
-          </div>
-          <div
-            className="w-20 ml-2 border-1 p-1 hover:cursor-pointer"
-            onClick={() => {
-              setPage("guest");
-            }}
-          >
-            Guest
-          </div>
-        </div>
-        {page === "admin" ? <LandingPageAdmin /> : null}
-        {page === "staff" ? <LandingPageStaff /> : null}
-        {page === "guest" ? <LandingPageGuest /> : null}
       </div>
-      <UpdateStatus />
+      {/* <LandingPageAdmin /> */}
+      {/* <LandingPageStaff /> */}
+      {/* <LandingPageGuest /> */}
+      <FindPatient
+        currentPatient={currentPatient}
+        setCurrentPatient={setCurrentPatient}
+      />
+      <div className="mb-2"></div>
+      <UpdateStatus
+        currentPatient={currentPatient}
+        setCurrentPatient={setCurrentPatient}
+      />
       <div className="mb-2"></div>
       <WaitingRoom />
       <Footer />
