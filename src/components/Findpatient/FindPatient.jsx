@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from "react";
 import patientsdb from "../patients";
 import "./findpatient.css";
+import "../../index.css";
+import Header from "../Header";
+import Footer from "../Footer";
+import { useNavigate } from "react-router-dom"
+
 
 const FindPatient = ({ currentPatient, setCurrentPatient }) => {
   const [patients, setPatients] = useState(patientsdb);
   const [inputValue, setInputValue] = useState("");
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {}, [currentPatient]);
 
@@ -20,6 +26,8 @@ const FindPatient = ({ currentPatient, setCurrentPatient }) => {
   };
 
   return (
+    <div>
+    <Header />
     <div className="h-[70vh] w-[100vw] flex flex-col items-center text-center justify-center bg-[#F0F0FA]">
       <div className="mb-10 mt-10">
         <h1 className="text-[#5d5a88] font-bold text-4xl">Find Patient</h1>
@@ -43,15 +51,17 @@ const FindPatient = ({ currentPatient, setCurrentPatient }) => {
       )}
       <div className="flex text-center items-center justify-center">
         <div
-          className="find-patient-button-left"
+          className="component-btn"
           onClick={() => {
             getPatient(inputValue);
           }}
         >
           Enter
         </div>
-        <div className="find-patient-button-right">Cancel</div>
+        <div className="component-btn" onClick={() => navigate("../Login")}>Sign Up/Log In</div>
       </div>
+    </div>
+    <Footer />
     </div>
   );
 };

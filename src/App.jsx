@@ -1,10 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useNavigate,
-} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route, useNavigate} from "react-router-dom";
 import "./index.css";
 import Header from "./components/Header";
 import homeImg from "./assets/homeImg.png";
@@ -22,9 +17,10 @@ import AddPatient from "./components/AddPatient";
 
 function Home() {
   const [currentPatient, setCurrentPatient] = useState(null);
+  const navigate = useNavigate();
 
   return (
-    <>
+    <div>
       <div className="min-h-screen w-full flex flex-col">
         <Header />
         <div className="flex-1 flex items-center justify-center bg-[#F5F3EA]">
@@ -37,10 +33,7 @@ function Home() {
                 Our mission is to offer timely, compassionate updates during surgery, ensuring families feel informed, supported, and connected every step of the way
               </p>
               <div>
-                <button 
-                  type="submit" 
-                  className="bg-[#008C99] text-white text-[1.125rem] font-bold rounded-[40px] px-13 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
-                >
+                <button type="submit" className="bg-[#008C99] text-white text-[1.125rem] font-bold rounded-[40px] px-13 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]" onClick={() => navigate('/FindPatient')}>
                   Get Started <FontAwesomeIcon icon={faArrowRight} />
                 </button>
               </div>
@@ -52,22 +45,8 @@ function Home() {
           </div>
         </div>
       </div>
-      {/* <LandingPageAdmin /> */}
-      {/* <LandingPageStaff /> */}
-      {/* <LandingPageGuest /> */}
-      <FindPatient
-        currentPatient={currentPatient}
-        setCurrentPatient={setCurrentPatient}
-      />
-      <div className="mb-2"></div>
-      <UpdateStatus
-        currentPatient={currentPatient}
-        setCurrentPatient={setCurrentPatient}
-      />
-      <div className="mb-2"></div>
-      <WaitingRoom />
       <Footer />
-    </>
+    </div>
   );
 }
 
@@ -78,6 +57,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/findPatient" element={<FindPatient />} />
         <Route path="/admin" element={<LandingPageAdmin />} />
         <Route path="/staff" element={<LandingPageStaff />} />
         <Route path="/guest" element={<LandingPageGuest />} />

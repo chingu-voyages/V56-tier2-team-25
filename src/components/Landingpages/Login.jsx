@@ -49,7 +49,7 @@ function Login() {
         // Query surgeons collection by email
         const surgeonsRef = collection(db, "surgeons");
         const q = query(surgeonsRef, where("email", "==", emailaddress));
-        const querySnapshot = await getDocs(q);
+        const querySnapshot = await getDocs(q); 
 
         if (!querySnapshot.empty) {
             const userDoc = querySnapshot.docs[0];
@@ -91,7 +91,7 @@ function Login() {
     }
 
 
-  } else {
+  } else {   //existingAccount === "No"
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, emailaddress, password);
       const uid = userCredential.user.uid;
@@ -153,7 +153,7 @@ function Login() {
                             </div>
                         )}
                         <p className="text-left dm-sans text-[1.125rem] mt-9">
-                            Not surgery staff or Admin? Continue as a <span className="text-[1.125rem] text-left text-[#008C99] font-bold cursor-pointer hover:text-[#A8D5BA]">Guest
+                            Not surgery staff or Admin? Continue as a <span className="text-[1.125rem] text-left text-[#008C99] font-bold cursor-pointer hover:text-[#A8D5BA]" onClick={() => navigate("../guest")}>Guest
                             </span>
                         </p>
                         
