@@ -1,11 +1,19 @@
-import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
-import './index.css';
-import Header from './components/Header'
-import homeImg from './assets/homeImg.png'
+import { useState, useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
+import "./index.css";
+import Header from "./components/Header";
+import homeImg from "./assets/homeImg.png";
 import LandingPageAdmin from "./components/Landingpages/LandingPageAdmin";
 import LandingPageGuest from "./components/Landingpages/LandingPageGuest";
 import LandingPageStaff from "./components/Landingpages/LandingPageStaff";
+import WaitingRoom from "./components/WaitingRoom";
+import UpdateStatus from "./components/Updatestatus/UpdateStatus";
+import FindPatient from "./components/Findpatient/FindPatient";
 import Footer from './components/Footer';
 import Login from './components/Landingpages/Login';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -13,8 +21,8 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import AddPatient from "./components/AddPatient";
 
 function Home() {
-  const [page, setPage] = useState("admin");
-  
+  const [currentPatient, setCurrentPatient] = useState(null);
+
   return (
     <>
       <div className="min-h-screen w-full flex flex-col">
@@ -42,39 +50,22 @@ function Home() {
               <img src={homeImg} className="w-auto object-contain"/>
             </div>
           </div>
-      {/*  
-       <div className="h-16 flex text-center items-center justify-center">
-        <div
-          className="w-20 mr-2 border-1 p-1 hover:cursor-pointer"
-          onClick={() => {
-            setPage("admin");
-          }}
-        >
-          Admin
-        </div>
-        <div
-          className="w-20 ml-2 border-1 p-1 hover:cursor-pointer"
-          onClick={() => {
-            setPage("staff");
-          }}
-        >
-          Staff
-        </div>
-        <div
-          className="w-20 ml-2 border-1 p-1 hover:cursor-pointer"
-          onClick={() => {
-            setPage("guest");
-          }}
-        >
-          Guest
         </div>
       </div>
-      {page === "admin" ? <LandingPageAdmin /> : null}
-      {page === "staff" ? <LandingPageStaff /> : null}
-      {page === "guest" ? <LandingPageGuest /> : null} */}
-        </div>
-        
-      </div>
+      {/* <LandingPageAdmin /> */}
+      {/* <LandingPageStaff /> */}
+      {/* <LandingPageGuest /> */}
+      <FindPatient
+        currentPatient={currentPatient}
+        setCurrentPatient={setCurrentPatient}
+      />
+      <div className="mb-2"></div>
+      <UpdateStatus
+        currentPatient={currentPatient}
+        setCurrentPatient={setCurrentPatient}
+      />
+      <div className="mb-2"></div>
+      <WaitingRoom />
       <Footer />
     </>
   );
