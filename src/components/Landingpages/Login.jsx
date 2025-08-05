@@ -142,12 +142,12 @@ function Login() {
                                 </p>
                             </div>
                         ) : (
-                            <div>
-                                <div className="btn-dark mb-6 block" onClick={infoSubmitted}>Create Account</div>
-                                <p className="text-sm text-left mt-6">
+                            <div className="flex flex-col mt-5">
+                                <div className="self-center bg-[#008C99] text-white text-[1.25rem] font-bold rounded-[40px] mb-14 px-15 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA] dm-sans" onClick={infoSubmitted}>Create Account</div>
+                                <p className="text-left dm-sans text-[1.125rem]">
                                     Surgery or staff Admin with existing account?
                                 </p>
-                                <p className="text-sm text-left text-blue-400" onClick={() => toggleExisting('Yes')}>
+                                <p className="text-[1.125rem] text-left text-[#008C99] font-bold cursor-pointer hover:text-[#A8D5BA]" onClick={() => toggleExisting('Yes')}>
                                     Sign in 
                                 </p>
                             </div>

@@ -20,7 +20,7 @@ function Home() {
       <div className="min-h-screen w-full flex flex-col">
         <Header />
         <div className="flex-1 flex items-center justify-center bg-[#F5F3EA]">
-          <div className="container flex flex-col lg:flex-row justify-center items-center mx-auto px-8 gap-18">
+          <div className="container flex flex-col lg:flex-row justify-center items-center mx-auto px-10  gap-18">
             <div className="flex flex-col justify-center lg:w-[45%] space-y-11">
               <h1 className="text-[3.4rem] font-bold text-[#4F4F4F] dm-sans leading-[1.125]">
                 Get immediate updates on your loved one's surgery
@@ -89,7 +89,9 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<LandingPageAdmin />} />
         <Route path="/staff" element={<LandingPageStaff />} />
-        <Route path="/add" element={<AddPatient />} />
+        <Route path="/guest" element={<LandingPageGuest />} />
+        <Route path="/addPatient" element={<AddPatient />} />
+        
       </Routes>
     </Router>
     

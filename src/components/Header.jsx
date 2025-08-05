@@ -7,7 +7,7 @@ const Header = () => {
 
     return (
         <header className="w-full transition-all duration-300 shadow-2xl">
-            <div className="container mx-auto flex items-center justify-between py-[28px]">
+            <div className="container mx-auto flex items-center justify-between px-2 py-[28px]">
                 <div className='flex items-center gap-8'>
                     <a href="#">
                         <div className='flex gap-7 items-center'>
