@@ -1,0 +1,41 @@
+.find-patient-button-left {
+  height: 7vh;
+  width: 14vw;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 14px;
+  border: solid 1px #5d5a88;
+  border-radius: 50px;
+  color: #5d5a88;
+  margin-right: 1vw;
+}
+
+.find-patient-button-right {
+  height: 7vh;
+  width: 12vw;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  border: solid 1px #5d5a88;
+  border-radius: 50px;
+  color: #5d5a88;
+  margin-left: 1vw;
+}
+
+.find-patient-button-left:hover {
+  cursor: pointer;
+  background-color: #5d5a88;
+  font-weight: 600;
+  color: white;
+}
+
+.find-patient-button-right:hover {
+  cursor: pointer;
+  background-color: #5d5a88;
+  font-weight: 600;
+  color: white;
+}
