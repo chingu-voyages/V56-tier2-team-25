@@ -8,9 +8,18 @@ import Footer from '../Footer'
 import { useState } from "react";
 import { auth } from '../../../firebase.js';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { collection, query, where, getDocs, doc, setDoc } from "firebase/firestore";
+import { db } from '../../../firebase';
+import { useDispatch } from "react-redux";
+import { setUserData } from "../../store/userSlice.jsx";
 
 
 function Login() {
+
+    const navigate = useNavigate();
+
+    const dispatch = useDispatch();
+
     const [existingAccount, toggleExisting] = useState('Yes');
     const [message, setMessage] = useState('');
     const [messageType, setMessageType] = useState('');
@@ -19,41 +28,87 @@ function Login() {
     const [password, setPassword] = useState('');
 
     const infoSubmitted = async () => {
-    if (!emailaddress || !password) {
-        setMessage('Email and password are required.');
-        setMessageType('error');
-        return;
-    } else if (!/.+@.+\..+/.test(emailaddress)) {
-        setMessage('Please enter a valid email address.');
-        setMessageType('error');
-        return;
-    } else if (password.length < 8) {
-        setMessage('Password must be at least 8 characters');
-        setMessageType('error');
-        return; 
-    } else {
-            if (existingAccount === 'Yes') {
-                try {
-                    const userCredential = await signInWithEmailAndPassword(auth, emailaddress, password);
-                    console.log('Successful login, awaiting navigation logic');
-                } catch (error) {
-                    console.error('Error logging in:', error.message);
-                }
-                setMessage('User logged in');
-                setMessageType('success');
-                return;
+  if (!emailaddress || !password) {
+    setMessage('Email and password are required.');
+    setMessageType('error');
+    return;
+  } else if (!/.+@.+\..+/.test(emailaddress)) {
+    setMessage('Please enter a valid email address.');
+    setMessageType('error');
+    return;
+  } else if (password.length < 8) {
+    setMessage('Password must be at least 8 characters');
+    setMessageType('error');
+    return;
+  }
+
+  if (existingAccount === 'Yes') {
+    try {
+        const userCredential = await signInWithEmailAndPassword(auth, emailaddress, password);
+
+        // Query surgeons collection by email
+        const surgeonsRef = collection(db, "surgeons");
+        const q = query(surgeonsRef, where("email", "==", emailaddress));
+        const querySnapshot = await getDocs(q);
+
+        if (!querySnapshot.empty) {
+            const userDoc = querySnapshot.docs[0];
+            const role = userDoc.data().role;
+            const name = userDoc.data().name;
+            setMessage(`User logged in as ${role}`);
+            setMessageType("success");
+
+            dispatch(setUserData({
+                uid: userCredential.user.uid,
+                email: emailaddress,
+                role: role,
+                name: name,
+                }));
+
+            localStorage.setItem("userData", JSON.stringify({
+                uid: userCredential.user.uid,
+                email: emailaddress,
+                role: role,
+                name: name,
+                }));
+
+            if (role === "Admin") {
+            navigate("/admin");
+            } else if (role === "Staff") {
+            navigate("/staff");
             } else {
-                try {
-                    const userCredential = await createUserWithEmailAndPassword(auth, emailaddress, password);
-                } catch (error) {
-                    console.error('Error registering user:', error.message);
-                }
-                setMessage('User created');
-                setMessageType('success');
-                return;
+            setMessage("User role is not recognized.");
+            setMessageType("error");
             }
+        } else {
+            setMessage("User profile not found.");
+            setMessageType("error");
         }
+    } catch (error) {
+    console.error("Login error:", error.message);
+    setMessage(error.message);
+    setMessageType("error");
     }
+
+
+  } else {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, emailaddress, password);
+      const uid = userCredential.user.uid;
+
+      await setDoc(doc(db, 'surgeons', uid), {
+        role: 'Staff'
+      });
+
+      setMessage('User created');
+      setMessageType('success');
+    } catch (error) {
+      console.error('Registration error:', error.message);
+      setMessage(error.message);
+      setMessageType('error');
+    }
+  }
+};
 
     return (  
         <>     

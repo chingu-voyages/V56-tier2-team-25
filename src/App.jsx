@@ -82,12 +82,16 @@ function Home() {
 
 export default function App() {
   return (
+
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/admin" element={<LandingPageAdmin />} />
+        <Route path="/staff" element={<LandingPageStaff />} />
         <Route path="/add" element={<AddPatient />} />
       </Routes>
     </Router>
+    
   );
 }
