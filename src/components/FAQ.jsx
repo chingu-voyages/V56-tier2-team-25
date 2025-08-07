@@ -32,17 +32,20 @@ const FAQ = () => {
 
 
     return(
-        <section className="w-full min-h-screen flex flex-col">
-            <Header/>
-            <div className="flex flex-1 flex-col justify-center items-center bg-[#F5F3EA] dm-sans">
-                <h2 className="text-[3.5rem] font-bold text-[#4F4F4F]">Frequently Asked Questions (FAQ)</h2>
-                <div className="w-[866px]">
-                    <h3 className="text-4xl font-bold text-[#4F4F4F]">Surger Updates</h3>
-                    {info}
+        <div>
+            <section className="w-full min-h-screen flex flex-col">
+                <Header/>
+                <div className="flex flex-1 flex-col justify-center items-center bg-[#F5F3EA] dm-sans">
+                    <h2 className="text-[3.5rem] font-bold text-[#4F4F4F]">Frequently Asked Questions (FAQ)</h2>
+                    <div className="w-[866px]">
+                        <h3 className="text-4xl font-bold text-[#4F4F4F]">Surger Updates</h3>
+                        {info}
+                    </div>
+                    
                 </div>
-                
-            </div>
-        </section>
+            </section>
+            <Footer/>
+        </div>
     )
 }
 
