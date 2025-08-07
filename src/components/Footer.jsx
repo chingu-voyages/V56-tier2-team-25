@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <footer className="mt-20">
             <div className="container mx-auto px-10">
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-33 text-center mb-20">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-32 text-center mb-20">
                     <div>
                         <h3 className="font-bold text-[1.25rem] dm-sans text-[#4F4F4F] mb-10">Product</h3>
                         <ul className="space-y-4 text-[rgb(126,126,126)] text-[1.125rem]">
