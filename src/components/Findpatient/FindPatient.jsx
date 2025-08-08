@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from "react";
 import patientsdb from "../patients";
 import "./findpatient.css";
-import "../../index.css";
-import Header from "../Header";
-import Footer from "../Footer";
-import { useNavigate } from "react-router-dom"
-
+import { useNavigate } from "react-router-dom";
 
 const FindPatient = ({ currentPatient, setCurrentPatient }) => {
   const [patients, setPatients] = useState(patientsdb);
   const [inputValue, setInputValue] = useState("");
   const [error, setError] = useState(null);
+
   const navigate = useNavigate();
 
   useEffect(() => {}, [currentPatient]);
@@ -22,6 +19,7 @@ const FindPatient = ({ currentPatient, setCurrentPatient }) => {
     } else {
       setCurrentPatient(patient[0]);
       setError(null);
+      navigate("/updateStatus");
     }
   };
 

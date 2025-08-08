@@ -1,10 +1,21 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import patientsdb from "../patients";
 import "./updatestatus.css";
 
-const UpdateStatus = ({ currentPatient, setCurrentPatient }) => {
-  const [selected, setSelected] = useState("");
+const UpdateStatus = ({
+  currentPatient,
+  setCurrentPatient,
+  patients,
+  setPatients,
+}) => {
+  const [selected, setSelected] = useState("Select New Status");
   const [isOpen, setIsOpen] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {}, []);
+
+  console.log(patients);
 
   const options = [
     "Checked-In",
@@ -16,11 +27,32 @@ const UpdateStatus = ({ currentPatient, setCurrentPatient }) => {
     "Discharge",
   ];
 
+  const navigate = useNavigate();
+
   const toggleDropdown = () => setIsOpen(!isOpen);
   const handleOptionClick = (option) => {
     setSelected(option);
     setIsOpen(false);
   };
+
+  const updatePatient = (id) => {
+    const updatedPatients = patients.map((patient) =>
+      patient.id === id ? { ...patient, status: { selected } } : patient
+    );
+    if (selected === "Select New Status") {
+      setError("error");
+    } else {
+      setPatients(updatedPatients);
+    }
+  };
+
+  // const handleSelectChange = () => {
+  //   if (selected !== "Select New Status") {
+  //     setError(null);
+  //   } else {
+  //     null;
+  //   }
+  // };
 
   return (
     <div className="h-[70vh] w-[100vw] flex flex-col items-center text-center justify-center bg-[#F0F0FA]">
@@ -48,7 +80,7 @@ const UpdateStatus = ({ currentPatient, setCurrentPatient }) => {
               className="w-[100%] flex justify-end"
               onClick={toggleDropdown}
             >
-              {selected || "Select New Status"}
+              {selected}
             </button>
 
             {isOpen && (
@@ -140,9 +172,26 @@ const UpdateStatus = ({ currentPatient, setCurrentPatient }) => {
           </div>
         </div>
       </div>
+      {error === null ? null : (
+        <div className="mb-8 text-red-400">Please select a new status</div>
+      )}
       <div className="flex text-center items-center justify-center">
-        <div className="update-status-button-left">Add/Update</div>
-        <div className="update-status-button-right">Cancel</div>
+        <div
+          className="update-status-button-left"
+          onClick={() => {
+            updatePatient(currentPatient.id);
+          }}
+        >
+          Add/Update
+        </div>
+        <div
+          className="update-status-button-right"
+          onClick={() => {
+            navigate("/findPatient");
+          }}
+        >
+          Cancel
+        </div>
       </div>
     </div>
   );
