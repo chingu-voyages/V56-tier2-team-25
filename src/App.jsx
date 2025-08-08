@@ -20,7 +20,7 @@ import Login from "./components/Landingpages/Login";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import AddPatient from "./components/AddPatient";
-import FAQ from './components/FAQ'
+import FAQ from './components/FAQ/FAQ'
 
 function Home() {
   const [currentPatient, setCurrentPatient] = useState(null);

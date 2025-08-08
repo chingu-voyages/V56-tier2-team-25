@@ -1,5 +1,7 @@
-import Footer from "./Footer"
-import Header from "./Header"
+import { useState } from 'react'
+import Footer from "../Footer"
+import Header from "../Header"
+import Accordion from './Accordion'
 
 const FAQ = () => {
 
@@ -21,29 +23,26 @@ const FAQ = () => {
         }
     ]
 
-    const info = faqArr.map((faq, index) => {
+    const faqs = faqArr.map((faq, index) => {
         return (
-            <div key={index}>
-                <h4>{faq.question}</h4>
-                <p className="">{faq.answer}</p>
-            </div>
+            <Accordion key={index} question={faq.question} answer={faq.answer}/>
         )
     })
 
 
     return(
-        <div>
-            <section className="w-full min-h-screen flex flex-col">
+        <div className=''>
+            
+            <div className="w-full min-h-screen flex flex-col">
                 <Header/>
                 <div className="flex flex-1 flex-col justify-center items-center bg-[#F5F3EA] dm-sans">
-                    <h2 className="text-[3.5rem] font-bold text-[#4F4F4F]">Frequently Asked Questions (FAQ)</h2>
+                    <h2 className="text-[3.5rem] font-bold text-[#4F4F4F] mb-26">Frequently Asked Questions (FAQ)</h2>
                     <div className="w-[866px]">
-                        <h3 className="text-4xl font-bold text-[#4F4F4F]">Surger Updates</h3>
-                        {info}
+                        <h3 className="text-4xl font-bold text-[#4F4F4F] mb-13">Surger Updates</h3>
+                        {faqs}
                     </div>
-                    
                 </div>
-            </section>
+            </div>
             <Footer/>
         </div>
     )
