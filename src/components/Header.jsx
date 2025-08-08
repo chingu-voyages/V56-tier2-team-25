@@ -10,7 +10,7 @@ const Header = () => {
         <header className="w-full transition-all duration-300 shadow-2xl">
             <div className="container mx-auto flex items-center justify-between px-2 py-[28px]">
                 <div className='flex items-center gap-8'>    
-                    <div className='flex gap-7 items-center' onClick={() => navigate("/")} >
+                    <div className='flex gap-7 items-center cursor-pointer' onClick={() => navigate("/")} >
                         <img src={logo} alt="logo"/>
                         <h1 className='text-[2rem] font-medium text-shadow-md text-[#006B44]'>Surgery Status</h1>
                     </div>

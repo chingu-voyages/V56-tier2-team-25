@@ -9,9 +9,9 @@ const Navbar = () => {
     const [ isOpen, setIsOpen ] = useState(false);
 
     const linksArr = [
-        { name: 'Home' }, 
+        { name: 'Home', path: '/' }, 
         { name: 'Patient', dropdown: ['Patient Information', 'Patient Status Update', 'Patient Status'] }, 
-        { name: 'FAQ' }, 
+        { name: 'FAQ', path: '/faq' }, 
         { name: 'Log In', path: '/login' }
     ]
 

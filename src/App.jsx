@@ -20,6 +20,7 @@ import Login from "./components/Landingpages/Login";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import AddPatient from "./components/AddPatient";
+import FAQ from './components/FAQ'
 
 function Home() {
   const [currentPatient, setCurrentPatient] = useState(null);
@@ -31,7 +32,7 @@ function Home() {
         <Header />
         <div className="flex-1 flex items-center justify-center bg-[#F5F3EA]">
           <div className="container flex flex-col lg:flex-row justify-center items-center mx-auto px-10  gap-18">
-            <div className="flex flex-col justify-center lg:w-[45%] space-y-11">
+            <div className="flex flex-col justify-center lg:w-[47%] space-y-11">
               <h1 className="text-[3.4rem] font-bold text-[#4F4F4F] dm-sans leading-[1.125]">
                 Get immediate updates on your loved one's surgery
               </h1>
@@ -95,6 +96,7 @@ export default function App() {
         <Route path="/guest" element={<LandingPageGuest />} />
         <Route path="/addPatient" element={<AddPatient />} />
         <Route path="/waitingRoom" element={<WaitingRoom />} />
+        <Route path="/faq" element={<FAQ />} />
       </Routes>
     </Router>
   );
