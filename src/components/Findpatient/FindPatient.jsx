@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import patientsdb from "../patients";
 import "./findpatient.css";
 import { useNavigate } from "react-router-dom";
+import Header from '../Header';
+import Footer from '../Footer';
 
 const FindPatient = ({ currentPatient, setCurrentPatient }) => {
   const [patients, setPatients] = useState(patientsdb);
