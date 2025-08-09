@@ -1,3 +1,6 @@
+
+import { db } from '../../firebase';
+import { doc, setDoc } from "firebase/firestore";
 import Footer from "./Footer"
 import Header from "./Header"
 
@@ -17,7 +20,7 @@ const AddPatient = () => {
 
     const formInputs = inputs.map(input => {
         return (
-            <div className="flex items-center justify-between mb-[18px]">
+            <div className="flex items-center justify-between mb-[18px]" key = {input.name}>
                 <label 
                     htmlFor={input.name}
                     className="font-semibold text-xl dm-sans text-[#333333] mr-[40px]"
@@ -35,10 +38,17 @@ const AddPatient = () => {
         )
     })
 
-    const submitForm = (e) => {
-        e.preventDfault()
+    const submitForm = async (e) => {
+        e.preventDefault()
         const formElement = e.currentTarget
         const formData = new FormData(formElement)
+        const dataForDB = Object.fromEntries(formData.entries());
+        if (dataForDB.patientNo !== "") {
+            await setDoc(doc(db, "patient_info", dataForDB.patientNo), dataForDB);
+            console.log("Created");
+        } else {
+            console.log("Not created");
+        }
         formElement.reset()
     }
     
@@ -50,21 +60,21 @@ const AddPatient = () => {
                 <h2 className="text-4xl font-bold text-[#4F4F4F] mb-24">Patient Information</h2>
                 <form onSubmit={submitForm} className="flex flex-col">
                     {formInputs}
+                    <div className="flex gap-6 mt-10">
+                            <button 
+                                type="submit"
+                                className="bg-[#008C99] text-white text-[1.125rem] font-bold rounded-[40px] px-18 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
+                                >
+                                Add New Patient
+                            </button>
+                            <button
+                                type="button"
+                                className="bg-white text-[#4F4F4F] text-[1.125rem] font-bold rounded-[40px] border border-[#CAC4D0] px-15 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
+                                >
+                                Cancel
+                            </button>
+                    </div>
                 </form>
-                <div className="flex gap-6 mt-10">
-                        <button 
-                            type="submit"
-                            className="bg-[#008C99] text-white text-[1.125rem] font-bold rounded-[40px] px-18 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
-                        >
-                            Add New Patient
-                        </button>
-                        <button
-                            type="button"
-                            className="bg-white text-[#4F4F4F] text-[1.125rem] font-bold rounded-[40px] border border-[#CAC4D0] px-15 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
-                        >
-                            Cancel
-                        </button>
-                </div>
             </div>
         </section>
         <Footer/>
