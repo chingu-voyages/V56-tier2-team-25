@@ -27,13 +27,13 @@ function Home() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen w-full flex flex-col">
+    <div>
       <div className="min-h-screen w-full flex flex-col">
         <Header />
-        <div className="flex flex-1 items-center justify-center bg-[#F5F3EA]">
+        <div className="flex flex-1 flex-col items-center pt-11 justify-start md:justify-center text-center bg-[#F5F3EA]">
           <div className="container flex flex-col lg:flex-row justify-center items-center mx-auto lg:px-10 px-8 lg:gap-18">
-            <div className="flex items-center justify-center  mb-6 lg:mb-0 order-0 lg:order-2">
-              <img src={homeImg} className="w-auto object-contain rounded-5xl" />
+            <div className="flex items-center justify-center mb-6 lg:mb-0 order-0 lg:order-2">
+              <img src={homeImg} className="w-auto object-contain" />
             </div>
             <div className="flex flex-col justify-center w-full lg:w-[47%] lg:space-y-11">
               <h1 className="lg:text-[3.4rem] text-[1.25rem] font-semibold text-center lg:text-left lg:font-bold pb-[1rem] text-[#4F4F4F] dm-sans lg:leading-[1.125]">
