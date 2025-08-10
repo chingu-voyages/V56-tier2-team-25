@@ -29,7 +29,7 @@ const FindPatient = ({ currentPatient, setCurrentPatient }) => {
     <section>
       <div className="min-h-screen w-full flex flex-col">      
         <Header />
-          <div className="flex flex-1 flex-col items-center pt-11 lg:pt-0 md:justify-center bg-[#F5F3EA]">
+          <div className="flex flex-1 flex-col items-center pt-11 md:pt-0 md:justify-center bg-[#F5F3EA]">
             <div className="mb-16">
               <h1 className="text-[#4F4F4F] font-bold text-2xl lg:text-4xl dm-sans">Find Patient</h1>
             </div>
