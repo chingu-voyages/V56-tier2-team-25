@@ -30,13 +30,13 @@ function Home() {
     <div>
       <div className="min-h-screen w-full flex flex-col">
         <Header />
-        <div className="flex flex-1 flex-col items-center pt-11 justify-start md:justify-center text-center bg-[#F5F3EA]">
+        <div className="flex flex-1 flex-col items-center pt-11 lg:pt-0 justify-start md:justify-center text-center md:text-left bg-[#F5F3EA]">
           <div className="container flex flex-col lg:flex-row justify-center items-center mx-auto lg:px-10 px-8 lg:gap-18">
             <div className="flex items-center justify-center mb-6 lg:mb-0 order-0 lg:order-2">
               <img src={homeImg} className="w-auto object-contain" />
             </div>
             <div className="flex flex-col justify-center w-full lg:w-[47%] lg:space-y-11">
-              <h1 className="lg:text-[3.4rem] text-[1.25rem] font-semibold text-center lg:text-left lg:font-bold pb-[1rem] text-[#4F4F4F] dm-sans lg:leading-[1.125]">
+              <h1 className="lg:text-[3.4rem] text-[1.25rem] font-semibold lg:font-bold pb-[1rem] text-[#4F4F4F] dm-sans lg:leading-[1.125]">
                 Get immediate updates on your loved one's surgery
               </h1>
               <p className="text-sm lg:text-[1.125rem] leading-6 lg:leading dm-sans text-[#4F4F4F]">
