@@ -31,9 +31,9 @@ const FindPatient = ({ currentPatient, setCurrentPatient }) => {
         <Header />
           <div className="flex flex-1 flex-col items-center justify-center bg-[#F5F3EA]">
             <div className="mb-16">
-              <h1 className="text-[#4F4F4F] font-bold text-4xl dm-sans">Find Patient</h1>
+              <h1 className="text-[#4F4F4F] font-bold text-2xl lg:text-4xl dm-sans">Find Patient</h1>
             </div>
-            <div className="mb-11 text-[#090909] text-[1.125rem] dm-sans">
+            <div className="mb-14 lg:mb-11 max-w-[256px] lg:max-w-full text-[#090909] text-[1.125rem] dm-sans text-center">
               <p>Input patient number to find an existing patient.</p>
             </div>
             <div className="mb-14">
@@ -50,7 +50,7 @@ const FindPatient = ({ currentPatient, setCurrentPatient }) => {
                 No patient with entered ID exists
               </div>
             )}
-            <div className="flex text-center items-center justify-center gap-7">
+            <div className="flex text-center items-center justify-center gap-2 lg:gap-7">
               <div
                 className="bg-[#008C99] text-white text-[1.125rem] font-bold rounded-[40px] px-15 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
                 onClick={() => {
@@ -63,7 +63,7 @@ const FindPatient = ({ currentPatient, setCurrentPatient }) => {
                 className="bg-white text-[#4F4F4F] text-[1.125rem] font-bold rounded-[40px] border border-[#CAC4D0] px-15 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA] hover:text-white hover-border-none" 
                 onClick={() => navigate("../Login")}>Cancel</div>
             </div>
-            <div className="flex text-center items-center justify-center gap-7 mt-6">
+            <div className="flex text-center items-center justify-center gap-7 mt-2 lg:mt-6">
               <div className="bg-[#008C99] text-white text-[1.125rem] font-bold rounded-[40px] px-15 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
                 onClick = {() => {navigate("../AddPatient")}}>Add Patient</div>
             </div>
