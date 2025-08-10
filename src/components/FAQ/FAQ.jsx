@@ -38,7 +38,7 @@ const FAQ = () => {
                 <div className="flex flex-1 flex-col justify-center items-center bg-[#F5F3EA] dm-sans">
                     <h2 className="text-[3.5rem] font-bold text-[#4F4F4F] mb-26">Frequently Asked Questions (FAQ)</h2>
                     <div className="w-[866px]">
-                        <h3 className="text-4xl font-bold text-[#4F4F4F] mb-13">Surger Updates</h3>
+                        <h3 className="text-4xl font-bold text-[#4F4F4F] mb-13">Surgery Updates</h3>
                         {faqs}
                     </div>
                 </div>
