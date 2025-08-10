@@ -22,7 +22,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import AddPatient from "./components/AddPatient";
 import AdminFindPatient from "./components/EditPatient/AdminFindPatient";
 import PatientForm from "./components/EditPatient/PatientForm";
-import FAQ from './components/FAQ'
+import FAQ from './components/FAQ/FAQ'
 
 function Home() {
   const [currentPatient, setCurrentPatient] = useState(null);
@@ -32,21 +32,24 @@ function Home() {
     <div>
       <div className="min-h-screen w-full flex flex-col">
         <Header />
-        <div className="flex-1 flex items-center justify-center bg-[#F5F3EA]">
-          <div className="container flex flex-col lg:flex-row justify-center items-center mx-auto px-10  gap-18">
-            <div className="flex flex-col justify-center lg:w-[47%] space-y-11">
-              <h1 className="text-[3.4rem] font-bold text-[#4F4F4F] dm-sans leading-[1.125]">
+        <div className="flex flex-1 flex-col items-center pt-11 lg:pt-0 justify-start md:justify-center text-center md:text-left bg-[#F5F3EA]">
+          <div className="container flex flex-col lg:flex-row justify-center items-center mx-auto lg:px-10 px-8 lg:gap-18">
+            <div className="flex items-center justify-center mb-6 lg:mb-0 order-0 lg:order-2">
+              <img src={homeImg} className="w-auto object-contain" />
+            </div>
+            <div className="flex flex-col justify-center w-full lg:w-[47%] lg:space-y-11">
+              <h1 className="lg:text-[3.4rem] text-[1.25rem] font-semibold lg:font-bold pb-[1rem] text-[#4F4F4F] dm-sans lg:leading-[1.125]">
                 Get immediate updates on your loved one's surgery
               </h1>
-              <p className="text-[1.125rem] dm-sans text-[#4F4F4F]">
+              <p className="text-sm lg:text-[1.125rem] leading-6 lg:leading dm-sans text-[#4F4F4F]">
                 Our mission is to offer timely, compassionate updates during
                 surgery, ensuring families feel informed, supported, and
                 connected every step of the way
               </p>
-              <div>
+              <div className="flex justify-center lg:justify-start">
                 <button
                   type="submit"
-                  className="bg-[#008C99] text-white text-[1.125rem] font-bold rounded-[40px] px-13 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
+                  className="bg-[#008C99] text-white text-[1.125rem] mt-12 lg:mt-0 font-bold rounded-[40px] px-13 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
                   onClick={() => navigate("/FindPatient")}
                 >
                   Get Started <FontAwesomeIcon icon={faArrowRight} />
@@ -54,9 +57,7 @@ function Home() {
               </div>
             </div>
 
-            <div className="flex items-center justify-center">
-              <img src={homeImg} className="w-auto object-contain" />
-            </div>
+            
           </div>
         </div>
       </div>
