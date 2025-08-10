@@ -3,8 +3,11 @@ import { db } from '../../firebase';
 import { doc, setDoc } from "firebase/firestore";
 import Footer from "./Footer"
 import Header from "./Header"
+import { useState } from 'react'
 
 const AddPatient = () => {
+
+    const [patientNo, setPatientNo] = useState('')
 
     const inputs = [
         { label: "Patient No.:", type: 'text', name: 'patientNo', placeholder: 'Patient number'},
@@ -18,12 +21,21 @@ const AddPatient = () => {
         { label: "Contact Email:", type: 'email', name: 'email', placeholder: 'Contact email' }, 
     ]
 
+    const generateNo = () => {
+        let number = ''
+        for (let i = 0; i < 6; i++) {
+            number += Math.ceil(Math.random() * 9)
+        }
+        setPatientNo(number)
+    }
+
     const formInputs = inputs.map(input => {
+        const isPatientNo = input.name === 'patientNo'
         return (
-            <div className="flex items-center justify-between mb-[18px]" key = {input.name}>
+            <div className="flex flex-col md:flex-row justify-between items-center mb-[18px]" key = {input.name}>
                 <label 
                     htmlFor={input.name}
-                    className="font-semibold text-xl dm-sans text-[#333333] mr-[40px]"
+                    className="font-semibold text-xl dm-sans text-[#333333]"
                 >
                     {input.label}
                 </label>
@@ -32,8 +44,17 @@ const AddPatient = () => {
                     id={input.name} 
                     name={input.name}
                     placeholder={input.placeholder}
-                    className="bg-white border w-[230px] border-[#333333] rounded-[10px] px-3 py-2 text-[#333333]"
+                    value={isPatientNo ? patientNo : undefined}
+                    className="bg-white border w-[331px] md:w-[262px] border-[#333333] rounded-[10px] px-3 py-2 text-[#333333]"
                 /> 
+                {isPatientNo && 
+                    <p 
+                        className='text-sm font-semibold underline text-[#008C99]'
+                        onClick={generateNo}
+                    >
+                        Generate New Patient Number
+                    </p>
+                }
             </div>
         )
     })
@@ -60,7 +81,7 @@ const AddPatient = () => {
                 <h2 className="text-[#4F4F4F] font-bold text-2xl lg:text-4xl dm-sans mb-10 md:mb-24">Patient Information</h2>
                 <form onSubmit={submitForm} className="flex flex-col">
                     {formInputs}
-                    <div className="flex gap-6 mt-10">
+                    <div className="flex gap-7 mt-10">
                             <button 
                                 type="submit"
                                 className="bg-[#008C99] text-white text-[1.125rem] font-bold rounded-[40px] px-18 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
