@@ -114,7 +114,7 @@ function Login() {
         <>     
             <div className="min-h-screen w-full flex flex-col">
                 <Header />
-                <div className="flex flex-1 flex-col items-center pt-11 md:pt-0 px-8 md:px-0 md:justify-center bg-[#F5F3EA]">
+                <div className="flex flex-1 flex-col items-center py-11 md:pt-0 px-8 md:px-0 md:justify-center bg-[#F5F3EA]">
                     {message && (
                         <div className={messageType === 'success' ? 'success-message' : 'error-message'} style={{ position: 'relative' }}>
                             <button className="message-close-btn" onClick={() => setMessage('')} aria-label="Close message">&times;</button>
