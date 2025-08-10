@@ -27,7 +27,7 @@ function Home() {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className="min-h-screen w-full flex flex-col">
       <div className="min-h-screen w-full flex flex-col">
         <Header />
         <div className="flex flex-1 items-center justify-center bg-[#F5F3EA]">
