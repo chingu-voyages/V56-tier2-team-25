@@ -49,7 +49,7 @@ const AddPatient = () => {
                 /> 
                 {isPatientNo && 
                     <p 
-                        className='text-sm font-semibold underline text-[#008C99]'
+                        className='text-sm font-semibold underline text-[#008C99] cursor-pointer'
                         onClick={generateNo}
                     >
                         Generate New Patient Number
@@ -71,6 +71,7 @@ const AddPatient = () => {
             console.log("Not created");
         }
         formElement.reset()
+        setPatientNo('')
     }
     
     return (
