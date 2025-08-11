@@ -1,6 +1,15 @@
 import logo from '../assets/logo.png'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
 
 const Footer = () => {
+
+    const navigate = useNavigate();
+
     return (
         <footer className="pt-12 lg:pt-20 lg:bg-white bg-[rgba(168,213,186,0.3)]">
             <div className="container mx-auto lg:px-10">
@@ -8,7 +17,7 @@ const Footer = () => {
                     <div>
                         <h3 className="font-bold text-[1.25rem] dm-sans text-[#4F4F4F] mb-[18px] lg:mb-10">Product</h3>
                         <ul className="space-y-4 text-[rgb(126,126,126)] text-[1.125rem]">
-                            <li><a href="#" className="hover:text-[#4F4F4F]">FAQ</a></li>
+                            <li className="hover:text-[#4F4F4F] cursor-pointer" onClick={() => navigate('../faq')}>FAQ</li>
                             <li>
                                 <a
                                     href="https://github.com/chingu-voyages/V56-tier2-team-25"

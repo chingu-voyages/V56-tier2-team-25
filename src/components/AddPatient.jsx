@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-route
 
 const AddPatient = () => {
 
-     const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const [patientNo, setPatientNo] = useState('')
 
