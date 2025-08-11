@@ -4,8 +4,11 @@ import { doc, setDoc } from "firebase/firestore";
 import Footer from "./Footer"
 import Header from "./Header"
 import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 
 const AddPatient = () => {
+
+     const navigate = useNavigate();
 
     const [patientNo, setPatientNo] = useState('')
 
@@ -92,6 +95,7 @@ const AddPatient = () => {
                             <button
                                 type="button"
                                 className="bg-white text-[#4F4F4F] text-[1.125rem] font-bold rounded-[40px] border border-[#CAC4D0] px-15 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
+                                onClick={() => navigate(-1)}
                                 >
                                 Cancel
                             </button>

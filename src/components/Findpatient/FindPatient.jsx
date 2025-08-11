@@ -61,7 +61,7 @@ const FindPatient = ({ currentPatient, setCurrentPatient }) => {
               </div>
               <div 
                 className="bg-white text-[#4F4F4F] text-[1.125rem] font-bold rounded-[40px] border border-[#CAC4D0] px-15 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA] hover:text-white hover-border-none" 
-                onClick={() => navigate("../Login")}>Cancel</div>
+                onClick={() => navigate(-1)}>Cancel</div>
             </div>
             <div className="flex text-center items-center justify-center gap-7 mt-2 lg:mt-6">
               <div className="bg-[#008C99] text-white text-[1.125rem] font-bold rounded-[40px] px-15 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"

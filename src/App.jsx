@@ -20,6 +20,8 @@ import Login from "./components/Landingpages/Login";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import AddPatient from "./components/AddPatient";
+import AdminFindPatient from "./components/EditPatient/AdminFindPatient";
+import PatientForm from "./components/EditPatient/PatientForm";
 import FAQ from './components/FAQ/FAQ'
 
 function Home() {
@@ -97,6 +99,8 @@ export default function App() {
         <Route path="/guest" element={<LandingPageGuest />} />
         <Route path="/addPatient" element={<AddPatient />} />
         <Route path="/waitingRoom" element={<WaitingRoom />} />
+        <Route path="/adminEdit" element={<AdminFindPatient />} />
+        <Route path="/adminPatients" element={<PatientForm />} />
         <Route path="/faq" element={<FAQ />} />
       </Routes>
     </Router>
