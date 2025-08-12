@@ -23,6 +23,7 @@ import AddPatient from "./components/AddPatient";
 import AdminFindPatient from "./components/EditPatient/AdminFindPatient";
 import PatientForm from "./components/EditPatient/PatientForm";
 import FAQ from './components/FAQ/FAQ'
+import UnderConstruction from "./components/UnderConstruction";
 
 function Home() {
   const [currentPatient, setCurrentPatient] = useState(null);
@@ -102,6 +103,7 @@ export default function App() {
         <Route path="/adminEdit" element={<AdminFindPatient />} />
         <Route path="/adminPatients" element={<PatientForm />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route path="/construction" element={<UnderConstruction />} />
       </Routes>
     </Router>
   );
