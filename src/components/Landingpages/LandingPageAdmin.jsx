@@ -30,7 +30,7 @@ const LandingPageAdmin = () => {
           <button className="bg-teal-600 text-white px-6 py-2 rounded-full hover:bg-teal-700 transition shadow-md" onClick={() => navigate("/FindPatient")}>
             Update Patient Status
           </button>
-          <button className="bg-white text-gray-800 px-6 py-2 rounded-full shadow hover:bg-gray-100 transition shadow-md" onClick={()=>navigate("/adminEdit")}>
+          <button className="bg-white text-gray-800 px-6 py-2 rounded-full shadow hover:bg-gray-100 transition shadow-md" onClick={()=>navigate("/ViewPatient")}>
             Edit Patient Info
           </button>
         </div>

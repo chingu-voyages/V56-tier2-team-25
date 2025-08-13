@@ -12,6 +12,7 @@ import { collection, query, where, getDocs, doc, setDoc } from "firebase/firesto
 import { db } from '../../../firebase';
 import { useDispatch } from "react-redux";
 import { setUserData } from "../../store/userSlice.jsx";
+import ViewPatient from '../ViewPatient';
 
 
 function Login() {
@@ -49,9 +50,10 @@ function Login() {
         // Query surgeons collection by email
         const surgeonsRef = collection(db, "surgeons");
         const q = query(surgeonsRef, where("email", "==", emailaddress));
-        const querySnapshot = await getDocs(q); 
+        const querySnapshot = await getDocs(q);
 
         if (!querySnapshot.empty) {
+            console.log("Query empty");
             const userDoc = querySnapshot.docs[0];
             const role = userDoc.data().role;
             const name = userDoc.data().name;
@@ -81,8 +83,11 @@ function Login() {
             setMessageType("error");
             }
         } else {
-            setMessage("User profile not found.");
-            setMessageType("error");
+            if (emailaddress === "admin@admin.com") {
+                navigate("/admin");
+            } else {
+                navigate("/staff");
+            }
         }
     } catch (error) {
     console.error("Login error:", error.message);

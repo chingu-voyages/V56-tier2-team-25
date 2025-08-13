@@ -24,6 +24,7 @@ import AdminFindPatient from "./components/EditPatient/AdminFindPatient";
 import PatientForm from "./components/EditPatient/PatientForm";
 import FAQ from './components/FAQ/FAQ'
 import UnderConstruction from "./components/UnderConstruction";
+import ViewPatient from "./components/ViewPatient";
 
 function Home() {
   const [currentPatient, setCurrentPatient] = useState(null);
@@ -95,6 +96,7 @@ export default function App() {
             />
           }
         />
+        <Route path="/viewPatient" element={<ViewPatient />} />
         <Route path="/admin" element={<LandingPageAdmin />} />
         <Route path="/staff" element={<LandingPageStaff />} />
         <Route path="/guest" element={<LandingPageGuest />} />
