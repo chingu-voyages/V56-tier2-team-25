@@ -87,7 +87,7 @@ const AddPatient = () => {
         <>
         <section className="min-h-screen w-full flex flex-col">
             <Header/>
-            <div className="flex flex-1 flex-col items-center pt-11 md:pt-0 md:justify-center bg-[#F5F3EA]">
+            <div className="flex flex-1 flex-col items-center py-11  md:justify-center bg-[#F5F3EA]">
                 <h2 className="text-[#4F4F4F] font-bold text-2xl lg:text-4xl dm-sans mb-10 md:mb-24">Patient Information</h2>
                 <form onSubmit={submitForm} className="flex flex-col">
                     {formInputs}

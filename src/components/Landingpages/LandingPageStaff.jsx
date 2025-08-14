@@ -50,17 +50,17 @@ const LandingPageStaff = () => {
                 </div>
               </div>
               <div className="flex flex-col items-center text-center justify-center gap-0 md:gap-6 sm:flex-row">
-                <div className="flex text-center items-center justify-center dm-sans mb-9 md:mb-0 bg-transaparent text-[#4F4F4F] border-2 border-[#4F4F4F] text-[1.25rem] font-bold rounded-[40px] px-14 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]">
+                <div className="flex text-center items-center justify-center dm-sans mb-9 md:mb-0 bg-transaparent text-[#CAC4D0] border-1 border-[#CAC4D0] text-[1.25rem] font-bold rounded-[40px] px-14 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]">
                   Edit Patient Info
                 </div>
                 <div
                   onClick={() => navigate('../construction')}  
-                  className="flex text-center items-center justify-center dm-sans mb-9 md:mb-0 bg-white text-[#4F4F4F] border-2 border-[#4F4F4F] text-[1.25rem] font-bold rounded-[40px] px-14 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]">
+                  className="flex text-center items-center justify-center dm-sans mb-9 md:mb-0 bg-white text-[#4F4F4F] border-1 border-[#CAC4D0] text-[1.25rem] font-bold rounded-[40px] px-14 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]">
                     Team Notifications
                 </div>
                 <div
                   onClick={() => navigate('../construction')}  
-                  className="flex text-center items-center justify-center dm-sans mb-6 md:mb-0 bg-white border-2 border-[#4F4F4F] text-[#4F4F4F] text-[1.25rem] font-bold rounded-[40px] px-14 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]">
+                  className="flex text-center items-center justify-center dm-sans mb-6 md:mb-0 bg-white border-1 border-[#CAC4D0] text-[#4F4F4F] text-[1.25rem] font-bold rounded-[40px] px-14 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]">
                     Live Case Status
                 </div>
               </div>
