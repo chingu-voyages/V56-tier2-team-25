@@ -1,15 +1,33 @@
 import React, { useEffect, useState } from "react";
-import patientsdb from "./patients";
-import Header from "./Header";
-import Footer from "./Footer";
+import { collection, doc, getDocs, updateDoc } from "firebase/firestore";
+import { db } from "../../firebase";
 
 const WaitingRoom = () => {
-  const [patients, setPatients] = useState(patientsdb);
+  const [patients, setPatients] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
+  const [loading, setLoading] = useState(true);
   const pageSize = 8;
   const intervalTime = 10000; // 10 seconds
 
-  const sortedPatients = [...patients].sort((a, b) => a.id - b.id);
+  useEffect(() => {
+    const fetchCollection = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "patient_info"));
+        const data = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setPatients(data);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching documents:", error);
+      }
+    };
+
+    fetchCollection();
+  }, []);
+
+  useEffect(() => {}, [patients]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -21,6 +39,8 @@ const WaitingRoom = () => {
     return () => clearInterval(interval);
   }, [patients.length]);
 
+  const sortedPatients = [...patients].sort((a, b) => a.id - b.id);
+
   const start = currentPage * pageSize;
   const currentItems = sortedPatients.slice(start, start + pageSize);
 
@@ -29,6 +49,9 @@ const WaitingRoom = () => {
       <div className="h-[100vh] w-[100vw] flex flex-col items-center text-center justify-start bg-[#F5F3EA]">
         <div className="mb-16 mt-20">
           <h1 className="text-gray-600 font-bold text-2xl">Patient Status</h1>
+        </div>
+        <div style={{ textAlign: "center", marginTop: "50px" }}>
+          {loading ? <div className="text-[16px]"> Loading...</div> : null}
         </div>
         {currentItems.map((item, index) => {
           let textColor = "text-gray-800";

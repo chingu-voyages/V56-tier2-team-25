@@ -1,24 +1,55 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import patientsdb from "../patients";
-import "./updatestatus.css";
+import { useLocation, useNavigate } from "react-router-dom";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { db } from "../../../firebase";
 import Header from "../Header";
 import Footer from "../Footer";
 
-const UpdateStatus = ({
-  currentPatient,
-  setCurrentPatient,
-  patients,
-  setPatients,
-}) => {
+const UpdateStatus = () => {
   const [showModal, setShowModal] = useState(false);
   const [selected, setSelected] = useState("Select New Status");
   const [isOpen, setIsOpen] = useState(false);
   const [error, setError] = useState(null);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const patientFromNav = location.state?.patient;
+  const patientNo = patientFromNav?.patientNo;
 
-  useEffect(() => {}, []);
+  const [formData, setFormData] = useState({
+    patientNo: "",
+    status: "",
+  });
 
-  console.log(patients);
+  useEffect(() => {
+    const fetchPatient = async () => {
+      if (!patientNo) return;
+      const docRef = doc(db, "patient_info", String(patientNo));
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        setFormData(docSnap.data());
+      }
+    };
+
+    if (patientFromNav) {
+      setFormData(patientFromNav);
+    } else {
+      fetchPatient();
+    }
+  }, [patientNo, patientFromNav]);
+
+  useEffect(() => {
+    if (selected !== "Select New Status") {
+      setFormData({
+        ...patientFromNav,
+        status: selected,
+      });
+    } else {
+      null;
+    }
+  }, [selected]);
+
+  console.log(patientNo);
+  console.log(patientFromNav);
 
   const options = [
     "Checked-In",
@@ -30,27 +61,31 @@ const UpdateStatus = ({
     "Discharge",
   ];
 
-  const navigate = useNavigate();
-
   const toggleDropdown = () => setIsOpen(!isOpen);
   const handleOptionClick = (option) => {
     setSelected(option);
     setIsOpen(false);
   };
 
-  const updatePatient = (id) => {
-    const updatedPatients = patients.map((patient) =>
-      patient.id === id ? { ...patient, status: { selected } } : patient
-    );
-    if (
-      selected === "Select New Status" ||
-      selected === currentPatient.status
-    ) {
-      setError("error");
-    } else {
-      setPatients(updatedPatients);
-      setShowModal(true);
+  // const handleChange = (e) => {
+  //   setFormData({
+  //     ...formData,
+  //     status: selected,
+  //   });
+  //   alert("function triggered");
+  // };
+
+  console.log(selected);
+  console.log(formData);
+
+  const handleSave = async () => {
+    if (!patientNo) {
+      alert("No patient number found.");
+      return;
     }
+    const docRef = doc(db, "patient_info", String(patientNo));
+    await updateDoc(docRef, formData);
+    setShowModal(true);
   };
 
   const styles = {
@@ -77,14 +112,14 @@ const UpdateStatus = ({
         <div className="">
           <div className="flex text-center items-center justify-between mb-4 font-bold">
             <p>Patient No:</p>
-            {currentPatient === null || currentPatient.length === 0 ? null : (
-              <p>{currentPatient.id}</p>
+            {patientNo === null || patientNo.length === 0 ? null : (
+              <p>{patientNo}</p>
             )}
           </div>
           <div className="flex text-center items-center justify-between mb-4 font-bold">
             <p>Current Status:</p>
-            {currentPatient === null || currentPatient.length === 0 ? null : (
-              <p>{currentPatient.status}</p>
+            {patientFromNav === null || patientFromNav.length === 0 ? null : (
+              <p>{patientFromNav.status}</p>
             )}
           </div>
           <div className="flex mb-10 font-bold">
@@ -93,16 +128,17 @@ const UpdateStatus = ({
               <button
                 className="flex justify-end w-[90%] p-[10px] cursor-pointer border-1 border-[#ccc] bg-white"
                 onClick={toggleDropdown}
+                value={selected}
               >
                 {selected}
               </button>
 
               {isOpen && (
                 <ul className="w-[90%] ml-6 mt-11 border-1 border-[#ccc] absolute bg-white">
-                  {currentPatient === null ||
-                  currentPatient.length === 0 ? null : (
+                  {patientFromNav === null ||
+                  patientFromNav.length === 0 ? null : (
                     <div>
-                      {currentPatient.status === "Checked-In"
+                      {patientFromNav.status === "Checked-In"
                         ? options.slice(0, 2).map((option) => (
                             <li
                               key={option}
@@ -113,7 +149,7 @@ const UpdateStatus = ({
                             </li>
                           ))
                         : null}
-                      {currentPatient.status === "Pre-Procedure"
+                      {patientFromNav.status === "Pre-Procedure"
                         ? options.slice(0, 3).map((option) => (
                             <li
                               key={option}
@@ -124,7 +160,7 @@ const UpdateStatus = ({
                             </li>
                           ))
                         : null}
-                      {currentPatient.status === "In-Progress"
+                      {patientFromNav.status === "In-Progress"
                         ? options.slice(1, 4).map((option) => (
                             <li
                               key={option}
@@ -135,7 +171,7 @@ const UpdateStatus = ({
                             </li>
                           ))
                         : null}
-                      {currentPatient.status === "Surgery Completed"
+                      {patientFromNav.status === "Surgery Completed"
                         ? options.slice(2, 5).map((option) => (
                             <li
                               key={option}
@@ -146,7 +182,7 @@ const UpdateStatus = ({
                             </li>
                           ))
                         : null}
-                      {currentPatient.status === "Recovery"
+                      {patientFromNav.status === "Recovery"
                         ? options.slice(3, 6).map((option) => (
                             <li
                               key={option}
@@ -157,7 +193,7 @@ const UpdateStatus = ({
                             </li>
                           ))
                         : null}
-                      {currentPatient.status === "Recovery Complete"
+                      {patientFromNav.status === "Recovery Complete"
                         ? options.slice(4, 7).map((option) => (
                             <li
                               key={option}
@@ -168,7 +204,7 @@ const UpdateStatus = ({
                             </li>
                           ))
                         : null}
-                      {currentPatient.status === "Discharge"
+                      {patientFromNav.status === "Discharge"
                         ? options.slice(5, 7).map((option) => (
                             <li
                               key={option}
@@ -193,7 +229,7 @@ const UpdateStatus = ({
           <div
             className="bg-[#008C99] mr-4 text-white text-[1.125rem] font-bold rounded-[40px] px-18 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
             onClick={() => {
-              updatePatient(currentPatient.id);
+              handleSave();
             }}
           >
             Add/Update
