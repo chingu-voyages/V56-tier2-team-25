@@ -24,6 +24,7 @@ import PatientForm from "./components/EditPatient/PatientForm";
 import FAQ from "./components/FAQ/FAQ";
 import UnderConstruction from "./components/UnderConstruction";
 import GuestPatientStatus from "./components/GuestPatientStatus";
+import ViewPatient from "./components/ViewPatient";
 
 function Home() {
   const navigate = useNavigate();
@@ -72,6 +73,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/findPatient" element={<FindPatient />} />
         <Route path="/updateStatus" element={<UpdateStatus />} />
+        <Route path="/viewPatient" element={<ViewPatient />} />
         <Route path="/admin" element={<LandingPageAdmin />} />
         <Route path="/staff" element={<LandingPageStaff />} />
         <Route path="/guest" element={<LandingPageGuest />} />

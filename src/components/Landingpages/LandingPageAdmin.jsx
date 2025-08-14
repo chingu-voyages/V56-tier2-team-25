@@ -16,36 +16,35 @@ const LandingPageAdmin = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="lp-admin-wrapper">
+    <>
+    <div className="min-h-screen w-full flex flex-col">
       <Header />
-      <div
-        className="lp-admin-container"
-        style={{ backgroundColor: "#F5F3EA" }}
-      >
-        <h1 className="text-2xl font-semibold text-gray-800 mb-10">
+      <div className="flex flex-1 flex-col items-center pt-25 md:pt-0 md:justify-center bg-[#F5F3EA]">
+        <h1 className="text-[1.5rem] md:text-4xl font-bold dm-sans text-[#4F4F4F] mb-18">
           Welcome back, {userData?.name}!
         </h1>
-        <p className="text-sm text-gray-600 mb-10">
-          Would you like to update the patient's surgery status or edit <br />{" "}
-          their personal information?
+        <p className="text-[.875rem] sm:text-[1.125rem] px-11 text-[#4F4F4F] text-center mb-18">
+          Would you like to update the patient's surgery status or edit their personal information?
         </p>
-        <div className="flex gap-4 justify-center">
-          <button
-            className="bg-teal-600 text-white px-6 py-2 rounded-full hover:bg-teal-700 transition shadow-md"
+        <div className="flex flex-col md:flex-row gap-7 items-center justify-center">
+          <button 
+            className="flex text-center items-center justify-center dm-sans md:mb-0 bg-[#008C99] text-white text-[1.25rem] font-bold rounded-[40px] px-14 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
             onClick={() => navigate("/FindPatient")}
           >
-            Update Patient Status
+              Update Patient Status
           </button>
-          <button
-            className="bg-white text-gray-800 px-6 py-2 rounded-full shadow hover:bg-gray-100 transition shadow-md"
-            onClick={() => navigate("/adminEdit")}
+          <button 
+            className="flex text-center items-center justify-center dm-sans mb-9 md:mb-0 bg-white text-[#4F4F4F] text-[1.25rem] border border-[#CAC4D0] font-bold rounded-[40px] px-14 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
+            onClick={()=>navigate("/ViewPatient")}
           >
-            Edit Patient Info
+              Edit Patient Info
           </button>
         </div>
       </div>
-      <Footer />
+      
     </div>
+    <Footer />
+    </>
   );
 };
 

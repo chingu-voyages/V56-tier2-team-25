@@ -1,6 +1,9 @@
 import logo from '../assets/logo.png';
 import Navbar from './Navbar';
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../../firebase';
 
 const Header = () => {
     const navigate = useNavigate();
