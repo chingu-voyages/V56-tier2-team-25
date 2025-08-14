@@ -8,20 +8,20 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-route
 
 const AddPatient = () => {
 
-     const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const [patientNo, setPatientNo] = useState('')
 
     const inputs = [
-        { label: "Patient No.:", type: 'text', name: 'patientNo', placeholder: 'Patient number'},
-        { label: "First Name:", type: 'text', name: 'firstName', placeholder: 'First name' },
-        { label: "Last Name:", type: 'text', name: 'lastName', placeholder: 'Last name' },
-        { label: "Street:", type: 'text', name: 'street', placeholder: 'Street' },
-        { label: "City:", type: "text", name: 'city', placeholder: 'City' },
-        { label: "State:", type: 'text', name: 'state', placeholder: 'State' },
-        { label: "Country:", type: 'text', name: 'country', placeholder: 'Country' },
-        { label: "Telephone:", type: 'tel', name: 'telephone', placeholder: 'Telephone number' },
-        { label: "Contact Email:", type: 'email', name: 'email', placeholder: 'Contact email' }, 
+        { label: "Patient No.:", type: 'text', name: 'patientNo', placeholder: 'Patient number', mobileLabel: 'Patient Number'},
+        { label: "First Name:", type: 'text', name: 'firstName', placeholder: 'First name', mobileLabel: 'First Name'},
+        { label: "Last Name:", type: 'text', name: 'lastName', placeholder: 'Last name', mobileLabel: 'Last Name'},
+        { label: "Street:", type: 'text', name: 'street', placeholder: 'Street', mobileLabel: 'Street'},
+        { label: "City:", type: "text", name: 'city', placeholder: 'City', mobileLabel: 'City'},
+        { label: "State:", type: 'text', name: 'state', placeholder: 'State', mobileLabel: 'State'},
+        { label: "Country:", type: 'text', name: 'country', placeholder: 'Country', mobileLabel: 'Country'},
+        { label: "Telephone:", type: 'tel', name: 'telephone', placeholder: 'Telephone number', mobileLabel: 'Telephone'},
+        { label: "Contact Email:", type: 'email', name: 'email', placeholder: 'Contact email', mobileLabel: 'Email'}
     ]
 
     const generateNo = () => {
@@ -35,10 +35,16 @@ const AddPatient = () => {
     const formInputs = inputs.map(input => {
         const isPatientNo = input.name === 'patientNo'
         return (
-            <div className="flex flex-col md:flex-row justify-between items-center mb-[18px]" key = {input.name}>
+            <div className="flex flex-col md:flex-row justify-between items-center mb-[18px] px-10 md:px-0" key = {input.name}>
                 <label 
                     htmlFor={input.name}
-                    className="font-semibold text-xl dm-sans text-[#333333]"
+                    className="md:hidden font-semibold text-sm text-[#333333] self-start mb-1"
+                >
+                    {input.mobileLabel}
+                </label>
+                <label
+                    htmlFor={input.name}
+                    className="hidden md:block font-semibold text-xl dm-sans text-[#333333] mb-0"
                 >
                     {input.label}
                 </label>
@@ -52,7 +58,7 @@ const AddPatient = () => {
                 /> 
                 {isPatientNo && 
                     <p 
-                        className='text-sm font-semibold underline text-[#008C99]'
+                        className='flex md:absolute md:ml-128 text-sm font-semibold underline text-[#008C99] cursor-pointer self-start pt-2'
                         onClick={generateNo}
                     >
                         Generate New Patient Number
@@ -74,17 +80,18 @@ const AddPatient = () => {
             console.log("Not created");
         }
         formElement.reset()
+        setPatientNo('')
     }
     
     return (
         <>
         <section className="min-h-screen w-full flex flex-col">
             <Header/>
-            <div className="flex flex-1 flex-col items-center pt-11 md:pt-0 md:justify-center bg-[#F5F3EA]">
+            <div className="flex flex-1 flex-col items-center py-11  md:justify-center bg-[#F5F3EA]">
                 <h2 className="text-[#4F4F4F] font-bold text-2xl lg:text-4xl dm-sans mb-10 md:mb-24">Patient Information</h2>
                 <form onSubmit={submitForm} className="flex flex-col">
                     {formInputs}
-                    <div className="flex gap-7 mt-10">
+                    <div className="flex flex-col md:flex-row items-center gap-7 mt-10 mb-12 md:mb-0">
                             <button 
                                 type="submit"
                                 className="bg-[#008C99] text-white text-[1.125rem] font-bold rounded-[40px] px-18 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"

@@ -23,6 +23,8 @@ import AddPatient from "./components/AddPatient";
 import AdminFindPatient from "./components/EditPatient/AdminFindPatient";
 import PatientForm from "./components/EditPatient/PatientForm";
 import FAQ from './components/FAQ/FAQ'
+import UnderConstruction from "./components/UnderConstruction";
+import ViewPatient from "./components/ViewPatient";
 
 function Home() {
   const [currentPatient, setCurrentPatient] = useState(null);
@@ -32,7 +34,7 @@ function Home() {
     <div>
       <div className="min-h-screen w-full flex flex-col">
         <Header />
-        <div className="flex flex-1 flex-col items-center pt-11 lg:pt-0 justify-start md:justify-center text-center md:text-left bg-[#F5F3EA]">
+        <div className="flex flex-1 flex-col items-center py-11 md:py-0 justify-start md:justify-center text-center md:text-left bg-[#F5F3EA]">
           <div className="container flex flex-col lg:flex-row justify-center items-center mx-auto lg:px-10 px-8 lg:gap-18">
             <div className="flex items-center justify-center mb-6 lg:mb-0 order-0 lg:order-2">
               <img src={homeImg} className="w-auto object-contain" />
@@ -94,6 +96,7 @@ export default function App() {
             />
           }
         />
+        <Route path="/viewPatient" element={<ViewPatient />} />
         <Route path="/admin" element={<LandingPageAdmin />} />
         <Route path="/staff" element={<LandingPageStaff />} />
         <Route path="/guest" element={<LandingPageGuest />} />
@@ -102,6 +105,7 @@ export default function App() {
         <Route path="/adminEdit" element={<AdminFindPatient />} />
         <Route path="/adminPatients" element={<PatientForm />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route path="/construction" element={<UnderConstruction />} />
       </Routes>
     </Router>
   );

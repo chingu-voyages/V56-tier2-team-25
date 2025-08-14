@@ -10,7 +10,7 @@ const Header = () => {
     const date = new Date().toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'})
 
     return (
-        <header className="w-full transition-all duration-300 shadow- lg:bg-white bg-[rgba(168,213,186,0.3)]">
+        <header className="w-full transition-all duration-300 shadow-2xl lg:bg-white bg-[rgba(168,213,186,0.3)]">
             <div className="container mx-auto flex items-center justify-between px-2 pt-4 lg:py-[28px]">
                 <div className='flex flex-col lg:flex-row items-center gap-6 lg:gap-8'>    
                     <div className='flex lg:gap-7 items-center cursor-pointer' onClick={() => navigate("/")} >
