@@ -25,6 +25,7 @@ import FAQ from "./components/FAQ/FAQ";
 import UnderConstruction from "./components/UnderConstruction";
 import GuestPatientStatus from "./components/GuestPatientStatus";
 import ViewPatient from "./components/ViewPatient";
+import ScrollToTop from "./components/ScrollToTop";
 
 function Home() {
   const navigate = useNavigate();
@@ -68,6 +69,7 @@ function Home() {
 export default function App() {
   return (
     <Router>
+      <ScrollToTop/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
