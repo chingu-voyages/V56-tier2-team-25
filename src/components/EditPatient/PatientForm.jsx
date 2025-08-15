@@ -58,60 +58,62 @@ const PatientForm = () => {
   };
 
   return (
-    <div>
-      <Header/>
-    <div className="min-h-screen flex flex-col items-center justify-center bg-[#F5F3EA] p-6">
-      <div className="bg-[#F5F3EA] rounded-lg w-full max-w-lg">
-        <h2 className="text-center text-2xl font-bold mb-6 text-gray-700">
-          Patient Information
-        </h2>
+    <>
+      <div className='w-full min-h-screen flex flex-col'>
+        <Header/>
+        <div className="flex flex-col flex-1 items-center justify-center bg-[#F5F3EA]">
+          <div className="bg-[#F5F3EA] rounded-lg w-full max-w-lg">
+            <h2 className="text-[#4F4F4F] font-bold text-2xl text-center lg:text-4xl dm-sans mb-10 md:mb-24">
+              Patient Information
+            </h2>
 
-        <form className="space-y-4">
-          {[
-            { label: "Patient No.:", name: "patientNo", placeholder: "Patient number" },
-            { label: "First Name:", name: "firstName", placeholder: "First name" },
-            { label: "Last Name:", name: "lastName", placeholder: "Last name" },
-            { label: "Street:", name: "street", placeholder: "Street" },
-            { label: "City:", name: "city", placeholder: "City" },
-            { label: "State:", name: "state", placeholder: "State" },
-            { label: "Country:", name: "country", placeholder: "Country" },
-            { label: "Telephone:", name: "telephone", placeholder: "Telephone number" },
-            { label: "Contact Email:", name: "email", placeholder: "Contact email" },
-          ].map((field) => (
-            <div key={field.name} className="flex items-center">
-              <label className="w-40 text-gray-700">{field.label}</label>
-              <input
-                type="text"
-                name={field.name}
-                placeholder={field.placeholder}
-                value={formData[field.name]}
-                onChange={handleChange}
-                className="flex-none w-64 bg-white border border-gray-500 rounded px-3 py-1 focus:outline-none focus:border-blue-500"
-              />
+            <form className="space-y-[10px]">
+              {[
+                { label: "Patient No.:", name: "patientNo", placeholder: "Patient Number" },
+                { label: "First Name:", name: "firstName", placeholder: "First name" },
+                { label: "Last Name:", name: "lastName", placeholder: "Last name" },
+                { label: "Street:", name: "street", placeholder: "Street" },
+                { label: "City:", name: "city", placeholder: "City" },
+                { label: "State:", name: "state", placeholder: "State" },
+                { label: "Country:", name: "country", placeholder: "Country" },
+                { label: "Telephone:", name: "telephone", placeholder: "Telephone number" },
+                { label: "Contact Email:", name: "email", placeholder: "Contact email" },
+              ].map((field) => (
+                <div key={field.name} className="flex items-center">
+                  <label className="w-40 text-gray-700">{field.label}</label>
+                  <input
+                    type="text"
+                    name={field.name}
+                    placeholder={field.placeholder}
+                    value={formData[field.name]}
+                    onChange={handleChange}
+                    className="flex-none w-64 bg-white border border-gray-500 rounded px-3 py-1 focus:outline-none focus:border-blue-500"
+                  />
+                </div>
+              ))}
+            </form>
+
+            <div className="flex justify-center space-x-6 mt-8">
+              <button
+                type="button"
+                onClick={handleSave}
+                className="bg-[#008C99] text-white text-[1.125rem] font-bold rounded-[40px] px-18 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
+              >
+                Update Patient
+              </button>
+              <button
+                type="button"
+                onClick={() => navigate(-1)}
+                className="bg-white text-[#4F4F4F] text-[1.125rem] font-bold rounded-[40px] border border-[#CAC4D0] px-15 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
+              >
+                Cancel
+              </button>
             </div>
-          ))}
-        </form>
-
-        <div className="flex justify-center space-x-6 mt-8">
-          <button
-            type="button"
-            onClick={handleSave}
-            className="bg-[#008C99] text-white font-bold px-6 py-2 rounded-full hover:bg-[#A8D5BA] transition"
-          >
-            Update Patient
-          </button>
-          <button
-            type="button"
-            onClick={() => navigate(-1)}
-            className="bg-white text-[#4F4F4F] border border-gray-300 font-bold px-6 py-2 rounded-full hover:bg-[#A8D5BA] hover:text-white transition"
-          >
-            Cancel
-          </button>
+          </div>
         </div>
       </div>
-    </div>
     <Footer/>
-    </div>
+    </>
   );
 };
 

@@ -45,15 +45,17 @@ const WaitingRoom = () => {
   const currentItems = sortedPatients.slice(start, start + pageSize);
 
   return (
-    <div className="flex flex-col">
-      <div className="h-[100vh] w-[100vw] flex flex-col items-center text-center justify-start bg-[#F5F3EA]">
-        <div className="mb-16 mt-20">
-          <h1 className="text-gray-600 font-bold text-2xl">Patient Status</h1>
+    <div className="w-full min-h-screen flex flex-col">
+      <div className="flex flex-1 flex-col items-center py-11  md:justify-center bg-[#F5F3EA]">
+        <div className="">
+          <h1 className="text-[#4F4F4F] font-bold text-2xl md:text-4xl dm-sans">Patient Status</h1>
         </div>
-        <div style={{ textAlign: "center", marginTop: "50px" }}>
+        <div className="mt-13" >
           {loading ? <div className="text-[16px]"> Loading...</div> : null}
         </div>
         {currentItems.map((item, index) => {
+          const isLast = index === currentItems.length - 1
+          const style = !isLast ? "flex items-center text-center justify-between border-b border-[#CAC4D0]" : "flex items-center text-center justify-between"
           let textColor = "text-gray-800";
           if (item.status === "Checked-In") {
             textColor = "bg-[#6298FC]";
@@ -72,12 +74,13 @@ const WaitingRoom = () => {
           }
 
           return (
-            <div className="flex items-center text-center justify-between mb-2 border-b border-gray-400">
-              <div className="w-40 h-10 font-bold flex items-center text-center">
+            <div className={style}>
+
+              <div className="w-40 md:w-60 font-semibold flex items-center text-xl md:text-2xl text-center dm-sans">
                 ID{item.id}
               </div>
               <div
-                className={`w-50 p-2 flex items-center text-center mb-5 mt-5 font-bold ${textColor}`}
+                className={`w-40 md:w-80 p-2 flex items-center text-center mb-5 mt-5 font-semibold md:text-2xl ${textColor}`}
               >
                 {item.status}
               </div>

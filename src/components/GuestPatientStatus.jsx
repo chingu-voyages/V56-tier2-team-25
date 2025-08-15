@@ -52,39 +52,41 @@ const GuestPatientStatus = () => {
   console.log(formData);
 
   return (
-    <div className="flex flex-col">
-      <Header />
-      <div className="h-[90vh] w-[100vw] flex flex-col items-center text-center justify-center bg-[#F5F3EA]">
-        <div className="mb-20 mt-10">
-          <h1 className="text-gray-600 font-bold text-4xl">Patient Status</h1>
-        </div>
-        <div className="w-70 mb-8">
-          <div className="flex text-center items-center justify-between mb-4 font-bold">
-            <p>Patient No:</p>
-            {patientNo === null || patientNo.length === 0 ? null : (
-              <p>{patientNo}</p>
-            )}
+    <>
+      <div className="w-full min-h-screen flex flex-col">
+        <Header />
+        <div className="flex flex-1 flex-col items-center py-11  md:justify-center bg-[#F5F3EA]">
+          <div className="mb-20 mt-10">
+            <h1 className="text-[#4F4F4F] font-bold text-4xl dm-sans">Patient Status</h1>
           </div>
-          <div className="flex text-center items-center justify-between mb-4 font-bold">
-            <p>Surgery Status:</p>
-            {patientFromNav === null || patientFromNav.length === 0 ? null : (
-              <p>{patientFromNav.status}</p>
-            )}
+          <div className="w-70 mb-8">
+            <div className="flex text-center items-center justify-between mb-4 font-bold">
+              <p>Patient No:</p>
+              {patientNo === null || patientNo.length === 0 ? null : (
+                <p>{patientNo}</p>
+              )}
+            </div>
+            <div className="flex text-center items-center justify-between mb-4 font-bold">
+              <p>Surgery Status:</p>
+              {patientFromNav === null || patientFromNav.length === 0 ? null : (
+                <p>{patientFromNav.status}</p>
+              )}
+            </div>
           </div>
-        </div>
-        <div className="flex text-center items-center justify-center">
-          <div
-            className="bg-[#008C99] ml-4 text-white text-[1.125rem] font-bold rounded-[40px] px-18 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
-            onClick={() => {
-              navigate(-1);
-            }}
-          >
-            Back
+          <div className="flex text-center items-center justify-center">
+            <div
+              className="bg-[#008C99] ml-4 text-white text-[1.125rem] font-bold rounded-[40px] px-18 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
+              onClick={() => {
+                navigate(-1);
+              }}
+            >
+              Back
+            </div>
           </div>
         </div>
       </div>
-      <Footer />
-    </div>
+       <Footer />
+    </>
   );
 };
 

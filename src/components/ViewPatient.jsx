@@ -8,6 +8,9 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-route
 
 
 function ViewPatient() {
+
+    const navigate = useNavigate();
+
     const [acceptedPN, setAcceptedPN] = useState("");
     const [patientNo, setPatientNo] = useState("");
     const [message, setMessage] = useState('');
@@ -53,9 +56,22 @@ function ViewPatient() {
                                 onChange={(e) => setPatientNo(e.target.value)}
                             />
                         </div>
-                        <div className="bg-[#008C99] text-white text-[1.125rem] font-bold rounded-[40px] px-15 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
-                            onClick = {() => checkPN(patientNo)}>Find Patient
+                        <div className='flex gap-7'>
+                            <div 
+                                className="bg-[#008C99] text-white text-[1.125rem] font-bold rounded-[40px] px-15 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
+                                onClick = {() => checkPN(patientNo)}
+                            >
+                                Find Patient
+                            </div>
+                             <div
+                                className="bg-white text-[#4F4F4F] text-[1.125rem] font-bold rounded-[40px] border border-[#CAC4D0] px-15 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA] hover:text-white hover-border-none"
+                                onClick={() => navigate(-1)}
+                            >
+                                Cancel
+                            </div>
                         </div>
+                        
+                        
                     </div>
                 </div>
             </section>
