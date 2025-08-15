@@ -111,12 +111,12 @@ const Navbar = ( {menuOpen, setMenuOpen }) => {
     return (
         <>
             <div 
-                className='w-7 h-5 relative cursor-pointer z-40 md:hidden'
+                className='w-7 h-5 relative cursor-pointer z-40 lg:hidden'
                 onClick={() => setMenuOpen(prev => !prev)}
             >
                 &#9776;
             </div>
-            <nav className="lg:flex items-center space-x-17">
+            <nav className="hidden lg:flex items-center space-x-17">
                 {links}
             </nav>
         </>
