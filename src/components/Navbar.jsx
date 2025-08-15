@@ -1,34 +1,44 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
-import { onAuthStateChanged, signOut, getAuth } from 'firebase/auth';
+import { signOut, getAuth } from 'firebase/auth';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { clearUserData } from '../store/userSlice';
 
 const Navbar = () => {
     const navigate = useNavigate();
     const [isOpen, setIsOpen] = useState(false);
-    const [user, setUser] = useState(null);
+    const dispatch = useDispatch();
+    const user = useSelector((state) => state.user.userData);
     const auth = getAuth();
 
-    useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            setUser(currentUser);
-        });
-        return () => unsubscribe();
-    }, [auth]);
-
     const handleSignOut = () => {
-        signOut(auth).then(() => {
-            navigate('/login');
-        });
-    };
+    signOut(auth).then(() => {
+      dispatch(clearUserData()); // THIS line clears redux + localStorage
+      navigate('/');
+    });
+  };
 
     const linksArr = [
-        { name: 'Home', path: '/' }, 
-        { name: 'Patient', dropdown: ['Patient Information', 'Patient Status Update', 'Patient Status'] }, 
-        { name: 'FAQ', path: '/faq' }, 
-        user 
-            ? { name: 'Sign Out', action: handleSignOut } 
+        { name: 'Home', path: '/' },
+        {
+            name: 'Patient',
+            dropdown: user
+                ? [
+                    { name: 'Patient Information', path: '/viewPatient' },
+                    { name: 'Patient Status Update', path: '/findPatient' },
+                    { name: 'Patient Status', path: '/waitingRoom' },
+                    ...(user?.role === 'Admin' ? [{ name: 'Edit Patient Information', path: '/editPatient' }] : [])
+                ]
+                : [
+                    { name: 'Patient Status', path: '../guest' }
+                ]
+        },
+        { name: 'FAQ', path: '/faq' },
+        user
+            ? { name: 'Sign Out', action: handleSignOut }
             : { name: 'Log In', path: '/login' }
     ];
 
@@ -60,10 +70,13 @@ const Navbar = () => {
                                     <div 
                                         key={subIndex} 
                                         className={subLinkStyle}
-                                        onClick={() => setIsOpen(false)}
+                                        onClick={() => {
+                                            setIsOpen(false);
+                                            navigate(item.path);
+                                        }}
                                     >
                                         <span className='text-[#79747E] hover:text-[#4F4F4F] dm-sans hover:font-semibold cursor-pointer'>
-                                            {item}
+                                            {item.name}
                                         </span>
                                     </div>
                                 );
