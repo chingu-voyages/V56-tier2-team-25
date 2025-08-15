@@ -1,47 +1,53 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
-import { onAuthStateChanged, signOut, getAuth } from 'firebase/auth';
+import { signOut, getAuth } from 'firebase/auth';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { clearUserData } from '../store/userSlice';
 
 const Navbar = () => {
-    const navigate = useNavigate()
-    const [isOpen, setIsOpen] = useState(false)
-    const [user, setUser] = useState(null)
-    const auth = getAuth()
-
-    useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            setUser(currentUser)
-        });
-        return () => unsubscribe()
-    }, [auth]);
+    const navigate = useNavigate();
+    const [isOpen, setIsOpen] = useState(false);
+    const dispatch = useDispatch();
+    const user = useSelector((state) => state.user.userData);
+    const auth = getAuth();
 
     const handleSignOut = () => {
-        signOut(auth).then(() => {
-            navigate('/login')
-        });
-    };
+    signOut(auth).then(() => {
+      dispatch(clearUserData()); // THIS line clears redux + localStorage
+      navigate('/');
+    });
+  };
 
     const linksArr = [
-        { name: 'Home', path: '/' }, 
-        { name: 'Patient', dropdown: [
-            {name: 'Patient Information', path: ''}, 
-            {name: 'Patient Status Update', path: ''}, 
-            {name:'Patient Status', path: '/FindPatient'}
-        ]}, 
-        { name: 'FAQ', path: '/faq' }, 
-        user 
-            ? { name: 'Sign Out', action: handleSignOut } 
+        { name: 'Home', path: '/' },
+        {
+            name: 'Patient',
+            dropdown: user
+                ? [
+                    { name: 'Patient Information', path: '/viewPatient' },
+                    { name: 'Patient Status Update', path: '/findPatient' },
+                    { name: 'Patient Status', path: '/waitingRoom' },
+                    ...(user?.role === 'Admin' ? [{ name: 'Edit Patient Information', path: '/editPatient' }] : [])
+                ]
+                : [
+                    { name: 'Patient Status', path: '../guest' }
+                ]
+        },
+        { name: 'FAQ', path: '/faq' },
+        user
+            ? { name: 'Sign Out', action: handleSignOut }
             : { name: 'Log In', path: '/login' }
     ];
 
     const links = linksArr.map((link, index) => {
-        const isLastLink = index === linksArr.length - 1
+        const isLastLink = index === linksArr.length - 1;
 
         const linkStyle = isLastLink 
             ? 'text-white bg-[#008C99] rounded-[30px] px-[24px] py-[14px] shadow-md/50 cursor-pointer hover:bg-[#A8D5BA]'
-            : 'text-[#4F4F4F] dm-sans text-[1.125rem] hover:text-[#333] cursor-pointer'
+            : 'text-[#4F4F4F] dm-sans text-[1.125rem] hover:text-[#333] cursor-pointer';
 
         if (link.dropdown) {
             return (
@@ -58,22 +64,22 @@ const Navbar = () => {
                     {isOpen && (
                         <div className="absolute w-[220px] flex-col bg-white rounded shadow-lg mt-5 px-5 pb-5 z-10 border border-[#D4D2E3]">
                             {link.dropdown.map((item, subIndex) => {
-                                const isLastSublink = subIndex === link.dropdown.length - 1
-                                const subLinkStyle = isLastSublink ? 'pt-5' : 'border-b border-[#D4D2E3] pb-5 pt-5'
+                                const isLastSublink = subIndex === link.dropdown.length - 1;
+                                const subLinkStyle = isLastSublink ? 'pt-5' : 'border-b border-[#D4D2E3] pb-5 pt-5';
                                 return (
                                     <div 
                                         key={subIndex} 
                                         className={subLinkStyle}
                                         onClick={() => {
-                                            setIsOpen(false)
-                                            if (item.path) navigate(item.path)
+                                            setIsOpen(false);
+                                            navigate(item.path);
                                         }}
                                     >
                                         <span className='text-[#79747E] hover:text-[#4F4F4F] dm-sans hover:font-semibold cursor-pointer'>
                                             {item.name}
                                         </span>
                                     </div>
-                                )
+                                );
                             })}
                         </div>
                     )}
@@ -87,22 +93,22 @@ const Navbar = () => {
                 className={linkStyle} 
                 onClick={() => {
                     if (link.action) {
-                        link.action()
+                        link.action();
                     } else if (link.path) {
-                        navigate(link.path)
+                        navigate(link.path);
                     }
                 }}
             >
                 {link.name}
             </div>
-        )
-    })
+        );
+    });
 
     return (
         <nav className="hidden lg:flex items-center space-x-17">
             {links}
         </nav>
-    )
-}
+    );
+};
 
-export default Navbar
+export default Navbar;
