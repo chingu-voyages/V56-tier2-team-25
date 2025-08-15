@@ -237,7 +237,7 @@ const UpdateStatus = () => {
           <div
             className="bg-[#008C99] ml-4 text-white text-[1.125rem] font-bold rounded-[40px] px-18 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
             onClick={() => {
-              navigate("/findPatient");
+              navigate(-1);
             }}
           >
             Cancel

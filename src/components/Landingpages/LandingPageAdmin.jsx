@@ -35,7 +35,7 @@ const LandingPageAdmin = () => {
           </button>
           <button 
             className="flex text-center items-center justify-center dm-sans mb-9 md:mb-0 bg-white text-[#4F4F4F] text-[1.25rem] border border-[#CAC4D0] font-bold rounded-[40px] px-14 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
-            onClick={()=>navigate("/ViewPatient")}
+            onClick={()=>navigate("/adminEdit")}
           >
               Edit Patient Info
           </button>
