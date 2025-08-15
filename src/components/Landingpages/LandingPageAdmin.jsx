@@ -1,20 +1,19 @@
 import React from "react";
 import { useState } from "react";
-import "./landingpages.css";
 import Header from "../Header";
 import Footer from "../Footer";
 import { useSelector } from "react-redux";
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
-
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
 
 const LandingPageAdmin = () => {
-
-
   const userData = useSelector((state) => state.user.userData);
 
-
   const navigate = useNavigate();
-
 
   return (
     <>
@@ -48,6 +47,5 @@ const LandingPageAdmin = () => {
     </>
   );
 };
-
 
 export default LandingPageAdmin;

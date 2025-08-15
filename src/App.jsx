@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import patientsdb from "./components/patients";
 import {
   BrowserRouter as Router,
   Routes,
@@ -22,12 +21,12 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import AddPatient from "./components/AddPatient";
 import AdminFindPatient from "./components/EditPatient/AdminFindPatient";
 import PatientForm from "./components/EditPatient/PatientForm";
-import FAQ from './components/FAQ/FAQ'
+import FAQ from "./components/FAQ/FAQ";
 import UnderConstruction from "./components/UnderConstruction";
+import GuestPatientStatus from "./components/GuestPatientStatus";
 import ViewPatient from "./components/ViewPatient";
 
 function Home() {
-  const [currentPatient, setCurrentPatient] = useState(null);
   const navigate = useNavigate();
 
   return (
@@ -58,8 +57,6 @@ function Home() {
                 </button>
               </div>
             </div>
-
-            
           </div>
         </div>
       </div>
@@ -69,37 +66,18 @@ function Home() {
 }
 
 export default function App() {
-  const [currentPatient, setCurrentPatient] = useState(null);
-  const [patients, setPatients] = useState(patientsdb);
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route
-          path="/findPatient"
-          element={
-            <FindPatient
-              currentPatient={currentPatient}
-              setCurrentPatient={setCurrentPatient}
-            />
-          }
-        />
-        <Route
-          path="/updateStatus"
-          element={
-            <UpdateStatus
-              currentPatient={currentPatient}
-              setCurrentPatient={setCurrentPatient}
-              patients={patients}
-              setPatients={setPatients}
-            />
-          }
-        />
+        <Route path="/findPatient" element={<FindPatient />} />
+        <Route path="/updateStatus" element={<UpdateStatus />} />
         <Route path="/viewPatient" element={<ViewPatient />} />
         <Route path="/admin" element={<LandingPageAdmin />} />
         <Route path="/staff" element={<LandingPageStaff />} />
         <Route path="/guest" element={<LandingPageGuest />} />
+        <Route path="/guestpatientstatus" element={<GuestPatientStatus />} />
         <Route path="/addPatient" element={<AddPatient />} />
         <Route path="/waitingRoom" element={<WaitingRoom />} />
         <Route path="/adminEdit" element={<AdminFindPatient />} />
