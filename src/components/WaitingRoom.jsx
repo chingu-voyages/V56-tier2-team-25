@@ -80,7 +80,7 @@ const WaitingRoom = () => {
                 ID{item.id}
               </div>
               <div
-                className={`w-40 md:w-80 p-2 flex items-center text-center mb-5 mt-5 font-semibold md:text-2xl ${textColor}`}
+                className={`w-40 md:w-80 p-2 flex items-center justify-center mb-5 mt-5 font-semibold md:text-2xl ${textColor}`}
               >
                 {item.status}
               </div>
