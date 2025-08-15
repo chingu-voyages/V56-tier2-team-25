@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
@@ -7,13 +7,17 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { clearUserData } from '../store/userSlice';
 
-const Navbar = () => {
+const Navbar = ( {menuOpen, setMenuOpen }) => {
     const navigate = useNavigate();
     const [isOpen, setIsOpen] = useState(false);
     const dispatch = useDispatch();
     const user = useSelector((state) => state.user.userData);
     const auth = getAuth();
 
+    useEffect(() => {
+        document.body.style.overflow = menuOpen ? 'hidden' : ''
+    }, [menuOpen])
+    
     const handleSignOut = () => {
     signOut(auth).then(() => {
       dispatch(clearUserData()); // THIS line clears redux + localStorage
@@ -105,9 +109,17 @@ const Navbar = () => {
     });
 
     return (
-        <nav className="lg:flex items-center space-x-17">
-            {links}
-        </nav>
+        <>
+            <div 
+                className='w-7 h-5 relative cursor-pointer z-40 md:hidden'
+                onClick={() => setMenuOpen(prev => !prev)}
+            >
+                &#9776;
+            </div>
+            <nav className="lg:flex items-center space-x-17">
+                {links}
+            </nav>
+        </>
     );
 };
 

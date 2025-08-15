@@ -6,6 +6,8 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../../firebase';
 
 const Header = () => {
+
+    const [ menuOpen, setMenuOpen ] = useState(false)
     const navigate = useNavigate();
     const date = new Date().toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'})
 
@@ -19,7 +21,7 @@ const Header = () => {
                     </div>
                     <span className='ml-1 lg:mt-[.6rem] pb-3 lg:pb-0 text-[#4F4F4F] text-xs lg:text-base font-bold lg:font-medium'>{date}</span>
                 </div>
-                <Navbar/>
+                <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
             </div>
         </header>
     )
