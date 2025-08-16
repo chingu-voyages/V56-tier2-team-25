@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { db } from "../../firebase";
-import Header from "./Header";
+import Header from "./Nav/Header";
 import Footer from "./Footer";
 
 const GuestPatientStatus = () => {
@@ -55,18 +55,18 @@ const GuestPatientStatus = () => {
     <>
       <div className="w-full min-h-screen flex flex-col">
         <Header />
-        <div className="flex flex-1 flex-col items-center py-11  md:justify-center bg-[#F5F3EA]">
-          <div className="mb-20 mt-10">
+        <div className="flex flex-1 flex-col items-center py-11 md:py-4 md:px-2 md:justify-center bg-[#F5F3EA]">
+          <div className="mb-17">
             <h1 className="text-[#4F4F4F] font-bold text-4xl dm-sans">Patient Status</h1>
           </div>
-          <div className="w-70 mb-8">
-            <div className="flex text-center items-center justify-between mb-4 font-bold">
+          <div className="mb- text-[#4F4F4F] mb-10">
+            <div className="text-xl font-semibold mb-3 flex gap-20 justify-between">
               <p>Patient No:</p>
               {patientNo === null || patientNo.length === 0 ? null : (
                 <p>{patientNo}</p>
               )}
             </div>
-            <div className="flex text-center items-center justify-between mb-4 font-bold">
+            <div className="text-xl font-semibold mb-3 flex gap-20 justify-between">
               <p>Surgery Status:</p>
               {patientFromNav === null || patientFromNav.length === 0 ? null : (
                 <p>{patientFromNav.status}</p>

@@ -1,7 +1,7 @@
 import { db } from '../../firebase';
 import { doc, getDoc } from "firebase/firestore";
 import Footer from "./Footer";
-import Header from "./Header";
+import Header from "./Nav/Header";
 import { useState } from 'react';
 import "../index.css";
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
@@ -34,7 +34,7 @@ function ViewPatient() {
             <section>
                 <div className="min-h-screen w-full flex flex-col">      
                     <Header />
-                    <div className="flex flex-1 flex-col items-center pt-11 md:pt-0 md:justify-center bg-[#F5F3EA]">
+                    <div className="flex flex-1 flex-col items-center py-11 md:py-4 md:px-2 md:justify-center bg-[#F5F3EA]">
                         {message && (
                             <div className='error-message' style={{ position: 'relative' }}>
                                 <button className="message-close-btn" onClick={() => setMessage('')} aria-label="Close message">&times;</button>
@@ -56,7 +56,7 @@ function ViewPatient() {
                                 onChange={(e) => setPatientNo(e.target.value)}
                             />
                         </div>
-                        <div className='flex gap-7'>
+                        <div className='flex flex-col items-center md:flex-row gap-7'>
                             <div 
                                 className="bg-[#008C99] text-white text-[1.125rem] font-bold rounded-[40px] px-15 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
                                 onClick = {() => checkPN(patientNo)}
@@ -74,24 +74,28 @@ function ViewPatient() {
                         
                     </div>
                 </div>
+                <Footer/>
             </section>
         )
     } else {
         return (
-            <div className="min-h-screen w-full flex flex-col"> 
-                <Header />
-                <div className="flex flex-1 flex-col items-center pt-11 md:pt-0 md:justify-center bg-[#F5F3EA]">
-                    <div className="p-6">
-                        <h2 className="text-xl font-bold mb-4">Patient Information</h2>
-                        <ul>
-                            {Object.entries(patientData).map(([key, value]) => (
-                                <li key={key} className="mb-2"><strong>{key}:</strong> {value}</li>
-                            ))}
-                        </ul>
+            <>
+                <div className="min-h-screen w-full flex flex-col"> 
+                    <Header />
+                    <div className="flex flex-1 flex-col items-center py-11 md:py-4 md:px-2 md:justify-center bg-[#F5F3EA] text-[#4F4F4F] dm-sans">
+                        <div className="p-6">
+                            <h2 className="text-4xl font-bold mb-17 text-center">Patient Information</h2>
+                            <ul>
+                                {Object.entries(patientData).map(([key, value]) => (
+                                    <li key={key} className=" text-xl font-semibold mb-3 flex gap-20 justify-between"><strong>{`${key[0].toUpperCase()}${key.slice(1,)}`}:</strong> {value}</li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
+                    
                 </div>
                 <Footer />
-            </div>
+            </>
         )
     }
 }

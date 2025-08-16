@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../Header";
+import Header from "../Nav/Header";
 import Footer from "../Footer";
 
 const LandingPageGuest = () => {
@@ -7,7 +7,7 @@ const LandingPageGuest = () => {
     <section>
       <div className="min-h-screen w-full flex flex-col">
         <Header />
-        <div className="flex flex-1 flex-col items-center pt-11 md:pt-0 justify-start md:justify-center text-center bg-[#F5F3EA]">
+        <div className="flex flex-1 flex-col items-center py-11 md:py-4  md:justify-center bg-[#F5F3EA]">
           <div className="flex flex-col items-center justify-center">
             <h1 className="text-[#4F4F4F] font-bold text-[1.75rem] dm-sans mb-8 sm:text-4xl">
               Welcome, Guest!

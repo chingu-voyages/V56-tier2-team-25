@@ -1,5 +1,5 @@
 import Footer from "./Footer"
-import Header from "./Header"
+import Header from "./Nav/Header"
 import construction from '../assets/construction.png'
 import {
   BrowserRouter as Router,
@@ -17,7 +17,7 @@ const UnderConstruction = () => {
         <>
             <div className="w-full min-h-screen flex flex-col">
                 <Header />
-                <section className="flex flex-1 flex-col items-center pt-11 md:pt-0 px-3 md:justify-center bg-[#F5F3EA]">
+                <section className="flex flex-1 flex-col items-center py-11 md:py-4 md:px:2 md:justify-center bg-[#F5F3EA]">
                     <h2 className="text-[#4F4F4F] text-2xl md:text-4xl dm-sans font-bold px-5 text-center pb-17">Page Under Construction</h2>
                     <div className="w-[60%] md:w-[20%] flex justify-center">
                         <img className="mb-17" src={construction} alt={'construction worker holding plans'}/>

@@ -6,7 +6,7 @@ import {
   useNavigate,
 } from "react-router-dom";
 import "./index.css";
-import Header from "./components/Header";
+import Header from "./components/Nav/Header";
 import homeImg from "./assets/homeImg.png";
 import LandingPageAdmin from "./components/Landingpages/LandingPageAdmin";
 import LandingPageGuest from "./components/Landingpages/LandingPageGuest";
@@ -34,7 +34,7 @@ function Home() {
     <div>
       <div className="min-h-screen w-full flex flex-col">
         <Header />
-        <div className="flex flex-1 flex-col items-center py-11 md:py-0 justify-start md:justify-center text-center md:text-left bg-[#F5F3EA]">
+        <div className="flex flex-1 flex-col items-center py-11 md:py-4 justify-start md:justify-center text-center md:text-left bg-[#F5F3EA]">
           <div className="container flex flex-col lg:flex-row justify-center items-center mx-auto lg:px-10 px-8 lg:gap-18">
             <div className="flex items-center justify-center mb-6 lg:mb-0 order-0 lg:order-2">
               <img src={homeImg} className="w-auto object-contain" />

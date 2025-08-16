@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { signOut, getAuth } from 'firebase/auth';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { clearUserData } from '../store/userSlice';
+import { clearUserData } from '../../store/userSlice';
 
 const Navbar = ( {menuOpen, setMenuOpen }) => {
     const navigate = useNavigate();
@@ -66,7 +66,7 @@ const Navbar = ( {menuOpen, setMenuOpen }) => {
                     </div>
                     <div className="absolute w-full h-5 top-full left-0 bg-transparent"></div>
                     {isOpen && (
-                        <div className="absolute w-[220px] flex-col bg-white rounded shadow-lg mt-5 px-5 pb-5 z-10 border border-[#D4D2E3]">
+                        <div className="absolute w-[225px] flex-col bg-white rounded shadow-lg mt-5 px-5 pb-5 z-10 border border-[#D4D2E3]">
                             {link.dropdown.map((item, subIndex) => {
                                 const isLastSublink = subIndex === link.dropdown.length - 1;
                                 const subLinkStyle = isLastSublink ? 'pt-5' : 'border-b border-[#D4D2E3] pb-5 pt-5';

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { db } from "../../../firebase";
-import Header from "../Header";
+import Header from "../Nav/Header";
 import Footer from "../Footer";
 
 const PatientForm = () => {
@@ -61,39 +61,40 @@ const PatientForm = () => {
     <>
       <div className='w-full min-h-screen flex flex-col'>
         <Header/>
-        <div className="flex flex-col flex-1 items-center justify-center bg-[#F5F3EA]">
-          <div className="bg-[#F5F3EA] rounded-lg w-full max-w-lg">
-            <h2 className="text-[#4F4F4F] font-bold text-2xl text-center lg:text-4xl dm-sans mb-10 md:mb-24">
+        <div className="flex flex-1 flex-col items-center py-11 md:py-4 md:px-2 md:justify-center bg-[#F5F3EA]">
+          
+            <h2 className="text-[#4F4F4F] font-bold text-2xl text-center lg:text-4xl dm-sans mb-10 md:mb-20">
               Patient Information
             </h2>
 
-            <form className="space-y-[10px]">
+            <form className="flex flex-col">
               {[
-                { label: "Patient No.:", name: "patientNo", placeholder: "Patient Number" },
-                { label: "First Name:", name: "firstName", placeholder: "First name" },
-                { label: "Last Name:", name: "lastName", placeholder: "Last name" },
-                { label: "Street:", name: "street", placeholder: "Street" },
-                { label: "City:", name: "city", placeholder: "City" },
-                { label: "State:", name: "state", placeholder: "State" },
-                { label: "Country:", name: "country", placeholder: "Country" },
-                { label: "Telephone:", name: "telephone", placeholder: "Telephone number" },
-                { label: "Contact Email:", name: "email", placeholder: "Contact email" },
+                { label: "Patient No.:", name: "patientNo", placeholder: "Patient Number", mobileLabel: 'Patient Number' },
+                { label: "First Name:", name: "firstName", placeholder: "First name", mobileLabel: 'First Name' },
+                { label: "Last Name:", name: "lastName", placeholder: "Last name", mobileLabel: 'Last Name' },
+                { label: "Street:", name: "street", placeholder: "Street", mobileLabel: 'Street' },
+                { label: "City:", name: "city", placeholder: "City", mobileLabel: 'City' },
+                { label: "State:", name: "state", placeholder: "State", mobileLabel: 'State' },
+                { label: "Country:", name: "country", placeholder: "Country", mobileLabel: 'Country' },
+                { label: "Telephone:", name: "telephone", placeholder: "Telephone number", mobileLabel: 'Telephone' },
+                { label: "Contact Email:", name: "email", placeholder: "Contact email", mobileLabel: 'Email' },
               ].map((field) => (
-                <div key={field.name} className="flex items-center">
-                  <label className="w-40 text-gray-700">{field.label}</label>
+                <div key={field.name} className="flex flex-col md:flex-row justify-between items-center mb-[18px] px-10 md:px-0 md:gap-20">
+                  <label className="md:hidden font-semibold text-sm text-[#333333] self-start mb-1">{field.mobileLabel}</label>
+                  <label className="hidden md:block font-semibold text-xl dm-sans text-[#333333] mb-0">{field.label}</label>
                   <input
                     type="text"
                     name={field.name}
                     placeholder={field.placeholder}
                     value={formData[field.name]}
                     onChange={handleChange}
-                    className="flex-none w-64 bg-white border border-gray-500 rounded px-3 py-1 focus:outline-none focus:border-blue-500"
+                    className="bg-white border w-[331px] md:w-[262px] border-[#333333] rounded-[10px] px-3 py-2 text-[#333333]"
                   />
                 </div>
               ))}
             </form>
 
-            <div className="flex justify-center space-x-6 mt-8">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-7 mt-10 mb-12 md:mb-0">
               <button
                 type="button"
                 onClick={handleSave}
@@ -111,7 +112,7 @@ const PatientForm = () => {
             </div>
           </div>
         </div>
-      </div>
+      
     <Footer/>
     </>
   );

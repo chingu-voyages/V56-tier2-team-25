@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import Header from "../Header";
+import Header from "../Nav/Header";
 import Footer from "../Footer";
 import { useSelector } from "react-redux";
 import {
@@ -19,7 +19,7 @@ const LandingPageAdmin = () => {
     <>
     <div className="min-h-screen w-full flex flex-col">
       <Header />
-      <div className="flex flex-1 flex-col items-center pt-25 md:pt-0 md:justify-center bg-[#F5F3EA]">
+      <div className="flex flex-1 flex-col items-center py-11 md:py-4  md:justify-center bg-[#F5F3EA]">
         <h1 className="text-[1.5rem] md:text-4xl font-bold dm-sans text-[#4F4F4F] mb-18">
           Welcome back, {userData?.name}!
         </h1>

@@ -46,7 +46,7 @@ const WaitingRoom = () => {
 
   return (
     <div className="w-full min-h-screen flex flex-col">
-      <div className="flex flex-1 flex-col items-center py-11  md:justify-center bg-[#F5F3EA]">
+      <div className="flex flex-1 flex-col items-center py-11 md:py-4 md:px:2 md:justify-center bg-[#F5F3EA]">
         <div className="">
           <h1 className="text-[#4F4F4F] font-bold text-2xl md:text-4xl dm-sans">Patient Status</h1>
         </div>

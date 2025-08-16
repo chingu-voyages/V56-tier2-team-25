@@ -88,8 +88,8 @@ const Footer = () => {
             <div className='container mx-auto lg:px-2'>
                 <hr className="my-4 border-0 lg:border lg:border-gray-200" />
                 <div className="flex flex-col sm:flex-row items-center justify-between lg:gap-2 text-gray-500">
-                    <div className="flex gap-7 items-center my-6 lg:my-11">
-                        <img src={logo} alt="logo" className="" />
+                    <div className="flex gap-4 items-center my-6 lg:my-11">
+                        <img src={logo} alt="logo"/>
                         <span className="text-[2rem] font-medium text-shadow-md text-[#006B44]">Surgery Status</span>
                     </div>
                     <p className="dm-sans text-xs font-semibold lg:font-normal lg:text-[16px] text-[#4F4F4F] mb-3">Copyright © 2025 Chingu V56 T2 T25 | All Rights Reserved</p>
