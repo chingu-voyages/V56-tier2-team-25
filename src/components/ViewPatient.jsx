@@ -84,10 +84,10 @@ function ViewPatient() {
                     <Header />
                     <div className="flex flex-1 flex-col items-center py-11 md:py-4 md:px-2 md:justify-center bg-[#F5F3EA] text-[#4F4F4F] dm-sans">
                         <div className="p-6">
-                            <h2 className="text-4xl font-bold mb-17 text-center">Patient Information</h2>
+                            <h2 className="text-2xl md:text-4xl font-bold mb-17 text-center">Patient Information</h2>
                             <ul>
                                 {Object.entries(patientData).map(([key, value]) => (
-                                    <li key={key} className=" text-xl font-semibold mb-3 flex gap-20 justify-between"><strong>{`${key[0].toUpperCase()}${key.slice(1,)}`}:</strong> {value}</li>
+                                    <li key={key} className="text-[1.125rem] md:text-xl font-semibold mb-3 flex gap-20 justify-between"><strong>{`${key[0].toUpperCase()}${key.slice(1,)}`}:</strong> {value}</li>
                                 ))}
                             </ul>
                         </div>
