@@ -19,13 +19,13 @@ const MobileMenu = ( { menuOpen, setMenuOpen, linksArr }) => {
                 &times;
             </button>
 
-            <nav className="flex flex-col mt-8 px-2 space-y-8">
+            <nav className="flex flex-col mt-8 space-y-8">
                 {linksArr.map((link, i) => {
                     if (link.dropdown) {
                         return link.dropdown.map((item, j) => (
                             <div
                                 key={`${i} - ${j}`}
-                                className="text-sm text-[] dm-sans"
+                                className="dm-sans"
                                 onClick={() => {
                                     setMenuOpen(false)
                                     navigate(item.path)
@@ -42,7 +42,7 @@ const MobileMenu = ( { menuOpen, setMenuOpen, linksArr }) => {
                     return (
                         <div
                             key={i}
-                            className="text-sm dm-sans"
+                            className="dm-sans"
                             onClick={() => {
                                 setMenuOpen(false)
                                 if (link.action) link.action()

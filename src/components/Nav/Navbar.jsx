@@ -34,24 +34,24 @@ const Navbar = ( {menuOpen, setMenuOpen }) => {
   };
 
     const linksArr = [
-        { name: 'Home', path: '/', icon: <FontAwesomeIcon icon={faHouse} size='xl' /> },
+        { name: 'Home', path: '/', icon: <FontAwesomeIcon icon={faHouse} size='2xl' /> },
         {
             name: 'Patient',
             dropdown: user
                 ? [
-                    { name: 'Patient Information', path: '/viewPatient', icon: <FontAwesomeIcon icon={faClipboard} size='xl'/>},
-                    { name: 'Patient Status Update', path: '/findPatient', icon: <FontAwesomeIcon icon={faSpinner}size='xl'/> },
-                    { name: 'Patient Status', path: '/waitingRoom', icon: <FontAwesomeIcon icon={faHeart} size='xl'/> },
+                    { name: 'Patient Information', path: '/viewPatient', icon: <FontAwesomeIcon icon={faClipboard} size='2xl'/>},
+                    { name: 'Patient Status Update', path: '/findPatient', icon: <FontAwesomeIcon icon={faSpinner}size='2xl'/> },
+                    { name: 'Patient Status', path: '/waitingRoom', icon: <FontAwesomeIcon icon={faHeart} size='2xl'/> },
                     ...(user?.role === 'Admin' ? [{ name: 'Edit Patient Information', path: '/editPatient', icon: <FontAwesomeIcon icon={faPencil} size='xl'/>}] : [])
                 ]
                 : [
-                    { name: 'Patient Status', path: '../guest', icon: <FontAwesomeIcon icon={faSpinner}size='xl'/> }
+                    { name: 'Patient Status', path: '../guest', icon: <FontAwesomeIcon icon={faSpinner}size='2xl'/> }
                 ]
         },
-        { name: 'FAQ', path: '/faq', icon: <FontAwesomeIcon icon={faCircleQuestion} size='xl'/> },
+        { name: 'FAQ', path: '/faq', icon: <FontAwesomeIcon icon={faCircleQuestion} size='2xl'/> },
         user
-            ? { name: 'Sign Out', action: handleSignOut, icon: <FontAwesomeIcon icon={faArrowRightFromBracket} size='xl'/>}
-            : { name: 'Log In', path: '/login', icon: <FontAwesomeIcon icon={faArrowRightFromBracket} size='xl'/>}
+            ? { name: 'Sign Out', action: handleSignOut, icon: <FontAwesomeIcon icon={faArrowRightFromBracket} size='2xl'/>}
+            : { name: 'Log In', path: '/login', icon: <FontAwesomeIcon icon={faArrowRightFromBracket} size='2xl'/>}
     ];
 
     const links = linksArr.map((link, index) => {
