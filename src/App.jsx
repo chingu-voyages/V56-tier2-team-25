@@ -48,15 +48,15 @@ function Home() {
                 surgery, ensuring families feel informed, supported, and
                 connected every step of the way
               </p>
-              <div className="flex justify-center lg:justify-start">
+              <div className="flex flex-col md:flex-row items-center justify-center lg:justify-start gap-7">
                 <button
                   type="submit"
-                  className="bg-[#008C99] text-white text-[1.125rem] mt-12 lg:mt-0 font-bold rounded-[40px] px-13 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA] mr-4"
+                  className="bg-[#008C99] text-white text-[1.125rem] mt-12 lg:mt-0 font-bold rounded-[40px] px-13 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
                   onClick={() => navigate("/FindPatient")}
                 >
                   Get Started <FontAwesomeIcon icon={faArrowRight} />
                 </button>
-                <button type="submit" className="bg-[#008C99] text-white text-[1.125rem] mt-12 lg:mt-0 font-bold rounded-[40px] px-13 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]" 
+                <button type="submit" className="bg-[#008C99] text-white text-[1.125rem] lg:mt-0 font-bold rounded-[40px] px-13 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]" 
                 onClick={() => navigate("/WaitingRoom")}>Status Board</button>
               </div>
             </div>
