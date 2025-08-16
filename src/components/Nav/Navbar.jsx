@@ -1,11 +1,19 @@
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
+import { 
+    faAngleDown, faAngleUp, faArrowRightFromBracket, 
+    faSpinner, faClipboard, faPencil
+} from '@fortawesome/free-solid-svg-icons';
+import { 
+    faHouse, faHeart, faCircleQuestion, 
+ } from '@fortawesome/free-regular-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import { signOut, getAuth } from 'firebase/auth';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { clearUserData } from '../../store/userSlice';
+import MobileMenu from './MobileMenu';
+
 
 const Navbar = ( {menuOpen, setMenuOpen }) => {
     const navigate = useNavigate();
@@ -26,24 +34,24 @@ const Navbar = ( {menuOpen, setMenuOpen }) => {
   };
 
     const linksArr = [
-        { name: 'Home', path: '/' },
+        { name: 'Home', path: '/', icon: <FontAwesomeIcon icon={faHouse} size='xl' /> },
         {
             name: 'Patient',
             dropdown: user
                 ? [
-                    { name: 'Patient Information', path: '/viewPatient' },
-                    { name: 'Patient Status Update', path: '/findPatient' },
-                    { name: 'Patient Status', path: '/waitingRoom' },
-                    ...(user?.role === 'Admin' ? [{ name: 'Edit Patient Information', path: '/editPatient' }] : [])
+                    { name: 'Patient Information', path: '/viewPatient', icon: <FontAwesomeIcon icon={faClipboard} size='xl'/>},
+                    { name: 'Patient Status Update', path: '/findPatient', icon: <FontAwesomeIcon icon={faSpinner}size='xl'/> },
+                    { name: 'Patient Status', path: '/waitingRoom', icon: <FontAwesomeIcon icon={faHeart} size='xl'/> },
+                    ...(user?.role === 'Admin' ? [{ name: 'Edit Patient Information', path: '/editPatient', icon: <FontAwesomeIcon icon={faPencil} size='xl'/>}] : [])
                 ]
                 : [
-                    { name: 'Patient Status', path: '../guest' }
+                    { name: 'Patient Status', path: '../guest', icon: <FontAwesomeIcon icon={faSpinner}size='xl'/> }
                 ]
         },
-        { name: 'FAQ', path: '/faq' },
+        { name: 'FAQ', path: '/faq', icon: <FontAwesomeIcon icon={faCircleQuestion} size='xl'/> },
         user
-            ? { name: 'Sign Out', action: handleSignOut }
-            : { name: 'Log In', path: '/login' }
+            ? { name: 'Sign Out', action: handleSignOut, icon: <FontAwesomeIcon icon={faArrowRightFromBracket} size='xl'/>}
+            : { name: 'Log In', path: '/login', icon: <FontAwesomeIcon icon={faArrowRightFromBracket} size='xl'/>}
     ];
 
     const links = linksArr.map((link, index) => {
@@ -119,6 +127,11 @@ const Navbar = ( {menuOpen, setMenuOpen }) => {
             <nav className="hidden lg:flex items-center space-x-17">
                 {links}
             </nav>
+            <MobileMenu
+                linksArr={linksArr}
+                menuOpen={menuOpen} 
+                setMenuOpen={setMenuOpen}
+            />
         </>
     );
 };

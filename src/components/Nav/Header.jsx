@@ -22,8 +22,7 @@ const Header = () => {
                     </div>
                     <span className='ml-1 lg:mt-[.6rem] pb-3 lg:pb-0 text-[#4F4F4F] text-xs lg:text-base font-bold lg:font-medium'>{date}</span>
                 </div>
-                <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
-                <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
+                <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen}/> 
             </div>
         </header>
     )
