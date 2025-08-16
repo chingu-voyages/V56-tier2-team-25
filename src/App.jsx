@@ -51,11 +51,13 @@ function Home() {
               <div className="flex justify-center lg:justify-start">
                 <button
                   type="submit"
-                  className="bg-[#008C99] text-white text-[1.125rem] mt-12 lg:mt-0 font-bold rounded-[40px] px-13 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
+                  className="bg-[#008C99] text-white text-[1.125rem] mt-12 lg:mt-0 font-bold rounded-[40px] px-13 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA] mr-4"
                   onClick={() => navigate("/FindPatient")}
                 >
                   Get Started <FontAwesomeIcon icon={faArrowRight} />
                 </button>
+                <button type="submit" className="bg-[#008C99] text-white text-[1.125rem] mt-12 lg:mt-0 font-bold rounded-[40px] px-13 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]" 
+                onClick={() => navigate("/WaitingRoom")}>Status Board</button>
               </div>
             </div>
           </div>

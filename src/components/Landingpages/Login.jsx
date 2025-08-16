@@ -180,7 +180,7 @@ function Login() {
               </label>
               <input
                 id="password"
-                type="text"
+                type="password"
                 className="border px-4 py-2 text-[#4F4F4F] placeholder:text-[#9f9fa1] rounded-[10px] text-[1.125rem]"
                 placeholder="Password"
                 value={password}
