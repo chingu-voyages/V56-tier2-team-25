@@ -57,16 +57,16 @@ const GuestPatientStatus = () => {
         <Header />
         <div className="flex flex-1 flex-col items-center py-11 md:py-4 md:px-2 md:justify-center bg-[#F5F3EA]">
           <div className="mb-17">
-            <h1 className="text-[#4F4F4F] font-bold text-4xl dm-sans">Patient Status</h1>
+            <h1 className="text-[#4F4F4F] font-bold text-2xl lg:text-4xl dm-sans">Patient Status</h1>
           </div>
           <div className="mb- text-[#4F4F4F] mb-10">
-            <div className="text-xl font-semibold mb-3 flex gap-20 justify-between">
+            <div className="text-[1.125rem] md:text-xl font-semibold mb-3 flex gap-20 justify-between">
               <p>Patient No:</p>
               {patientNo === null || patientNo.length === 0 ? null : (
                 <p>{patientNo}</p>
               )}
             </div>
-            <div className="text-xl font-semibold mb-3 flex gap-20 justify-between">
+            <div className="text-[1.125rem] md:text-xl font-semibold mb-3 flex gap-20 justify-between">
               <p>Surgery Status:</p>
               {patientFromNav === null || patientFromNav.length === 0 ? null : (
                 <p>{patientFromNav.status}</p>
