@@ -28,19 +28,19 @@ const LandingPageAdmin = () => {
         </p>
         <div className="flex flex-col md:flex-row gap-7 items-center justify-center">
           <button 
-            className="flex text-center items-center justify-center dm-sans md:mb-0 bg-[#008C99] text-white text-[1.25rem] font-bold rounded-[40px] px-14 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
+            className="flex text-center items-center justify-center dm-sans bg-[#008C99] text-white text-[1.25rem] font-bold rounded-[40px] px-14 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
             onClick={() => navigate("/FindPatient")}
           >
               Update Patient Status
           </button>
           <button 
-            className="flex text-center items-center justify-center dm-sans mb-9 md:mb-0 bg-white text-[#4F4F4F] text-[1.25rem] border border-[#CAC4D0] font-bold rounded-[40px] px-14 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
+            className="flex text-center items-center justify-center dm-sans bg-white text-[#4F4F4F] text-[1.25rem] border border-[#CAC4D0] font-bold rounded-[40px] px-14 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
             onClick={()=>navigate("/adminEdit")}
           >
               Edit Patient Info
           </button>
           <button 
-            className="flex text-center items-center justify-center dm-sans md:mb-0 bg-[#008C99] text-white text-[1.25rem] font-bold rounded-[40px] px-14 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
+            className="flex text-center items-center justify-center dm-sans bg-[#008C99] text-white text-[1.25rem] font-bold rounded-[40px] px-14 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
             onClick={() => navigate("/AddPatient")}
           >
               Add Patient

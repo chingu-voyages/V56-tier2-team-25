@@ -117,7 +117,7 @@ const UpdateStatus = () => {
                 <p>{patientNo}</p>
               )}
             </div>
-            <div className="flex text-center items-center justify-between gap-38">
+            <div className="flex text-center items-center justify-between">
               <p>Current Status:</p>
               {patientFromNav === null || patientFromNav.length === 0 ? null : (
                 <p>{patientFromNav.status}</p>
@@ -127,7 +127,7 @@ const UpdateStatus = () => {
               <p className="flex justify-center items-center mr-13">New Status:</p>
               <div className="md:w-[272px] relative flex justify-end">
                 <button
-                  className="flex justify-center items-center py-2 md:px-7 w-[200px] md:w-[250px] cursor-pointer border-1 border-black rounded-[10px] bg-white"
+                  className="flex justify-center items-center py-2 md:px-7 w-[200px] md:w-[250px] cursor-pointer border-1 border-black rounded-[10px] bg-white z-20"
                   onClick={toggleDropdown}
                   value={selected}
                 >
@@ -135,7 +135,7 @@ const UpdateStatus = () => {
                 </button>
 
                 {isOpen && (
-                  <ul className="md:w-[92%] mt-10 md:mt-11 border-1 font-medium px-[15px] border-[#ccc] absolute bg-white rounded-[10px]">
+                  <ul className="md:w-[92%] z-20 mt-10 md:mt-11 border-1 font-medium px-[15px] border-[#ccc] absolute bg-white rounded-[10px]">
                     {patientFromNav === null ||
                     patientFromNav.length === 0 ? null : (
                       <div>
