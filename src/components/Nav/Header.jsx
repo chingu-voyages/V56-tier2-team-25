@@ -19,9 +19,17 @@ const Header = () => {
             >
                 &#9776; 
             </div>
-                <div className='w-full flex lg:gap-4 items-center justify-center md:justify-start cursor-pointer' onClick={() => navigate("/")} >
-                    <img className='hidden md:block' src={logo} alt="logo"/>
-                    <h1 className='text-2xl lg:text-[2rem] font-medium text-shadow-md text-[#006B44]'>Surgery Status</h1>
+                <div className='w-full flex lg:gap-4 items-center justify-center md:justify-start cursor-pointer' >
+                    <img 
+                        className='hidden md:block' src={logo} alt="logo"
+                        onClick={() => navigate("/")}
+                    />
+                    <h1 
+                        className='text-2xl lg:text-[2rem] font-medium text-shadow-md text-[#006B44]'
+                        onClick={() => navigate("/")}
+                    >
+                        Surgery Status
+                    </h1>
                     <span className='hidden lg:block md:ml-1 lg:mt-[.6rem]  pb-3 lg:pb-0 text-[#4F4F4F] text-xs lg:text-base font-bold lg:font-medium'>{date}</span>
                     <span className='lg:hidden absolute top-20 right-[26px] md:ml-1 lg:mt-[.6rem] pb-3 lg:pb-0 text-[#4F4F4F] text-[.75rem] lg:text-base font-bold lg:font-medium'>{date}</span>
 
