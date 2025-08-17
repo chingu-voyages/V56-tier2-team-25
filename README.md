@@ -1,5 +1,5 @@
 Surgery Status Board
-Developed as a Chingu Voyage Project - Surgery Center Status Board Project Requirements
+Developed as a Chingu Voyage Project - Surgery Center Status Board [Project Requirements](https://github.com/chingu-voyages/voyage-project-surgerystatus)
 
 Surgery Status Board is a web platform for real-time surgical status tracking.
 
