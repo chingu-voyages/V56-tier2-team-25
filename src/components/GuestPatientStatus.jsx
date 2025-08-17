@@ -59,8 +59,8 @@ const GuestPatientStatus = () => {
           <div className="mb-17">
             <h1 className="text-[#4F4F4F] font-bold text-2xl lg:text-4xl dm-sans">Patient Status</h1>
           </div>
-          <div className="mb- text-[#4F4F4F] mb-10">
-            <div className="text-[1.125rem] md:text-xl font-semibold mb-3 flex gap-20 justify-between">
+          <div className="text-[#4F4F4F] mb-10 w-full md:w-1/4 px-7">
+            <div className="text-[1.125rem] md:text-xl font-semibold mb-3 flex justify-between">
               <p>Patient No:</p>
               {patientNo === null || patientNo.length === 0 ? null : (
                 <p>{patientNo}</p>

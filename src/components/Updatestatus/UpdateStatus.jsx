@@ -124,7 +124,7 @@ const UpdateStatus = () => {
               )}
             </div>
             <div className="flex mb-38 md:mb-42 md:gap-25">
-              <p className="flex justify-center items-center mr-13">New Status:</p>
+              <p className="flex justify-center items-center mr-8">New Status:</p>
               <div className="md:w-[272px] relative flex justify-end">
                 <button
                   className="flex justify-center items-center py-2 md:px-7 w-[200px] md:w-[250px] cursor-pointer border-1 border-black rounded-[10px] bg-white z-20"
