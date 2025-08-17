@@ -1,12 +1,7 @@
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-    faAngleDown, faAngleUp, faArrowRightFromBracket, 
-    faSpinner, faClipboard, faPencil
-} from '@fortawesome/free-solid-svg-icons';
-import { 
-    faHouse, faHeart, faCircleQuestion, 
- } from '@fortawesome/free-regular-svg-icons';
+import {faAngleDown, faAngleUp, faArrowRightFromBracket, faSpinner, faClipboard, faPencil} from '@fortawesome/free-solid-svg-icons';
+import {faHouse, faHeart, faCircleQuestion,} from '@fortawesome/free-regular-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import { signOut, getAuth } from 'firebase/auth';
 import { useSelector } from 'react-redux';

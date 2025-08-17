@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { collection, doc, getDocs, updateDoc } from "firebase/firestore";
 import { db } from "../../firebase";
+import Footer from "./Footer"
+import Header from "./Nav/Header"
+
 
 const WaitingRoom = () => {
   const [patients, setPatients] = useState([]);
@@ -45,6 +48,8 @@ const WaitingRoom = () => {
   const currentItems = sortedPatients.slice(start, start + pageSize);
 
   return (
+    <div>
+              <Header/>
     <div className="w-full min-h-screen flex flex-col">
       <div className="flex flex-1 flex-col items-center py-11 md:py-4 md:px:2 md:justify-center bg-[#F5F3EA]">
         <div className="">
@@ -88,6 +93,8 @@ const WaitingRoom = () => {
           );
         })}
       </div>
+    </div>
+      <Footer/>
     </div>
   );
 };

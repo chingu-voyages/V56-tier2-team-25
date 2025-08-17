@@ -254,7 +254,7 @@ const UpdateStatus = () => {
                 <button
                   className="bg-[#008C99] text-white text-[1rem] font-bold rounded-[40px] px-10 py-4 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
                   onClick={() => {
-                    navigate("/findPatient");
+                    navigate(-2);
                   }}
                 >
                   Continue
