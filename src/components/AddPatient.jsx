@@ -73,6 +73,7 @@ const AddPatient = () => {
         const formElement = e.currentTarget
         const formData = new FormData(formElement)
         const dataForDB = Object.fromEntries(formData.entries());
+        dataForDB.status = "Checked-In";
         if (dataForDB.patientNo !== "") {
             await setDoc(doc(db, "patient_info", dataForDB.patientNo), dataForDB);
             console.log("Created");
