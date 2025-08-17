@@ -6,7 +6,7 @@ import {
   useNavigate,
 } from "react-router-dom";
 import "../../index.css";
-import Header from "../Header";
+import Header from "../Nav/Header.jsx";
 import Footer from "../Footer";
 import { useState } from "react";
 import { auth } from "../../../firebase.js";
@@ -139,7 +139,7 @@ function Login() {
     <>
       <div className="min-h-screen w-full flex flex-col">
         <Header />
-        <div className="flex flex-1 flex-col items-center py-11 px-8 md:px-0 md:justify-center bg-[#F5F3EA]">
+        <div className="flex flex-1 flex-col items-center py-11 md:py-4 px-8 md:px-2 md:justify-center bg-[#F5F3EA]">
           {message && (
             <div
               className={
@@ -180,7 +180,7 @@ function Login() {
               </label>
               <input
                 id="password"
-                type="text"
+                type="password"
                 className="border px-4 py-2 text-[#4F4F4F] placeholder:text-[#9f9fa1] rounded-[10px] text-[1.125rem]"
                 placeholder="Password"
                 value={password}

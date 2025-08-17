@@ -1,13 +1,16 @@
 import React from "react";
-import Header from "../Header";
+import Header from "../Nav/Header";
 import Footer from "../Footer";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 
 const LandingPageGuest = () => {
+  const navigate = useNavigate();
+
   return (
     <section>
       <div className="min-h-screen w-full flex flex-col">
         <Header />
-        <div className="flex flex-1 flex-col items-center pt-11 md:pt-0 justify-start md:justify-center text-center bg-[#F5F3EA]">
+        <div className="flex flex-1 flex-col items-center py-11 md:py-4  md:justify-center bg-[#F5F3EA]">
           <div className="flex flex-col items-center justify-center">
             <h1 className="text-[#4F4F4F] font-bold text-[1.75rem] dm-sans mb-8 sm:text-4xl">
               Welcome, Guest!
@@ -18,7 +21,8 @@ const LandingPageGuest = () => {
               skill, compassion, and hope."
             </p>
           </div>
-          <div className="bg-[#008C99] text-white text-[1.125rem] font-bold rounded-[40px] px-18 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]">
+          <div className="bg-[#008C99] text-white text-[1.125rem] font-bold rounded-[40px] px-18 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
+          onClick={() => navigate("/FindPatient")}>
             Track Patient Status
           </div>
         </div>

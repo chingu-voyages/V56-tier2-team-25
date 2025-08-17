@@ -46,7 +46,7 @@ const WaitingRoom = () => {
 
   return (
     <div className="w-full min-h-screen flex flex-col">
-      <div className="flex flex-1 flex-col items-center py-11  md:justify-center bg-[#F5F3EA]">
+      <div className="flex flex-1 flex-col items-center py-11 md:py-4 md:px:2 md:justify-center bg-[#F5F3EA]">
         <div className="">
           <h1 className="text-[#4F4F4F] font-bold text-2xl md:text-4xl dm-sans">Patient Status</h1>
         </div>
@@ -80,7 +80,7 @@ const WaitingRoom = () => {
                 ID{item.id}
               </div>
               <div
-                className={`w-40 md:w-80 p-2 flex items-center justify-center mb-5 mt-5 font-semibold md:text-2xl ${textColor}`}
+                className={`w-40 md:w-80 p-2 flex items-center justify-center mb-5 mt-5 font-semibold md:text-2xl rounded-lg ${textColor}`}
               >
                 {item.status}
               </div>

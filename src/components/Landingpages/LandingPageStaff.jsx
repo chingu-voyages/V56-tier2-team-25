@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../Header";
+import Header from "../Nav/Header";
 import Footer from "../Footer";
 import { useSelector } from "react-redux";
 import {
@@ -19,7 +19,7 @@ const LandingPageStaff = () => {
     <>
       <div className="min-h-screen w-full flex flex-col">
         <Header />
-        <div className="flex flex-1 flex-col text-center pt-2 items-center justify-center bg-[#F5F3EA]">
+        <div className="flex flex-1 flex-col items-center py-11 md:py-4  md:justify-center bg-[#F5F3EA]">
           <div className="flex flex-col text-center items-center justify-center mb-16 md:h-[80vh]">
             <h1 className="text-[#006B44] font-bold md:font-semibold text-[1.125rem] md:text-[2rem] dm-sans px-14 md:px-0 mb-9 mt-8 sm:text-[2rem] 1.sm:mb-16">
               "Stay Ahead of the Procedure. Every Detail, One Dashboard."
@@ -50,7 +50,7 @@ const LandingPageStaff = () => {
                 </div>
               </div>
               <div className="flex flex-col items-center text-center justify-center gap-0 md:gap-6 sm:flex-row">
-                <div className="flex text-center items-center justify-center dm-sans mb-9 md:mb-0 bg-transaparent text-[#CAC4D0] border-1 border-[#CAC4D0] text-[1.25rem] font-bold rounded-[40px] px-14 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]">
+                <div className="flex text-center items-center justify-center dm-sans mb-9 md:mb-0 bg-transaparent text-[#CAC4D0] border-1 border-[#CAC4D0] text-[1.25rem] font-bold rounded-[40px] cursor-not-allowed px-14 py-6 shadow-md/60">
                   Edit Patient Info
                 </div>
                 <div

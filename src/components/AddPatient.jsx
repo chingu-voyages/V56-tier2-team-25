@@ -2,7 +2,7 @@
 import { db } from '../../firebase';
 import { doc, setDoc } from "firebase/firestore";
 import Footer from "./Footer"
-import Header from "./Header"
+import Header from "./Nav/Header"
 import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 
@@ -87,24 +87,24 @@ const AddPatient = () => {
         <>
         <section className="min-h-screen w-full flex flex-col">
             <Header/>
-            <div className="flex flex-1 flex-col items-center py-11  md:justify-center bg-[#F5F3EA]">
-                <h2 className="text-[#4F4F4F] font-bold text-2xl lg:text-4xl dm-sans mb-10 md:mb-24">Patient Information</h2>
+            <div className="flex flex-1 flex-col items-center py-11 md:py-4 md:px:2 md:justify-center bg-[#F5F3EA]">
+                <h2 className="text-[#4F4F4F] font-bold text-2xl lg:text-4xl dm-sans mb-10 md:mb-20">Patient Information</h2>
                 <form onSubmit={submitForm} className="flex flex-col">
                     {formInputs}
                     <div className="flex flex-col md:flex-row items-center gap-7 mt-10 mb-12 md:mb-0">
-                            <button 
-                                type="submit"
-                                className="bg-[#008C99] text-white text-[1.125rem] font-bold rounded-[40px] px-18 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
-                                >
-                                Add New Patient
-                            </button>
-                            <button
-                                type="button"
-                                className="bg-white text-[#4F4F4F] text-[1.125rem] font-bold rounded-[40px] border border-[#CAC4D0] px-15 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
-                                onClick={() => navigate(-1)}
-                                >
-                                Cancel
-                            </button>
+                        <button 
+                        type="submit"
+                        className="bg-[#008C99] text-white text-[1.125rem] font-bold rounded-[40px] px-18 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
+                        >
+                            Add New Patient
+                        </button>
+                        <button
+                            type="button"
+                            className="bg-white text-[#4F4F4F] text-[1.125rem] font-bold rounded-[40px] border border-[#CAC4D0] px-15 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
+                            onClick={() => navigate(-1)}
+                            >
+                            Cancel
+                        </button>
                     </div>
                 </form>
             </div>

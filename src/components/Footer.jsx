@@ -20,12 +20,8 @@ const Footer = () => {
               Product
             </h3>
             <ul className="space-y-4 text-[rgb(126,126,126)] text-[1.125rem]">
-              <li
-                className="hover:text-[#4F4F4F] cursor-pointer"
-                onClick={() => navigate("../faq")}
-              >
-                FAQ
-              </li>
+              <li className="hover:text-[#4F4F4F] cursor-pointer" onClick={() => navigate('../')}>Home</li>
+              <li className="hover:text-[#4F4F4F] cursor-pointer" onClick={() => navigate('../faq')}>FAQ</li>
               <li>
                 <a
                   href="https://github.com/chingu-voyages/V56-tier2-team-25"
