@@ -1,10 +1,7 @@
 import logo from '../../assets/logo.png';
 import Navbar from './Navbar';
-import MobileMenu from './MobileMenu'
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from 'react';
-import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from '../../../firebase';
+import { useState } from 'react';
 
 const Header = () => {
 
@@ -15,9 +12,15 @@ const Header = () => {
     return (
         <header className="w-full transition-all duration-300 shadow-2xl lg:bg-white bg-[rgba(168,213,186,0.3)]">
             <div className="container mx-auto flex items-center justify-between px-2 pt-4 lg:py-[28px]">
-                <div className='flex flex-col lg:flex-row items-center gap-6 lg:gap-8'>    
+                <div className='flex flex-row items-center lg:gap-8'>
+                    <div 
+                        className='relative cursor-pointer z-40 lg:hidden text-3xl'
+                        onClick={() => setMenuOpen(prev => !prev)}
+                    >
+                        &#9776;
+                    </div>    
                     <div className='flex lg:gap-4 items-center cursor-pointer' onClick={() => navigate("/")} >
-                        <img className='hidden lg:block' src={logo} alt="logo"/>
+                        <img className='hidden md:block' src={logo} alt="logo"/>
                         <h1 className='text-2xl lg:text-[2rem] font-medium text-shadow-md text-[#006B44]'>Surgery Status</h1>
                     </div>
                     <span className='ml-1 lg:mt-[.6rem] pb-3 lg:pb-0 text-[#4F4F4F] text-xs lg:text-base font-bold lg:font-medium'>{date}</span>

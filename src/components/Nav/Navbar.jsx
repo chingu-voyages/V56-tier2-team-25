@@ -37,7 +37,7 @@ const Navbar = ( {menuOpen, setMenuOpen }) => {
                     { name: 'Patient Information', path: '/viewPatient', icon: <FontAwesomeIcon icon={faClipboard} size='2xl'/>},
                     { name: 'Patient Status Update', path: '/findPatient', icon: <FontAwesomeIcon icon={faSpinner}size='2xl'/> },
                     { name: 'Patient Status', path: '/waitingRoom', icon: <FontAwesomeIcon icon={faHeart} size='2xl'/> },
-                    ...(user?.role === 'Admin' ? [{ name: 'Edit Patient Information', path: '/editPatient', icon: <FontAwesomeIcon icon={faPencil} size='xl'/>}] : [])
+                    ...(user?.role === 'Admin' ? [{ name: 'Edit Patient Information', path: '/editPatient', icon: <FontAwesomeIcon icon={faPencil} size='2xl'/>}] : [])
                 ]
                 : [
                     { name: 'Patient Status', path: '../guest', icon: <FontAwesomeIcon icon={faSpinner}size='2xl'/> }
@@ -113,12 +113,7 @@ const Navbar = ( {menuOpen, setMenuOpen }) => {
 
     return (
         <>
-            <div 
-                className='w-7 h-5 relative cursor-pointer z-40 lg:hidden'
-                onClick={() => setMenuOpen(prev => !prev)}
-            >
-                &#9776;
-            </div>
+            
             <nav className="hidden lg:flex items-center space-x-17">
                 {links}
             </nav>
