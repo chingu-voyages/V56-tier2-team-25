@@ -37,7 +37,7 @@ coding!
 - Nidhi Gupta: [GitHub](https://github.com/Nidh12) / [LinkedIn](https://linkedin.com/in/nidhi-gupta-46423b24/)
 - Mingshi Hui: [GitHub](https://github.com/mingshi0821) / [LinkedIn](https://www.linkedin.com/in/mingshi-hui/)
 - Dylan Zimmer: [GitHub](https://github.com/DylanZimmer) / [LinkedIn](https://www.linkedin.com/in/dylanzimmereads/)
-- Omar: [GitHub](https://github.com/oramos-correa) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Omar Ramos-Correa: [GitHub](https://github.com/oramos-correa) / [LinkedIn](https://www.linkedin.com/in/omar-ramos-correa-80a852229)
 - Matthew Neie: [GitHub](https://github.com/MatthewNeie) / [LinkedIn](https://linkedin.com/in/matthew-neie)
 - Ruben Aguilar: [GitHub](https://github.com/rubenaguilardev) / [LinkedIn](https://www.linkedin.com/in/rubenaguilar-/)
 - Jamika: [GitHub](https://github.com/msjaydee) / [LinkedIn](https://linkedin.com/in/jamika-arnwine/)

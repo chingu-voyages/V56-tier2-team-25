@@ -49,7 +49,7 @@ const WaitingRoom = () => {
 
   return (
     <div>
-              <Header/>
+    <Header/>
     <div className="w-full min-h-screen flex flex-col">
       <div className="flex flex-1 flex-col items-center py-11 md:py-4 md:px:2 md:justify-center bg-[#F5F3EA]">
         <div className="">
