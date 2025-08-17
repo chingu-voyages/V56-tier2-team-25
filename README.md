@@ -1,17 +1,9 @@
-# voyage-tasks
+Surgery Status Board
+Developed as a Chingu Voyage Project - Surgery Center Status Board Project Requirements
 
-Your project's `readme` is as important to success as your code. For 
-this reason you should put as much care into its creation and maintenance
-as you would any other component of the application.
+Surgery Status Board is a web platform for real-time surgical status tracking.
 
-If you are unsure of what should go into the `readme` let this article,
-written by an experienced Chingu, be your starting point - 
-[Keys to a well written README](https://tinyurl.com/yk3wubft).
-
-And before we go there's "one more thing"! Once you decide what to include
-in your `readme` feel free to replace the text we've provided here.
-
-> Own it & Make it your Own!
+This helps hospitals keep patients’ families informed and reduces uncertainty in waiting rooms. Guest users can view real-time surgical updates, surgical team members can update patient status throughout the procedure, and admins can register new patients and initiate tracking. Designed to ease emotional stress and improve communication during critical moments.
 
 ## Team Documents
 
