@@ -30,9 +30,11 @@ const Header = () => {
                     >
                         Surgery Status
                     </h1>
-                    <span className='hidden lg:block md:ml-1 lg:mt-[.6rem]  pb-3 lg:pb-0 text-[#4F4F4F] text-xs lg:text-base font-bold lg:font-medium'>{date}</span>
-                    <span className='lg:hidden absolute top-20 right-[26px] md:ml-1 lg:mt-[.6rem] pb-3 lg:pb-0 text-[#4F4F4F] text-[.75rem] lg:text-base font-bold lg:font-medium'>{date}</span>
-
+                   <span
+                        className="absolute top-20 right-[26px] lg:static lg:top-auto lg:right-auto ml-0 lg:ml-1 mt-0 lg:mt-[.6rem] pb-3 lg:pb-0 text-[#4F4F4F] text-[.75rem] lg:text-base font-bold lg:font-medium"
+                    >
+                        {date}
+                    </span>
                 </div>
                 
                 <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen}/> 
