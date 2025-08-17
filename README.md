@@ -29,10 +29,13 @@ There are three types of users:
 2. Surgical staff (sign-in required)
 3. Admin (sign-in required)
 
-### Sign-in Criteria - Staff account
+### Sign-in Criteria - Surgical Staff account
+
 email: staff@email.com
 
 password: testing123
+
+
 
 ### Sign-in Criteria - Admin account
 email: admin@email.com
@@ -41,6 +44,8 @@ password: testing123
 
 ## Tech Stack
 ![screenshot of canva image of tech stack.](https://github.com/chingu-voyages/V56-tier2-team-25/blob/dev/Tech%20Stack.png)
+
+
 
 
 
