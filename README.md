@@ -1,23 +1,48 @@
-Surgery Status Board
+## Surgery Status Board
 Developed as a Chingu Voyage Project - Surgery Center Status Board [Project Requirements](https://github.com/chingu-voyages/voyage-project-surgerystatus)
 
-Surgery Status Board is a web platform for real-time surgical status tracking.
+### Surgery Status Board is a web application that track patients' progress and displays it on a monitor in the waiting room.
 
-This helps hospitals keep patients’ families informed and reduces uncertainty in waiting rooms. Guest users can view real-time surgical updates, surgical team members can update patient status throughout the procedure, and admins can register new patients and initiate tracking. Designed to ease emotional stress and improve communication during critical moments.
+This application provides real-time surgery status updates for hospital staff, families and loved ones. Guest users can view real-time surgical updates. Surgical team members can update patient status throughout the procedure. Admins can register new patients, update patient information, and initiate tracking. Patient privacy is a core component that ensure compliance with HIPPA laws. The application is designed to reduce uncertainty in waiting rooms, improve communication and reduces stress during critical moments.
 
-## Team Documents
 
-You may find these helpful as you work together to organize your project.
+## Features
 
-- [Team Project Ideas](./docs/team_project_ideas.md)
-- [Team Decision Log](./docs/team_decision_log.md)
+1. Real-time Patient Status Display
 
-Meeting Agenda templates (located in the `/docs` directory in this repo):
+Allows guest users (e.g., family members, loved ones) to view the patient's current surgical status in real time using their assigned ID number.
 
-- Meeting - Voyage Kickoff --> ./docs/meeting-voyage_kickoff.docx
-- Meeting - App Vision & Feature Planning --> ./docs/meeting-vision_and_feature_planning.docx
-- Meeting - Sprint Retrospective, Review, and Planning --> ./docs/meeting-sprint_retrospective_review_and_planning.docx
-- Meeting - Sprint Open Topic Session --> ./docs/meeting-sprint_open_topic_session.docx
+2. Surgical Status Updates
+
+Enables surgical team members to update the patient's status throughout the procedure.
+
+3. Patient Information Management
+
+Provides admin users with tools to register new patients and initiate status tracking, while still maintaining patient privacy in accordance with HIPPA laws.
+
+## Live Link
+https://v56-tier2-team-25.vercel.app/
+
+There are three types of users:
+
+1. Guest users (NO sign-in required)
+2. Surgical staff (sign-in required)
+3. Admin (sign-in required)
+
+### Sign-in Criteria - Staff account
+email: staff@email.com
+
+password: testing123
+
+### Sign-in Criteria - Admin account
+email: admin@email.com
+
+password: testing123
+
+## Tech Stack
+![screenshot of canva image of tech stack.](https://www.canva.com/design/DAGwV8egnXM/tjrS1k_3THEohsMCeMl19w/view?utm_content=DAGwV8egnXM&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hdd89f5cbcc)
+
+
 
 ## Our Team
 
