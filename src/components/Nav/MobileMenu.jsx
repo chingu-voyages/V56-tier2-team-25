@@ -8,7 +8,7 @@ const MobileMenu = ( { menuOpen, setMenuOpen, linksArr }) => {
         <div
         
             className={`
-                fixed top-0 left-0 h-screen w-[72%] bg-[#A8D5BA] flex flex-col pt-30 px-8 transition-all duration-300 ease-in-out z-50
+                fixed top-0 left-0 h-screen w-[72%] bg-[#A8D5BA] flex flex-col pt-30 px-7 transition-all duration-300 ease-in-out z-50
                 ${ menuOpen ? 'translate-x-0' : '-translate-x-full' }
             `}
         >

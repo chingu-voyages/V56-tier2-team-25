@@ -114,7 +114,7 @@ const Navbar = ( {menuOpen, setMenuOpen }) => {
     return (
         <>
             
-            <nav className="hidden lg:flex items-center space-x-17">
+            <nav className="w-full hidden lg:flex items-center md:justify-end md:space-x-17">
                 {links}
             </nav>
             <MobileMenu
