@@ -39,37 +39,41 @@ const Footer = () => {
               Design Team
             </h3>
             <ul className="space-y-4 text-[#7E7E7E] text-[1.125rem]">
-              <div className="flex text-center items-center justify-center">
+              <div className="flex md:flex-col text-center items-center justify-center">
                 <li className="hover:text-[#4F4F4F]">
                   <a href="https://www.linkedin.com/in/mingshi-hui/">
                     Mingshi Hui
                   </a>
                 </li>
-                <a href="https://github.com/mingshi0821" className="ml-2">
-                  <GitHubIcon />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/mingshi-hui/"
-                  className="ml-1"
-                >
-                  <LinkedInIcon />
-                </a>
+                <div>
+                  <a href="https://github.com/mingshi0821" className="ml-2">
+                    <GitHubIcon />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/mingshi-hui/"
+                    className="ml-1"
+                  >
+                    <LinkedInIcon />
+                  </a>
+                </div>
               </div>
-              <div className="flex text-center items-center justify-center">
+              <div className="flex md:flex-col text-center items-center justify-center">
                 <li className="hover:text-[#4F4F4F]">
                   <a href="https://linkedin.com/in/nidhi-gupta-46423b24">
                     Nidhi Gupta
                   </a>
                 </li>
-                <a href="https://github.com/Nidh12" className="ml-2">
-                  <GitHubIcon />
-                </a>
-                <a
-                  href="https://linkedin.com/in/nidhi-gupta-46423b24"
-                  className="ml-1"
-                >
-                  <LinkedInIcon />
-                </a>
+                <div>
+                  <a href="https://github.com/Nidh12" className="ml-2">
+                    <GitHubIcon />
+                  </a>
+                  <a
+                    href="https://linkedin.com/in/nidhi-gupta-46423b24"
+                    className="ml-1"
+                  >
+                    <LinkedInIcon />
+                  </a>
+                </div>
               </div>
             </ul>
           </div>
@@ -78,64 +82,72 @@ const Footer = () => {
               Dev Team
             </h3>
             <ul className="space-y-4 text-[#7E7E7E] text-[1.125rem]">
-              <div className="flex text-center items-center justify-center">
+              <div className="flex md:flex-col text-center items-center justify-center">
                 <li className="hover:text-[#4F4F4F]">
                   <a href="https://www.linkedin.com/in/dylanzimmereads/">
                     Dylan Zimmer
                   </a>
                 </li>
-                <a href="https://github.com/DylanZimmer" className="ml-2">
-                  <GitHubIcon />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/dylanzimmereads/"
-                  className="ml-1"
-                >
-                  <LinkedInIcon />
-                </a>
+                <div>
+                  <a href="https://github.com/DylanZimmer" className="ml-2">
+                    <GitHubIcon />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/dylanzimmereads/"
+                    className="ml-1"
+                  >
+                    <LinkedInIcon />
+                  </a>
+                </div>
               </div>
-              <div className="flex text-center items-center justify-center">
+              <div className="flex md:flex-col text-center items-center justify-center">
                 <li className="hover:text-[#4F4F4F]">
                   <a href="https://linkedin.com/in/matthew-neie">
                     Matthew Neie
                   </a>
                 </li>
-                <a href="https://github.com/MatthewNeie" className="ml-2">
-                  <GitHubIcon />
-                </a>
-                <a href="https://linkedin.com/in/matthew-neie" className="ml-1">
-                  <LinkedInIcon />
-                </a>
+                <div>
+                  <a href="https://github.com/MatthewNeie" className="ml-2">
+                    <GitHubIcon />
+                  </a>
+                  <a href="https://linkedin.com/in/matthew-neie" className="ml-1">
+                    <LinkedInIcon />
+                  </a>
+                </div>
               </div>
-              <div className="flex text-center items-center justify-center">
+              <div className="flex md:flex-col text-center items-center justify-center">
                 <li className="hover:text-[#4F4F4F]">
-                  <a href="https://github.com/oramos-correa">Omar</a>
+                  <a href="https://github.com/oramos-correa">Omar Ramos-Correa</a>
                 </li>
-                <a href="https://github.com/oramos-correa" className="ml-2">
-                  <GitHubIcon />
-                </a>
-                {/* <a
-                  href="https://www.linkedin.com/in/mingshi-hui/"
-                  className="ml-1"
-                >
-                  <LinkedInIcon />
-                </a> */}
+                <div>
+                  <a href="https://github.com/oramos-correa" className="ml-2">
+                    <GitHubIcon />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/omar-ramos-correa-80a852229/-hui/"
+                    className="ml-1"
+                  >
+                    <LinkedInIcon />
+                  </a>
+                </div>
               </div>
-              <div className="flex text-center items-center justify-center">
+              <div className="flex md:flex-col text-center items-center justify-center">
                 <li className="hover:text-[#4F4F4F]">
                   <a href="https://www.linkedin.com/in/rubenaguilar-/">
                     Ruben Aguilar
                   </a>
                 </li>
-                <a href="https://github.com/rubenaguilardev" className="ml-2">
-                  <GitHubIcon />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/rubenaguilar-/"
-                  className="ml-1"
-                >
-                  <LinkedInIcon />
-                </a>
+                <div>
+                  <a href="https://github.com/rubenaguilardev" className="ml-2">
+                    <GitHubIcon />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/rubenaguilar-/"
+                    className="ml-1"
+                  >
+                    <LinkedInIcon />
+                  </a>
+                </div>
               </div>
             </ul>
           </div>
@@ -144,37 +156,41 @@ const Footer = () => {
               Scrum Master
             </h3>
             <ul className="space-y-4 text-[#7E7E7E] text-[1.125rem]">
-              <div className="flex text-center items-center justify-center">
+              <div className="flex md:flex-col text-center items-center justify-center">
                 <li className="hover:text-[#4F4F4F]">
                   <a href="https://www.linkedin.com/in/tanika-watson">
                     Tanika Watson
                   </a>
                 </li>
-                <a href="https://github.com/twatson07017" className="ml-2">
-                  <GitHubIcon />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/tanika-watson"
-                  className="ml-1"
-                >
-                  <LinkedInIcon />
-                </a>
+                <div>
+                  <a href="https://github.com/twatson07017" className="ml-2">
+                    <GitHubIcon />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/tanika-watson"
+                    className="ml-1"
+                  >
+                    <LinkedInIcon />
+                  </a>
+                </div>
               </div>
-              <div className="flex text-center items-center justify-center">
+              <div className="flex md:flex-col text-center items-center justify-center">
                 <li className="hover:text-[#4F4F4F]">
                   <a href="https://linkedin.com/in/jamika-arnwine/">
-                    Jamika (shadow)
+                    Jamika Arnwine (shadow)
                   </a>
                 </li>
-                <a href="https://github.com/msjaydee" className="ml-2">
-                  <GitHubIcon />
-                </a>
-                <a
-                  href="https://linkedin.com/in/jamika-arnwine/"
-                  className="ml-1"
-                >
-                  <LinkedInIcon />
-                </a>
+                <div>
+                  <a href="https://github.com/msjaydee" className="ml-2">
+                    <GitHubIcon />
+                  </a>
+                  <a
+                    href="https://linkedin.com/in/jamika-arnwine/"
+                    className="ml-1"
+                  >
+                    <LinkedInIcon />
+                  </a>
+                </div>
               </div>
             </ul>
           </div>
@@ -183,21 +199,23 @@ const Footer = () => {
               Voyage Guide
             </h3>
             <ul className="space-y-4 text-[#7E7E7E] text-[1.125rem]">
-              <div className="flex text-center items-center justify-center">
+              <div className="flex md:flex-col text-center items-center justify-center">
                 <li className="hover:text-[#4F4F4F]">
                   <a href="https://www.linkedin.com/in/valeriylysenko">
                     Valeriy Lysenko
                   </a>
                 </li>
-                <a href="https://github.com/Valeriusdev" className="ml-2">
-                  <GitHubIcon />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/valeriylysenko"
-                  className="ml-1"
-                >
-                  <LinkedInIcon />
-                </a>
+                <div>
+                  <a href="https://github.com/Valeriusdev" className="ml-2">
+                    <GitHubIcon />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/valeriylysenko"
+                    className="ml-1"
+                  >
+                    <LinkedInIcon />
+                  </a>
+                </div>
               </div>
             </ul>
           </div>

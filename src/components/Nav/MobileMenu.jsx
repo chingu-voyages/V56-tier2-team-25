@@ -31,7 +31,7 @@ const MobileMenu = ( { menuOpen, setMenuOpen, linksArr }) => {
                                     navigate(item.path)
                                 }}
                             >   
-                                <div className="flex items-center gap-4">
+                                <div className="flex items-center gap-4 ">
                                     {item.icon && <span className=" text-white">{item.icon}</span>}
                                     {item.name}
                                 </div>

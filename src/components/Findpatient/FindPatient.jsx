@@ -111,7 +111,7 @@ const FindPatient = () => {
                 Enter
               </div>
             ) : null}
-            <div className='flex flex-col md:flex-row gap-7'>
+            <div className='flex flex-col items-center md:flex-row gap-7'>
               {userData === null ? null : (
                 
                   <div
