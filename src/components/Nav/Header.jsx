@@ -10,7 +10,7 @@ const Header = () => {
     const date = new Date().toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'})
 
     return (
-        <header className="flex w-full h-[108px] items-center transition-all duration-300 shadow-2xl px-[25px] md:px-0 lg:bg-white bg-[rgba(168,213,186,0.3)]">
+        <header className="flex w-full h-[108px] items-center transition-all duration-300 shado-2xl px-[1.5625rem] md:px-0 lg:bg-white bg-[rgba(168,213,186,0.3)]">
                  
             <div className="container mx-auto flex items-center md:px-2 lg:py-[28px]">
                 <div 
@@ -31,7 +31,7 @@ const Header = () => {
                         Surgery Status
                     </h1>
                    <span
-                        className="absolute top-20 right-[26px] lg:static lg:top-auto lg:right-auto ml-0 lg:ml-1 mt-0 lg:mt-[.6rem] pb-3 lg:pb-0 text-[#4F4F4F] text-[.75rem] lg:text-base font-bold lg:font-medium"
+                        className="absolute top-20 right-[1.625rem] lg:static lg:top-auto lg:right-auto ml-0 lg:ml-1 mt-0 lg:mt-[.6rem] pb-3 lg:pb-0 text-[#4F4F4F] text-[.75rem] lg:text-base font-bold lg:font-medium"
                     >
                         {date}
                     </span>
