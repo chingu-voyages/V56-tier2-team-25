@@ -40,7 +40,7 @@ email: admin@email.com
 password: testing123
 
 ## Tech Stack
-![screenshot of canva image of tech stack.](https://www.canva.com/design/DAGwV8egnXM/tjrS1k_3THEohsMCeMl19w/view?utm_content=DAGwV8egnXM&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hdd89f5cbcc)
+![screenshot of canva image of tech stack.](https://github.com/chingu-voyages/V56-tier2-team-25/blob/dev/Tech%20Stack.png)
 
 
 
