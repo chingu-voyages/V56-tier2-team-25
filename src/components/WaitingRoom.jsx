@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { collection, doc, getDocs, updateDoc } from "firebase/firestore";
 import { db } from "../../firebase";
-import Footer from "./Footer"
-import Header from "./Nav/Header"
-
+import Footer from "./Footer";
+import Header from "./Nav/Header";
 
 const WaitingRoom = () => {
   const [patients, setPatients] = useState([]);
@@ -42,59 +41,76 @@ const WaitingRoom = () => {
     return () => clearInterval(interval);
   }, [patients.length]);
 
-  const sortedPatients = [...patients].sort((a, b) => a.id - b.id);
+  const options = [
+    "Checked-In",
+    "Pre-Procedure",
+    "In-Progress",
+    "Surgery Completed",
+    "Recovery",
+    "Recovery Complete",
+    "Discharge",
+  ];
+
+  const filteredPatients = patients.filter((patient) =>
+    options.includes(patient.status)
+  );
+
+  const sortedPatients = [...filteredPatients].sort((a, b) => a.id - b.id);
 
   const start = currentPage * pageSize;
   const currentItems = sortedPatients.slice(start, start + pageSize);
 
   return (
     <div>
-    <Header/>
-    <div className="w-full min-h-screen flex flex-col">
-      <div className="flex flex-1 flex-col items-center py-11 md:py-42 md:px:2  bg-[#F5F3EA]">
-        <div className="">
-          <h1 className="text-[#4F4F4F] font-bold text-2xl md:text-4xl dm-sans">Patient Status</h1>
-        </div>
-        <div className="mt-13" >
-          {loading ? <div className="text-[16px]"> Loading...</div> : null}
-        </div>
-        {currentItems.map((item, index) => {
-          const isLast = index === currentItems.length - 1
-          const style = !isLast ? "flex items-center text-center justify-between border-b border-[#CAC4D0]" : "flex items-center text-center justify-between"
-          let textColor = "text-gray-800";
-          if (item.status === "Checked-In") {
-            textColor = "bg-[#6298FC]";
-          } else if (item.status === "Pre-Procedure") {
-            textColor = "bg-[#F67C47]";
-          } else if (item.status === "In-Progress") {
-            textColor = "bg-[#CA0D10]";
-          } else if (item.status === "Surgery Completed") {
-            textColor = "bg-[#AD27DE]";
-          } else if (item.status === "Recovery") {
-            textColor = "bg-[#20E83E]";
-          } else if (item.status === "Recovery Complete") {
-            textColor = "bg-[#EAF261]";
-          } else if (item.status === "Discharge") {
-            textColor = "bg-[#D4D2E3]";
-          }
+      <Header />
+      <div className="w-full min-h-screen flex flex-col">
+        <div className="flex flex-1 flex-col items-center py-11 md:py-42 md:px:2  bg-[#F5F3EA]">
+          <div className="">
+            <h1 className="text-[#4F4F4F] font-bold text-2xl md:text-4xl dm-sans">
+              Patient Status
+            </h1>
+          </div>
+          <div className="mt-13">
+            {loading ? <div className="text-[16px]"> Loading...</div> : null}
+          </div>
+          {currentItems.map((item, index) => {
+            const isLast = index === currentItems.length - 1;
+            const style = !isLast
+              ? "flex items-center text-center justify-between border-b border-[#CAC4D0]"
+              : "flex items-center text-center justify-between";
+            let textColor = "text-gray-800";
+            if (item.status === "Checked-In") {
+              textColor = "bg-[#6298FC]";
+            } else if (item.status === "Pre-Procedure") {
+              textColor = "bg-[#F67C47]";
+            } else if (item.status === "In-Progress") {
+              textColor = "bg-[#CA0D10]";
+            } else if (item.status === "Surgery Completed") {
+              textColor = "bg-[#AD27DE]";
+            } else if (item.status === "Recovery") {
+              textColor = "bg-[#20E83E]";
+            } else if (item.status === "Recovery Complete") {
+              textColor = "bg-[#EAF261]";
+            } else if (item.status === "Discharge") {
+              textColor = "bg-[#D4D2E3]";
+            }
 
-          return (
-            <div className={style}>
-
-              <div className="w-40 md:w-60 font-semibold flex items-center text-xl md:text-2xl text-center dm-sans">
-                ID{item.id}
+            return (
+              <div className={style}>
+                <div className="w-40 md:w-60 font-semibold flex items-center text-xl md:text-2xl text-center dm-sans">
+                  ID{item.id}
+                </div>
+                <div
+                  className={`w-40 md:w-80 p-2 flex items-center justify-center mb-5 mt-5 font-semibold md:text-2xl rounded-lg ${textColor}`}
+                >
+                  {item.status}
+                </div>
               </div>
-              <div
-                className={`w-40 md:w-80 p-2 flex items-center justify-center mb-5 mt-5 font-semibold md:text-2xl rounded-lg ${textColor}`}
-              >
-                {item.status}
-              </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
-    </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

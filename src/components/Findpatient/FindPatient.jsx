@@ -93,13 +93,11 @@ const FindPatient = () => {
               onChange={(e) => setInputValue(e.target.value)}
               onKeyDown={handleKeyPress}
             />
-            {error === null ? null : (
-            <div className="text-red-500 flex justify-center mt-5">
-              No patient with entered ID exists
-            </div>
-          )}
+            {error && (
+              <p className="text-red-500 flex justify-center mt-5">{error}</p>
+            )}
           </div>
-          
+
           <div className="flex flex-col md:flex-row text-center items-center justify-center gap-7 md:gap-2 lg:gap-7">
             {userData === null ? (
               <div
@@ -111,18 +109,17 @@ const FindPatient = () => {
                 Enter
               </div>
             ) : null}
-            <div className='flex flex-col items-center md:flex-row gap-7'>
+            <div className="flex flex-col items-center md:flex-row gap-7">
               {userData === null ? null : (
-                
-                  <div
-                    className="bg-[#008C99] text-white text-[1.125rem] font-bold rounded-[40px] px-15 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
-                    onClick={() => {
-                      handleSearch(inputValue);
-                    }}
-                  >
-                    Update Status
-                  </div>
-                )}
+                <div
+                  className="bg-[#008C99] text-white text-[1.125rem] font-bold rounded-[40px] px-15 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
+                  onClick={() => {
+                    handleSearch(inputValue);
+                  }}
+                >
+                  Update Status
+                </div>
+              )}
 
               <div
                 className="bg-white text-[#4F4F4F] text-[1.125rem] font-bold rounded-[40px] border border-[#CAC4D0] px-15 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA] hover:text-white hover-border-none"
