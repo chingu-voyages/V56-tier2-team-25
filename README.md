@@ -1,47 +1,74 @@
-# voyage-tasks
+## Surgery Status Board
+<img width="1887" height="983" alt="image" src="https://github.com/user-attachments/assets/a9b592bc-61dc-492b-b26e-30be1e45e35a" />
 
-Your project's `readme` is as important to success as your code. For 
-this reason you should put as much care into its creation and maintenance
-as you would any other component of the application.
+Developed as a Chingu Voyage Project - Surgery Center Status Board [Project Requirements](https://github.com/chingu-voyages/voyage-project-surgerystatus)
 
-If you are unsure of what should go into the `readme` let this article,
-written by an experienced Chingu, be your starting point - 
-[Keys to a well written README](https://tinyurl.com/yk3wubft).
+### Surgery Status Board is a web application that tracks patients' progress and displays it on a monitor in the waiting room, as well as on a mobile device.
 
-And before we go there's "one more thing"! Once you decide what to include
-in your `readme` feel free to replace the text we've provided here.
+This application provides real-time surgery status updates for hospital staff, families and loved ones. Guest users can view real-time surgical updates. Surgical team members can update patient status throughout the procedure. Admins can register new patients, update patient information, and initiate tracking. Patient privacy is a core component that ensures compliance with HIPPA laws. The application is designed to reduce uncertainty in waiting rooms, improve communication and reduces stress during critical moments.
 
-> Own it & Make it your Own!
 
-## Team Documents
+## Features
 
-You may find these helpful as you work together to organize your project.
+1. Real-time Patient Status Display
 
-- [Team Project Ideas](./docs/team_project_ideas.md)
-- [Team Decision Log](./docs/team_decision_log.md)
+Allows guest users (e.g., family members, loved ones) to view the patient's current surgical status in real time using the patient's assigned ID number.
 
-Meeting Agenda templates (located in the `/docs` directory in this repo):
+2. Surgical Status Updates
 
-- Meeting - Voyage Kickoff --> ./docs/meeting-voyage_kickoff.docx
-- Meeting - App Vision & Feature Planning --> ./docs/meeting-vision_and_feature_planning.docx
-- Meeting - Sprint Retrospective, Review, and Planning --> ./docs/meeting-sprint_retrospective_review_and_planning.docx
-- Meeting - Sprint Open Topic Session --> ./docs/meeting-sprint_open_topic_session.docx
+Enables surgical staff to update the patient's status throughout the procedure.
+
+3. Patient Information Management
+
+Provides admins with tools to register new patients, update patient information, and initiate status tracking. This is done while maintaining patient privacy in accordance with HIPPA laws.
+
+## Live Link
+https://v56-tier2-team-25.vercel.app/
+
+There are three types of users:
+
+1. Guest (NO sign-in required)
+2. Surgical staff (sign-in required)
+3. Admin (sign-in required)
+
+### Sign-in Criteria - Surgical Staff account
+
+email: staff@email.com
+
+password: testing123
+
+
+
+### Sign-in Criteria - Admin account
+email: admin@email.com
+
+password: testing123
+
+## Tech Stack
+![screenshot of canva image of tech stack.](https://github.com/chingu-voyages/V56-tier2-team-25/blob/dev/Tech%20Stack.png)
+
+
+
+
 
 ## Our Team
 
-Everyone on your team should add their name along with a link to their GitHub
-& optionally their LinkedIn profiles below. Do this in Sprint #1 to validate
-your repo access and to practice PR'ing with your team *before* you start
-coding!
 
+### Designers
 - Nidhi Gupta: [GitHub](https://github.com/Nidh12) / [LinkedIn](https://linkedin.com/in/nidhi-gupta-46423b24/)
 - Mingshi Hui: [GitHub](https://github.com/mingshi0821) / [LinkedIn](https://www.linkedin.com/in/mingshi-hui/)
+
+### Developers
 - Dylan Zimmer: [GitHub](https://github.com/DylanZimmer) / [LinkedIn](https://www.linkedin.com/in/dylanzimmereads/)
-- Maha: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
-- Will Kalish: [GitHub](https://github.com/williamk31) / [LinkedIn](https://www.linkedin.com/in/william-kalish/)
-- Omar: [GitHub](https://github.com/oramos-correa) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Omar Ramos-Correa: [GitHub](https://github.com/oramos-correa) / [LinkedIn](https://www.linkedin.com/in/omar-ramos-correa-80a852229)
 - Matthew Neie: [GitHub](https://github.com/MatthewNeie) / [LinkedIn](https://linkedin.com/in/matthew-neie)
 - Ruben Aguilar: [GitHub](https://github.com/rubenaguilardev) / [LinkedIn](https://www.linkedin.com/in/rubenaguilar-/)
-- Jamika: [GitHub](https://github.com/msjaydee) / [LinkedIn](https://linkedin.com/in/jamika-arnwine/)
+
+### Scrum Master
 - Tanika Watson: [GitHub](https://github.com/twatson07017) / [LinkedIn](https://www.linkedin.com/in/tanika-watson/)
+
+### Shadow Scrum Master
+- Jamika Arnwine: [GitHub](https://github.com/msjaydee) / [LinkedIn](https://linkedin.com/in/jamika-arnwine/)
+
+### Voyage Guide
 - Valeriy Lysenko: [GitHub](https://github.com/Valeriusdev) / [LinkedIn](https://www.linkedin.com/in/valeriylysenko/)
