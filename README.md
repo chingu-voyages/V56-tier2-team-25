@@ -1,4 +1,6 @@
 ## Surgery Status Board
+<img width="1887" height="983" alt="image" src="https://github.com/user-attachments/assets/a9b592bc-61dc-492b-b26e-30be1e45e35a" />
+
 Developed as a Chingu Voyage Project - Surgery Center Status Board [Project Requirements](https://github.com/chingu-voyages/voyage-project-surgerystatus)
 
 ### Surgery Status Board is a web application that tracks patients' progress and displays it on a monitor in the waiting room, as well as on a mobile device.
