@@ -73,12 +73,11 @@ const AdminFindPatient = () => {
               onKeyDown={handleKeyPress}
             />
             <div>
-              {error && <p className="text-red-500 flex justify-center mt-5">{error}</p>}
+              {error && (
+                <p className="text-red-500 flex justify-center mt-5">{error}</p>
+              )}
             </div>
-            
           </div>
-
-          
 
           {result && (
             <div className="mt-6 bg-white p-4 rounded shadow w-72 text-left">
@@ -96,7 +95,7 @@ const AdminFindPatient = () => {
               className="bg-[#008C99] text-white text-[1.125rem] font-bold rounded-[40px] px-15 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
               onClick={handleSearch}
             >
-              Update Status
+              Update Patient Info
             </div>
             <div
               className="bg-white text-[#4F4F4F] text-[1.125rem] font-bold rounded-[40px] border border-[#CAC4D0] px-15 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA] hover:text-white hover-border-none"

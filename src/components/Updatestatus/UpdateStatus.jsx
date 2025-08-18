@@ -61,6 +61,18 @@ const UpdateStatus = () => {
     "Discharge",
   ];
 
+  const allOptions = [
+    "Registered",
+    "Checked-In",
+    "Pre-Procedure",
+    "In-Progress",
+    "Surgery Completed",
+    "Recovery",
+    "Recovery Complete",
+    "Discharge",
+    "Completed",
+  ];
+
   const toggleDropdown = () => setIsOpen(!isOpen);
   const handleOptionClick = (option) => {
     setSelected(option);
@@ -79,13 +91,19 @@ const UpdateStatus = () => {
   console.log(formData);
 
   const handleSave = async () => {
-    if (!patientNo) {
+    if (
+      selected === "Select New Status" ||
+      selected === patientFromNav.status
+    ) {
+      setError("Select a new status");
+    } else if (!patientNo) {
       alert("No patient number found.");
       return;
+    } else {
+      const docRef = doc(db, "patient_info", String(patientNo));
+      await updateDoc(docRef, formData);
+      setShowModal(true);
     }
-    const docRef = doc(db, "patient_info", String(patientNo));
-    await updateDoc(docRef, formData);
-    setShowModal(true);
   };
 
   const styles = {
@@ -108,7 +126,9 @@ const UpdateStatus = () => {
         <Header />
         <div className="flex flex-1 flex-col items-center py-11 md:py-4 md:px-2 md:justify-center bg-[#F5F3EA]">
           <div className="mb-14 md:mb-20">
-            <h1 className="text-[#4F4F4F] font-bold text-2xl md:text-4xl dm-sans">Patient Status</h1>
+            <h1 className="text-[#4F4F4F] font-bold text-2xl md:text-4xl dm-sans">
+              Patient Status
+            </h1>
           </div>
           <div className="flex flex-col gap-3 md:gap-7 dm-sans md:text-[1.25rem] font-semibold text-[#333333]">
             <div className="flex justify-between">
@@ -124,7 +144,9 @@ const UpdateStatus = () => {
               )}
             </div>
             <div className="flex mb-38 md:mb-42 md:gap-25">
-              <p className="flex justify-center items-center mr-8">New Status:</p>
+              <p className="flex justify-center items-center mr-8">
+                New Status:
+              </p>
               <div className="md:w-[272px] relative flex justify-end">
                 <button
                   className="flex justify-center items-center py-2 md:px-7 w-[200px] md:w-[250px] cursor-pointer border-1 border-black rounded-[10px] bg-white z-20"
@@ -139,8 +161,19 @@ const UpdateStatus = () => {
                     {patientFromNav === null ||
                     patientFromNav.length === 0 ? null : (
                       <div>
+                        {patientFromNav.status === "Registered"
+                          ? options.slice(0, 1).map((option) => (
+                              <li
+                                key={option}
+                                className="p-[10px] cursor-pointer border-b border-[#eee] flex justify-center"
+                                onClick={() => handleOptionClick(option)}
+                              >
+                                {option}
+                              </li>
+                            ))
+                          : null}
                         {patientFromNav.status === "Checked-In"
-                          ? options.slice(0, 2).map((option) => (
+                          ? allOptions.slice(0, 3).map((option) => (
                               <li
                                 key={option}
                                 className="p-[10px] cursor-pointer border-b border-[#eee] flex justify-center"
@@ -206,7 +239,18 @@ const UpdateStatus = () => {
                             ))
                           : null}
                         {patientFromNav.status === "Discharge"
-                          ? options.slice(5, 7).map((option) => (
+                          ? allOptions.slice(6, 9).map((option) => (
+                              <li
+                                key={option}
+                                className="p-[10px] cursor-pointer border-b border-[#eee] flex justify-end"
+                                onClick={() => handleOptionClick(option)}
+                              >
+                                {option}
+                              </li>
+                            ))
+                          : null}
+                        {patientFromNav.status === "Completed"
+                          ? allOptions.slice(7, 8).map((option) => (
                               <li
                                 key={option}
                                 className="p-[10px] cursor-pointer border-b border-[#eee] flex justify-end"
@@ -224,7 +268,7 @@ const UpdateStatus = () => {
             </div>
           </div>
           {error === null ? null : (
-            <div className="mb-8 text-red-400">Please select a new status</div>
+            <div className="mb-8 text-red-400">{error}</div>
           )}
           <div className="flex flex-col md:flex-row text-center items-center justify-center gap-7">
             <div
@@ -250,7 +294,9 @@ const UpdateStatus = () => {
               className="fixed inset-0 bg-opacity-50 flex items-center justify-center z-50"
             >
               <div className="bg-white p-20 rounded-[10px] shadow-lg text-center max-w-md w-full">
-                <p className="mb-10 text-[20px] dm-sans font-semibold">Patient has been updated!</p>
+                <p className="mb-10 text-[20px] dm-sans font-semibold">
+                  Patient has been updated!
+                </p>
                 <button
                   className="bg-[#008C99] text-white text-[1rem] font-bold rounded-[40px] px-10 py-4 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
                   onClick={() => {
@@ -264,7 +310,7 @@ const UpdateStatus = () => {
           )}
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };
