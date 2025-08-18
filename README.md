@@ -23,7 +23,7 @@ Enables surgical staff to update the patient's status throughout the procedure.
 Provides admins with tools to register new patients, update patient information, and initiate status tracking. This is done while maintaining patient privacy in accordance with HIPPA laws.
 
 ## Live Link
-https://v56-tier2-team-25.vercel.app/
+https://v56-tier2-team-25-chingu.vercel.app/
 
 There are three types of users:
 
