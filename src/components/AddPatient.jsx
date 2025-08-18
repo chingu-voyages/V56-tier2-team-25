@@ -1,74 +1,208 @@
-import Footer from "./Footer"
-import Header from "./Header"
+import { db } from "../../firebase";
+import { doc, setDoc } from "firebase/firestore";
+import Footer from "./Footer";
+import Header from "./Nav/Header";
+import { useState } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
 
 const AddPatient = () => {
+  const navigate = useNavigate();
 
-    const inputs = [
-        { label: "Patient No:", type: 'text', name: 'patientNo'},
-        { label: "First Name:", type: 'text', name: 'firstName' },
-        { label: "Last Name:", type: 'text', name: 'lastName' },
-        { label: "Street:", type: 'text', name: 'street' },
-        { label: "City:", type: "text", name: 'city' },
-        { label: "State:", type: 'text', name: 'state' },
-        { label: "Country:", type: 'text', name: 'country' },
-        { label: "Telephone:", type: 'tel', name: 'telephone' },
-        { label: "Contact Email:", type: 'email', name: 'email' }, 
-    ]
+  const [patientNo, setPatientNo] = useState("");
+  const [showModal, setShowModal] = useState(false);
 
-    const formInputs = inputs.map(input => {
-        return (
-            <div className="flex items-center justify-between mb-[18px]">
-                <label 
-                    htmlFor={input.name}
-                    className="font-semibold text-xl dm-sans text-[#333333]"
-                >
-                    {input.label}
-                </label>
-                <input 
-                    type={input.type} 
-                    id={input.name} 
-                    name={input.name}
-                    className="bg-white w-31 border border-[#333333] px-2 py-1 text-[#333333]"
-                /> 
-            </div>
-        )
-    })
+  const inputs = [
+    {
+      label: "Patient No.:",
+      type: "text",
+      name: "patientNo",
+      placeholder: "Patient number",
+      mobileLabel: "Patient Number",
+    },
+    {
+      label: "First Name:",
+      type: "text",
+      name: "firstName",
+      placeholder: "First name",
+      mobileLabel: "First Name",
+    },
+    {
+      label: "Last Name:",
+      type: "text",
+      name: "lastName",
+      placeholder: "Last name",
+      mobileLabel: "Last Name",
+    },
+    {
+      label: "Street:",
+      type: "text",
+      name: "street",
+      placeholder: "Street",
+      mobileLabel: "Street",
+    },
+    {
+      label: "City:",
+      type: "text",
+      name: "city",
+      placeholder: "City",
+      mobileLabel: "City",
+    },
+    {
+      label: "State:",
+      type: "text",
+      name: "state",
+      placeholder: "State",
+      mobileLabel: "State",
+    },
+    {
+      label: "Country:",
+      type: "text",
+      name: "country",
+      placeholder: "Country",
+      mobileLabel: "Country",
+    },
+    {
+      label: "Telephone:",
+      type: "tel",
+      name: "telephone",
+      placeholder: "Telephone number",
+      mobileLabel: "Telephone",
+    },
+    {
+      label: "Contact Email:",
+      type: "email",
+      name: "email",
+      placeholder: "Contact email",
+      mobileLabel: "Email",
+    },
+  ];
 
-    const submitForm = (e) => {
-        e.preventDfault()
-        const formElement = e.currentTarget
-        const formData = new FormData(formElement)
-        formElement.reset()
+  const generateNo = () => {
+    let number = "";
+    for (let i = 0; i < 6; i++) {
+      number += Math.ceil(Math.random() * 9);
     }
-    
-    return (
-        <>
-        <section className="min-h-screen w-full flex flex-col">
-            <Header/>
-            <div className="flex-1 flex flex-col items-center justify-center bg-[#F5F3EA]">
-                <h2 className="text-4xl font-bold text-[#4F4F4F] mb-24">Patient Information</h2>
-                <form onSubmit={submitForm} className="flex flex-col w-[314px]">
-                    {formInputs}
-                </form>
-                <div className="flex gap-6 mt-10">
-                        <button 
-                            type="submit"
-                            className="bg-[#008C99] text-white text-[1.125rem] font-bold rounded-[40px] px-10 py-5 cursor-pointer shadow-md/50"
-                        >
-                            Add New Patient
-                        </button>
-                        <button
-                            type="button"
-                            className="bg-white text-[#4F4F4F] border border-[#CAC4D0] text-[1.125rem] font-bold rounded-[40px] px-10 py-5 cursor-pointer shadow-md/50"
-                        >
-                            Cancel
-                        </button>
-                </div>
-            </div>
-        </section>
-        <Footer/>
-        </>
-    )
-}
+    setPatientNo(number);
+  };
 
-export default AddPatient
+  const formInputs = inputs.map((input) => {
+    const isPatientNo = input.name === "patientNo";
+    return (
+      <div
+        className="flex flex-col md:flex-row justify-between items-center mb-[18px] px-10 md:px-0"
+        key={input.name}
+      >
+        <label
+          htmlFor={input.name}
+          className="md:hidden font-semibold text-sm text-[#333333] self-start mb-1"
+        >
+          {input.mobileLabel}
+        </label>
+        <label
+          htmlFor={input.name}
+          className="hidden md:block font-semibold text-xl dm-sans text-[#333333] mb-0"
+        >
+          {input.label}
+        </label>
+        <input
+          type={input.type}
+          id={input.name}
+          name={input.name}
+          placeholder={input.placeholder}
+          value={isPatientNo ? patientNo : undefined}
+          className="bg-white border w-[331px] md:w-[262px] border-[#333333] rounded-[10px] px-3 py-2 text-[#333333]"
+        />
+        {isPatientNo && (
+          <p
+            className="flex md:absolute md:ml-128 text-sm font-semibold underline text-[#008C99] cursor-pointer self-start pt-2"
+            onClick={generateNo}
+          >
+            Generate New Patient Number
+          </p>
+        )}
+      </div>
+    );
+  });
+
+  const submitForm = async (e) => {
+    e.preventDefault();
+    const formElement = e.currentTarget;
+    const formData = new FormData(formElement);
+    const dataForDB = Object.fromEntries(formData.entries());
+    dataForDB.status = "Registered";
+    if (dataForDB.patientNo !== "") {
+      await setDoc(doc(db, "patient_info", dataForDB.patientNo), dataForDB);
+      console.log("Created");
+      setShowModal(true);
+    } else {
+      console.log("Not created");
+    }
+    formElement.reset();
+    setPatientNo("");
+  };
+
+  const styles = {
+    modalOverlay: {
+      backgroundColor: "rgba(0,0,0,0.5)",
+    },
+  };
+
+  return (
+    <>
+      <section className="min-h-screen w-full flex flex-col">
+        <Header />
+        <div className="flex flex-1 flex-col items-center py-11 md:py-4 md:px:2 md:justify-center bg-[#F5F3EA]">
+          <h2 className="text-[#4F4F4F] font-bold text-2xl lg:text-4xl dm-sans mb-10 md:mb-20">
+            Patient Information
+          </h2>
+          <form onSubmit={submitForm} className="flex flex-col">
+            {formInputs}
+            <div className="flex flex-col md:flex-row items-center gap-7 mt-10 mb-12 md:mb-0">
+              <button
+                type="submit"
+                className="bg-[#008C99] text-white text-[1.125rem] font-bold rounded-[40px] px-18 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
+              >
+                Add New Patient
+              </button>
+              <button
+                type="button"
+                className="bg-white text-[#4F4F4F] text-[1.125rem] font-bold rounded-[40px] border border-[#CAC4D0] px-15 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
+                onClick={() => navigate(-1)}
+              >
+                Cancel
+              </button>
+            </div>
+            {showModal && (
+              <div
+                style={styles.modalOverlay}
+                className="fixed inset-0 bg-opacity-50 flex items-center justify-center z-50"
+              >
+                <div className="bg-white p-20 rounded-[10px] shadow-lg text-center max-w-md w-full">
+                  <p className="mb-10 text-[20px] dm-sans font-semibold">
+                    Patient added!
+                  </p>
+                  <button
+                    className="bg-[#008C99] text-white text-[1rem] font-bold rounded-[40px] px-10 py-4 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
+                    onClick={() => {
+                      navigate(-2);
+                    }}
+                  >
+                    Continue
+                  </button>
+                </div>
+              </div>
+            )}
+          </form>
+        </div>
+      </section>
+      <Footer />
+    </>
+  );
+};
+
+export default AddPatient;

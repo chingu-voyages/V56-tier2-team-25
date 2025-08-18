@@ -1,0 +1,47 @@
+import logo from '../../assets/logo.png';
+import Navbar from './Navbar';
+import { useNavigate } from "react-router-dom";
+import { useState } from 'react';
+
+const Header = () => {
+
+    const [ menuOpen, setMenuOpen ] = useState(false)
+    const navigate = useNavigate();
+    const date = new Date().toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'})
+
+    return (
+        <header className="flex w-full h-[108px] items-center transition-all duration-300 shado-2xl px-[1.5625rem] md:px-0 lg:bg-white bg-[rgba(168,213,186,0.3)]">
+                 
+            <div className="container mx-auto flex items-center md:px-2 lg:py-[28px]">
+                <div 
+                className='absolute cursor-pointer z-40 lg:hidden text-3xl'
+                onClick={() => setMenuOpen(prev => !prev)}
+            >
+                &#9776; 
+            </div>
+                <div className='w-full flex lg:gap-4 items-center justify-center md:justify-start cursor-pointer' >
+                    <img 
+                        className='hidden md:block' src={logo} alt="logo"
+                        onClick={() => navigate("/")}
+                    />
+                    <h1 
+                        className='text-2xl lg:text-[2rem] font-medium text-shadow-md text-[#006B44]'
+                        onClick={() => navigate("/")}
+                    >
+                        Surgery Status
+                    </h1>
+                   <span
+                        className="absolute top-20 right-[1.625rem] lg:static lg:top-auto lg:right-auto ml-0 lg:ml-1 mt-0 lg:mt-[.6rem] pb-3 lg:pb-0 text-[#4F4F4F] text-[.75rem] lg:text-base font-bold lg:font-medium"
+                    >
+                        {date}
+                    </span>
+                </div>
+                
+                <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen}/> 
+            </div>
+            
+        </header>
+    )
+}
+
+export default Header

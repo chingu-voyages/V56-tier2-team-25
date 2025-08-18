@@ -1,23 +1,56 @@
 import React from "react";
 import { useState } from "react";
-import "./landingpages.css";
+import Header from "../Nav/Header";
+import Footer from "../Footer";
+import { useSelector } from "react-redux";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
 
 const LandingPageAdmin = () => {
+  const userData = useSelector((state) => state.user.userData);
+
+  const navigate = useNavigate();
+
   return (
-    <div className="lp-admin-wrapper">
-      <div className="lp-admin-container">
-        <h1 className="lp-admin-title">Welcome back, Amy!</h1>
-        <p className="lp-admin-desc">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in ligula
-          nec eros molestie ornare sed sit amet orci. Content that advertises
-          the purpose of the app and its benefits
+    <>
+    <div className="min-h-screen w-full flex flex-col">
+      <Header />
+      <div className="flex flex-1 flex-col items-center py-11 md:py-4  md:justify-center bg-[#F5F3EA]">
+        <h1 className="text-[1.5rem] md:text-4xl font-bold dm-sans text-[#4F4F4F] mb-18">
+          Welcome back, {userData?.name}!
+        </h1>
+        <p className="text-[.875rem] sm:text-[1.125rem] px-11 text-[#4F4F4F] text-center mb-18">
+          Would you like to update the patient's surgery status or edit their personal information?
         </p>
-        <div className="lp-admin-button-div">
-          <div className="lp-admin-button-left">Update Patient Status</div>
-          <div className="lp-admin-button-right">Edit Patient Info</div>
+        <div className="flex flex-col md:flex-row gap-7 items-center justify-center">
+          <button 
+            className="flex text-center items-center justify-center dm-sans bg-[#008C99] text-white text-[1.25rem] font-bold rounded-[40px] px-14 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
+            onClick={() => navigate("/FindPatient")}
+          >
+              Update Patient Status
+          </button>
+          <button 
+            className="flex text-center items-center justify-center dm-sans bg-white text-[#4F4F4F] text-[1.25rem] border border-[#CAC4D0] font-bold rounded-[40px] px-14 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
+            onClick={()=>navigate("/adminEdit")}
+          >
+              Edit Patient Info
+          </button>
+          <button 
+            className="flex text-center items-center justify-center dm-sans bg-[#008C99] text-white text-[1.25rem] font-bold rounded-[40px] px-14 py-6 cursor-pointer shadow-md/60 hover:bg-[#A8D5BA]"
+            onClick={() => navigate("/AddPatient")}
+          >
+              Add Patient
+          </button>
         </div>
       </div>
+      
     </div>
+    <Footer />
+    </>
   );
 };
 
