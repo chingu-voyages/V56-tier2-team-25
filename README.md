@@ -5,7 +5,7 @@ Developed as a Chingu Voyage Project - Surgery Center Status Board [Project Requ
 
 ### Surgery Status Board is a web application that tracks patients' progress and displays it on a monitor in the waiting room, as well as on a mobile device.
 
-This application provides real-time surgery status updates for hospital staff, families and loved ones. Guest users can view real-time surgical updates. Surgical team members can update patient status throughout the procedure. Admins can register new patients, update patient information, and initiate tracking. Patient privacy is a core component that ensures compliance with HIPPA laws. The application is designed to reduce uncertainty in waiting rooms, improve communication and reduces stress during critical moments.
+This application provides real-time surgery status updates for hospital staff, families and loved ones. Guest users can view real-time surgical updates. Surgical team members can update patient status throughout the procedure. Admins can register new patients, update patient information, and initiate tracking. Patient privacy is a core component that ensures compliance with HIPPA laws. The application is designed to reduce uncertainty in waiting rooms, improve communication and reduce stress during critical moments.
 
 
 ## Features
